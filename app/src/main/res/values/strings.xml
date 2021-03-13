@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">Shop Assist</string>
+    <string name="app_name" translatable="false">Shop Assist</string>
+    <string name="Login">Login</string>
 </resources>
