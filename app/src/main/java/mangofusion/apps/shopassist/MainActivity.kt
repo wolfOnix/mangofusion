@@ -1,9 +1,9 @@
 package mangofusion.apps.shopassist
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.FirebaseDatabase
 
 class MainActivity : AppCompatActivity() {
@@ -12,8 +12,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val database = FirebaseDatabase.getInstance()
-        val myRef = database.getReference("Username")
-        myRef.setValue("Laviniu")
+        val myRef = database.getReference("test")
+        myRef.setValue("Hello, World!")
     }
 
     /* Called when the user taps the Send button */
