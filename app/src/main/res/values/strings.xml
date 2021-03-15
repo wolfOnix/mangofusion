@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name" translatable="false">Shop Assist</string>
     <string name="Login">Login</string>
+    <string name="signup">Sign Up</string>
 </resources>
