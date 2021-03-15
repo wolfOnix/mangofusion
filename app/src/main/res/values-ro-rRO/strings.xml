@@ -2,4 +2,11 @@
 <resources>
     <string name="Login">Conectare</string>
     <string name="signup">Creare cont</string>
+    <string name="firstname">Prenume</string>
+    <string name="lastname">Nume de familie</string>
+    <string name="password">Parolă</string>
+    <string name="confirmpassword">Confirmare parolă</string>
+    <string name="address">Adresă</string>
+    <string name="telephonenumber">Număr de telefon</string>
+    <string name="email">Email</string>
 </resources>

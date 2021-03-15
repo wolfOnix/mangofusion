@@ -2,4 +2,11 @@
 <resources>
     <string name="Login">Anmelden</string>
     <string name="signup">Konto erstellen</string>
+    <string name="firstname">Vorname</string>
+    <string name="lastname">Nachname</string>
+    <string name="password">Passwort</string>
+    <string name="confirmpassword">Passwort bestätigen</string>
+    <string name="address">Adresse</string>
+    <string name="telephonenumber">Telefonnummer</string>
+    <string name="email">Email</string>
 </resources>
