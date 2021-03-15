@@ -21,4 +21,12 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this, SignUp::class.java).apply { }
         startActivity(intent)
     }
+
+    /* Called when the user taps the Sign In button
+    fun goToLogIn(view: View) {
+        val intent = Intent(this, LogIn::class.java).apply { }
+        startActivity(intent)
+    }
+    */
+     
 }
