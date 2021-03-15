@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="Login">Conectare</string>
-    <string name="signup">Creare cont</string>
-    <string name="firstname">Prenume</string>
-    <string name="lastname">Nume de familie</string>
+    <string name="sign_up">Creare cont</string>
+    <string name="first_name">Prenume</string>
+    <string name="last_name">Nume de familie</string>
     <string name="password">Parolă</string>
-    <string name="confirmpassword">Confirmare parolă</string>
+    <string name="confirm_password">Confirmare parolă</string>
     <string name="address">Adresă</string>
-    <string name="telephonenumber">Număr de telefon</string>
+    <string name="telephone_number">Număr de telefon</string>
     <string name="email">Email</string>
     <string name="title">Titlu</string>
+    <string name="forgot_password">Forgot Password?</string>
 </resources>

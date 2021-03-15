@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="Login">Anmelden</string>
-    <string name="signup">Konto erstellen</string>
-    <string name="firstname">Vorname</string>
-    <string name="lastname">Nachname</string>
+    <string name="sign_up">Konto erstellen</string>
+    <string name="first_name">Vorname</string>
+    <string name="last_name">Nachname</string>
     <string name="password">Passwort</string>
-    <string name="confirmpassword">Passwort bestätigen</string>
+    <string name="confirm_password">Passwort bestätigen</string>
     <string name="address">Adresse</string>
-    <string name="telephonenumber">Telefonnummer</string>
+    <string name="telephone_number">Telefonnummer</string>
     <string name="email">Email</string>
     <string name="title">Titel</string>
+    <string name="forgot_password">Forgot Password?</string>
 </resources>
