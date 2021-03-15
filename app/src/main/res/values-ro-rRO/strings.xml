@@ -9,4 +9,5 @@
     <string name="address">Adresă</string>
     <string name="telephonenumber">Număr de telefon</string>
     <string name="email">Email</string>
+    <string name="title">Titlu</string>
 </resources>
