@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name" translatable="false">Shop Assist</string>
     <string name="log_in_screen" translatable="false">LOGIN SCREEN</string>
-    <string name="log_in" translatable="false">LOGIN</string>
+    <string name="log_in">LOGIN</string>
     <string name="sign_up">Sign Up</string>
     <string name="first_name">First Name</string>
     <string name="last_name">Last Name</string>
@@ -11,6 +11,6 @@
     <string name="telephone_number">Telephone number</string>
     <string name="email">Email</string>
     <string name="title">title</string>
-    <string name="forgot_password">Forgot Password?</string>
+    <string name="forgot_password">Forgot password</string>
     <string name="birthday_date">Birthday date</string>
 </resources>
