@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name" translatable="false">Shop Assist</string>
-    <string name="log_in" translatable="false">Log In</string>
+    <string name="log_in_screen" translatable="false">LOGIN SCREEN</string>
+    <string name="log_in" translatable="false">LOGIN</string>
     <string name="sign_up">Sign Up</string>
     <string name="first_name">First Name</string>
     <string name="last_name">Last Name</string>
