@@ -7,7 +7,7 @@
     tools:context=".SignUpActivity">
 
     <TextView
-        android:id="@+id/txtvw_signup"
+        android:id="@+id/tv_sign_up"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/sign_up"
@@ -20,7 +20,7 @@
         app:layout_constraintVertical_bias="0.119" />
 
     <EditText
-        android:id="@+id/edtxt_firstname"
+        android:id="@+id/et_first_name"
         android:layout_width="325dp"
         android:layout_height="42dp"
         android:layout_marginTop="68dp"
@@ -29,11 +29,11 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtvw_signup"
+        app:layout_constraintTop_toBottomOf="@+id/tv_sign_up"
         android:autofillHints="" />
 
     <EditText
-        android:id="@+id/edtxt_lastname"
+        android:id="@+id/et_last_name"
         android:layout_width="325dp"
         android:layout_height="42dp"
         android:layout_marginTop="32dp"
@@ -42,11 +42,11 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtxt_firstname"
+        app:layout_constraintTop_toBottomOf="@+id/et_first_name"
         android:autofillHints="" />
 
     <EditText
-        android:id="@+id/edtxt_email"
+        android:id="@+id/et_email"
         android:layout_width="325dp"
         android:layout_height="42dp"
         android:layout_marginTop="32dp"
@@ -56,11 +56,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtxt_lastname"
+        app:layout_constraintTop_toBottomOf="@+id/et_last_name"
         android:autofillHints="" />
 
     <EditText
-        android:id="@+id/edtxt_password"
+        android:id="@+id/et_password"
         android:layout_width="325dp"
         android:layout_height="42dp"
         android:layout_marginTop="32dp"
@@ -70,11 +70,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtxt_email"
+        app:layout_constraintTop_toBottomOf="@+id/et_email"
         android:autofillHints="" />
 
     <EditText
-        android:id="@+id/edtxt_confirmpassword"
+        android:id="@+id/et_confirm_password"
         android:layout_width="325dp"
         android:layout_height="42dp"
         android:layout_marginTop="32dp"
@@ -84,7 +84,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtxt_password"
+        app:layout_constraintTop_toBottomOf="@+id/et_password"
         android:autofillHints="" />
 
     <com.google.android.gms.maps.MapView
@@ -95,10 +95,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtxt_confirmpassword" />
+        app:layout_constraintTop_toBottomOf="@+id/et_confirm_password" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="4dp"
