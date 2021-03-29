@@ -12,4 +12,6 @@
     <string name="forgot_password">Recuperare parolă</string>
     <string name="birthday_date">Data nașterii</string>
     <string name="log_in">Conectare</string>
+    <string name="hello">Bună ziua</string>
+    <string name="home">Acasă</string>
 </resources>

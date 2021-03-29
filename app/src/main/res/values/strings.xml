@@ -13,4 +13,6 @@
     <string name="title">title</string>
     <string name="forgot_password">Forgot password</string>
     <string name="birthday_date">Birthday date</string>
+    <string name="hello">Hello</string>
+    <string name="home">Home</string>
 </resources>

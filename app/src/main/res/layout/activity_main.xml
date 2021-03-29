@@ -22,7 +22,8 @@
             android:layout_marginTop="-250dp"
             android:layout_gravity="center"
             android:src="@drawable/decoration_login_screen"
-            android:contentDescription="decoration" />
+            android:contentDescription="decoration"
+            tools:ignore="HardcodedText" />
 
         <ImageView
             android:layout_width="150dp"
@@ -30,7 +31,8 @@
             android:layout_marginBottom="0dp"
             android:layout_gravity="center"
             android:src="@drawable/full_logo"
-            android:contentDescription="background" />
+            android:contentDescription="background"
+            tools:ignore="HardcodedText" />
 
     </FrameLayout>
 
@@ -73,7 +75,8 @@
         app:layout_constraintHorizontal_bias="0.844"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.632" />
+        app:layout_constraintVertical_bias="0.632"
+        android:onClick="goHome" />
 
     <LinearLayout
         android:layout_width="match_parent"

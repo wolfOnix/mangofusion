@@ -12,4 +12,6 @@
     <string name="forgot_password">Forgot password</string>
     <string name="birthday_date">Birthday date</string>
     <string name="log_in">Log In</string>
+    <string name="hello">Hello</string>
+    <string name="home">Home</string>
 </resources>
