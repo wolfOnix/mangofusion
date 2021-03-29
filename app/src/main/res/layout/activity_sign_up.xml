@@ -6,96 +6,142 @@
     android:layout_height="match_parent"
     tools:context=".SignUpActivity">
 
-    <TextView
-        android:id="@+id/txtvw_signup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/sign_up"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.119" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none"> <!-- Disable scrollbar -->
 
-    <EditText
-        android:id="@+id/edtxt_firstname"
-        android:layout_width="325dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="68dp"
-        android:ems="10"
-        android:hint="@string/first_name"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtvw_signup"
-        android:autofillHints="" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center" > <!-- Center elements inside -->
 
-    <EditText
-        android:id="@+id/edtxt_lastname"
-        android:layout_width="325dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="32dp"
-        android:ems="10"
-        android:hint="@string/last_name"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtxt_firstname"
-        android:autofillHints="" />
+            <TextView
+                android:id="@+id/txtvw_signup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="68dp"
+                android:text="@string/sign_up"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.119" />
 
-    <EditText
-        android:id="@+id/edtxt_email"
-        android:layout_width="325dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="32dp"
-        android:ems="10"
-        android:hint="@string/email"
-        android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtxt_lastname"
-        android:autofillHints="" />
+            <EditText
+                android:id="@+id/edtxt_firstname"
+                android:layout_width="325dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="68dp"
+                android:autofillHints=""
+                android:ems="10"
+                android:hint="@string/first_name"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtvw_signup" />
 
-    <EditText
-        android:id="@+id/edtxt_password"
-        android:layout_width="325dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="32dp"
-        android:ems="10"
-        android:hint="@string/password"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtxt_email"
-        android:autofillHints="" />
+            <EditText
+                android:id="@+id/edtxt_lastname"
+                android:layout_width="325dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="32dp"
+                android:autofillHints=""
+                android:ems="10"
+                android:hint="@string/last_name"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtxt_firstname" />
 
-    <EditText
-        android:id="@+id/edtxt_confirmpassword"
-        android:layout_width="325dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="32dp"
-        android:ems="10"
-        android:hint="@string/confirm_password"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtxt_password"
-        android:autofillHints="" />
+            <EditText
+                android:id="@+id/edtxt_email"
+                android:layout_width="325dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="32dp"
+                android:autofillHints=""
+                android:ems="10"
+                android:hint="@string/email"
+                android:inputType="textEmailAddress"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtxt_lastname" />
 
-    <com.google.android.gms.maps.MapView
-        android:id="@+id/mapView2"
-        android:layout_width="325dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtxt_confirmpassword" />
+            <EditText
+                android:id="@+id/edtxt_password"
+                android:layout_width="325dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="32dp"
+                android:autofillHints=""
+                android:ems="10"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtxt_email" />
+
+            <EditText
+                android:id="@+id/edtxt_confirmpassword"
+                android:layout_width="325dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="32dp"
+                android:autofillHints=""
+                android:ems="10"
+                android:hint="@string/confirm_password"
+                android:inputType="textPassword"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtxt_password" />
+
+            <EditText
+                android:id="@+id/edtxt_birthdaydate"
+                android:layout_width="325dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="32dp"
+                android:autofillHints=""
+                android:ems="10"
+                android:hint="@string/birthday_date"
+                android:inputType="date"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtxt_password" />
+
+            <EditText
+                android:id="@+id/edtxt_telephonenumber"
+                android:layout_width="325dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="32dp"
+                android:autofillHints=""
+                android:ems="10"
+                android:hint="@string/telephone_number"
+                android:inputType="phone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtxt_password" />
+
+            <com.google.android.gms.maps.MapView
+                android:id="@+id/mapView2"
+                android:layout_width="325dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="90dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtxt_confirmpassword" />
+
+        </LinearLayout>
+
+    </ScrollView>
 
     <Button
         android:id="@+id/button"

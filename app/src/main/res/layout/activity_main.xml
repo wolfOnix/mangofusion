@@ -21,7 +21,8 @@
             android:scaleType="fitXY"
             android:src="@drawable/login_header"
             tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="-345dp" />
+            tools:layout_editor_absoluteY="-345dp"
+            android:contentDescription="background" />
 
         <ImageView
             android:layout_width="200dp"
