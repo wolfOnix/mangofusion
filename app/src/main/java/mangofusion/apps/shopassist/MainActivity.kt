@@ -77,8 +77,18 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         mAuth!!.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    // redirect to user profile
-                    startActivity(Intent(this@MainActivity, HomeActivity::class.java))
+                    val user = FirebaseAuth.getInstance().currentUser
+                    if (user.isEmailVerified) {
+                        // redirect to user profile
+                        startActivity(Intent(this@MainActivity, HomeActivity::class.java))
+                    } else {
+                        user.sendEmailVerification()
+                        Toast.makeText(
+                            this@MainActivity,
+                            "Check your email to verify your account!",
+                            Toast.LENGTH_LONG
+                        ).show()
+                    }
                 } else {
                     Toast.makeText(
                         this@MainActivity,
