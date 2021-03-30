@@ -9,5 +9,9 @@
     <string name="telephone_number">Telefonnummer</string>
     <string name="email">Email</string>
     <string name="title">Titel</string>
-    <string name="forgot_password">Forgot Password?</string>
+    <string name="forgot_password">Passwort vergessen</string>
+    <string name="birthday_date">Geburtsdatum</string>
+    <string name="log_in">Anmelden</string>
+    <string name="hello">Guten Tag</string>
+    <string name="home">Zu Hause</string>
 </resources>

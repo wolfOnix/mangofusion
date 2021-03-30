@@ -8,4 +8,6 @@
     <color name="red">#FFE4112A</color>
     <color name="carbon">#FF404040</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="gray">#707070</color>
+    <color name="black">#000000</color>
 </resources>

@@ -9,5 +9,9 @@
     <string name="telephone_number">Număr de telefon</string>
     <string name="email">Email</string>
     <string name="title">Titlu</string>
-    <string name="forgot_password">Forgot Password?</string>
+    <string name="forgot_password">Recuperare parolă</string>
+    <string name="birthday_date">Data nașterii</string>
+    <string name="log_in">Conectare</string>
+    <string name="hello">Bună ziua</string>
+    <string name="home">Acasă</string>
 </resources>
