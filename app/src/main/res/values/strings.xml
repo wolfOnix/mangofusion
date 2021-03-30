@@ -15,4 +15,5 @@
     <string name="birthday_date">Birthday date</string>
     <string name="hello">Hello</string>
     <string name="home">Home</string>
+    <string name="cancel">Cancel</string>
 </resources>

@@ -14,4 +14,5 @@
     <string name="log_in">Conectare</string>
     <string name="hello">Bună ziua</string>
     <string name="home">Acasă</string>
+    <string name="cancel">Anulare</string>
 </resources>
