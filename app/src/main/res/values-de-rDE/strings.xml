@@ -15,4 +15,5 @@
     <string name="hello">Guten Tag</string>
     <string name="home">Zu Hause</string>
     <string name="cancel">Abbrechen</string>
+    <string name="my_account">Mein Konto</string>
 </resources>

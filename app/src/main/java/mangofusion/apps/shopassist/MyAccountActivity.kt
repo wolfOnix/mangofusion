@@ -5,10 +5,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 
-class HomeActivity : AppCompatActivity() {
+class MyAccountActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
+        setContentView(R.layout.activity_my_account)
     }
 
     fun goHome(view: View) {
@@ -20,4 +20,5 @@ class HomeActivity : AppCompatActivity() {
         val intent = Intent(this, MyAccountActivity::class.java).apply { }
         startActivity(intent)
     }
+
 }

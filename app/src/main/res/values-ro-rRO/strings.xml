@@ -15,4 +15,5 @@
     <string name="hello">Bună ziua</string>
     <string name="home">Acasă</string>
     <string name="cancel">Anulare</string>
+    <string name="my_account">Contul meu</string>
 </resources>
