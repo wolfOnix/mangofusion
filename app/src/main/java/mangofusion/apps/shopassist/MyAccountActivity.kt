@@ -1,11 +1,11 @@
 package mangofusion.apps.shopassist
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 
-class MyAccountActivity : AppCompatActivity() {
+class MyAccountActivity : Activity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_my_account)
@@ -18,6 +18,11 @@ class MyAccountActivity : AppCompatActivity() {
 
     fun goToMyAccount(view: View) {
         val intent = Intent(this, MyAccountActivity::class.java).apply { }
+        startActivity(intent)
+    }
+
+    fun logOut(view: View) {
+        val intent = Intent(this, MainActivity::class.java).apply { }
         startActivity(intent)
     }
 

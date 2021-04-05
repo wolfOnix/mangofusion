@@ -15,6 +15,10 @@
         <item name="android:textColor">@color/white</item>
     </style>
 
+    <style name="button_main_red" parent="@style/button_main">
+        <item name="android:backgroundTint">@color/magenta</item>
+    </style>
+
     <style name="button_back" parent="@style/Widget.MaterialComponents.Button">
         <item name="android:textSize">15sp</item>
         <item name="android:backgroundTint">#00000000</item>

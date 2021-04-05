@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 
-class MainActivity : AppCompatActivity(), View.OnClickListener {
+class MainActivity : Activity(), View.OnClickListener {
 
     private var button_sign_up: Button? = null
     private var button_Login: Button? = null
@@ -32,13 +32,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         mAuth = FirebaseAuth.getInstance()
     }
 
-    fun goToSignUp(view: View) {
-        val intent = Intent(this, SignUpActivity::class.java).apply { }
+    fun goHome(view: View) {
+        val intent = Intent(this, HomeActivity::class.java).apply { }
         startActivity(intent)
     }
 
-    fun goHome(view: View) {
-        val intent = Intent(this, HomeActivity::class.java).apply { }
+    fun goToSignUp(view: View) {
+        val intent = Intent(this, SignUpActivity::class.java).apply { }
         startActivity(intent)
     }
 

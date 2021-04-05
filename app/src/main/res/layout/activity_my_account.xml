@@ -34,6 +34,20 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.119" />
 
+            <Button
+                android:id="@+id/button_Login"
+                style="@style/button_main_red"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/log_out"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.844"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.632"
+                android:onClick="logOut" />
+
         </LinearLayout>
 
     </ScrollView>
@@ -50,7 +64,7 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_marginBottom="10dp"
-            android:layout_marginRight="15dp"
+            android:layout_marginEnd="15dp"
             android:scaleType="fitCenter"
             android:backgroundTint="#00000000"
             android:src="@drawable/icon_home"
@@ -76,7 +90,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginBottom="10dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
             android:scaleType="fitCenter"
             android:backgroundTint="#00000000"
             android:src="@drawable/icon_my_account"

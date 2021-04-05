@@ -9,11 +9,12 @@
     <string name="telephone_number">Telephone number</string>
     <string name="email">Email</string>
     <string name="title">Title</string>
-    <string name="forgot_password">Forgot password</string>
+    <string name="password_recovery">Password recovery</string>
     <string name="birthday_date">Birthday date</string>
     <string name="log_in">Log In</string>
     <string name="hello">Hello</string>
     <string name="home">Home</string>
     <string name="cancel">Cancel</string>
     <string name="my_account">My account</string>
+    <string name="log_out">Log out</string>
 </resources>

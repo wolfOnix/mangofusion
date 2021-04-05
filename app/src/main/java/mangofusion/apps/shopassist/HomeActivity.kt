@@ -1,11 +1,11 @@
 package mangofusion.apps.shopassist
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 
-class HomeActivity : AppCompatActivity() {
+class HomeActivity : Activity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
@@ -20,4 +20,5 @@ class HomeActivity : AppCompatActivity() {
         val intent = Intent(this, MyAccountActivity::class.java).apply { }
         startActivity(intent)
     }
+
 }
