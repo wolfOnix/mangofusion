@@ -7,9 +7,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.FirebaseDatabase
 
 class MainActivity : Activity(), View.OnClickListener {
 
@@ -20,6 +18,11 @@ class MainActivity : Activity(), View.OnClickListener {
     private var mAuth: FirebaseAuth? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        mAuth = FirebaseAuth.getInstance()
+        if (mAuth!!.getCurrentUser() != null) { // if user is already logged in, jump to HomeActivity
+            goHome(null)
+        }
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
@@ -29,10 +32,9 @@ class MainActivity : Activity(), View.OnClickListener {
         button_Login!!.setOnClickListener(this)
         editTextEmail = findViewById<View>(R.id.edtxt_email) as EditText
         editTextPassword = findViewById<View>(R.id.edtxt_password) as EditText
-        mAuth = FirebaseAuth.getInstance()
     }
 
-    fun goHome(view: View) {
+    fun goHome(view: View?) {
         val intent = Intent(this, HomeActivity::class.java).apply { }
         startActivity(intent)
     }
