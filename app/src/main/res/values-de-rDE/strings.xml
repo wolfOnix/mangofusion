@@ -17,4 +17,7 @@
     <string name="cancel">Abbrechen</string>
     <string name="my_account">Mein Konto</string>
     <string name="log_out">Abmelden</string>
+    <string name="login_not_successful">Anmeldung nicht möglich</string>
+    <string name="required_field">Pflichtfeld</string>
+    <string name="email_not_valid">Das Email ist nicht gültig</string>
 </resources>

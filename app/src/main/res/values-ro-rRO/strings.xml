@@ -17,4 +17,7 @@
     <string name="cancel">Anulare</string>
     <string name="my_account">Contul meu</string>
     <string name="log_out">Deconectare</string>
+    <string name="login_not_successful">Autentificarea a eșuat</string>
+    <string name="required_field">Câmp obligatoriu</string>
+    <string name="email_not_valid">Email-ul nu este valid</string>
 </resources>

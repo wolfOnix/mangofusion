@@ -1,13 +1,9 @@
 package mangofusion.apps.shopassist
 
 import android.content.Intent
-import android.graphics.Color
-import android.os.Build
 import android.os.Bundle
 import android.util.Patterns
 import android.view.View
-import android.view.Window
-import android.view.WindowManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -62,22 +58,17 @@ class MainActivity : Activity(), View.OnClickListener {
         val email = editTextEmail!!.text.toString().trim { it <= ' ' }
         val password = editTextPassword!!.text.toString().trim { it <= ' ' }
         if (email.isEmpty()) {
-            editTextEmail!!.error = "Email is required!"
+            editTextEmail!!.error = getString(R.string.required_field)
             editTextEmail!!.requestFocus()
             return
         }
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            editTextEmail!!.error = "Please enter a valid email!"
+            editTextEmail!!.error = getString(R.string.email_not_valid)
             editTextEmail!!.requestFocus()
             return
         }
         if (password.isEmpty()) {
-            editTextPassword!!.error = "Password is required!"
-            editTextPassword!!.requestFocus()
-            return
-        }
-        if (password.length < 6) {
-            editTextPassword!!.error = "Password should be at least 6 characters!"
+            editTextPassword!!.error = getString(R.string.required_field)
             editTextPassword!!.requestFocus()
             return
         }
@@ -99,7 +90,7 @@ class MainActivity : Activity(), View.OnClickListener {
                 } else {
                     Toast.makeText(
                         this@MainActivity,
-                        "Failed to login! Please check your credentials",
+                        getString(R.string.login_not_successful), // @string resource. TO be changed to xml labels
                         Toast.LENGTH_LONG
                     ).show()
                 }
