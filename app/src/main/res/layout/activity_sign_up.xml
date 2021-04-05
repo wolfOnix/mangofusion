@@ -36,8 +36,10 @@
 
             <EditText
                 android:id="@+id/edtxt_firstname"
+                style="@style/input_field"
+                android:background="@drawable/input_text_background"
                 android:layout_width="325dp"
-                android:layout_height="42dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="68dp"
                 android:autofillHints=""
                 android:ems="10"
@@ -48,8 +50,10 @@
 
             <EditText
                 android:id="@+id/edtxt_lastname"
+                style="@style/input_field"
+                android:background="@drawable/input_text_background"
                 android:layout_width="325dp"
-                android:layout_height="42dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 android:autofillHints=""
                 android:ems="10"
@@ -60,8 +64,10 @@
 
             <EditText
                 android:id="@+id/edtxt_email"
+                style="@style/input_field"
+                android:background="@drawable/input_text_background"
                 android:layout_width="325dp"
-                android:layout_height="42dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 android:autofillHints=""
                 android:ems="10"
@@ -73,8 +79,10 @@
 
             <EditText
                 android:id="@+id/edtxt_password"
+                style="@style/input_field"
+                android:background="@drawable/input_text_background"
                 android:layout_width="325dp"
-                android:layout_height="42dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 android:autofillHints=""
                 android:ems="10"
@@ -86,8 +94,10 @@
 
             <EditText
                 android:id="@+id/edtxt_confirmpassword"
+                style="@style/input_field"
+                android:background="@drawable/input_text_background"
                 android:layout_width="325dp"
-                android:layout_height="42dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 android:autofillHints=""
                 android:ems="10"
@@ -99,8 +109,10 @@
 
             <EditText
                 android:id="@+id/edtxt_birthdaydate"
+                style="@style/input_field"
+                android:background="@drawable/input_text_background"
                 android:layout_width="325dp"
-                android:layout_height="42dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 android:autofillHints=""
                 android:ems="10"
@@ -112,8 +124,10 @@
 
             <EditText
                 android:id="@+id/edtxt_telephonenumber"
+                style="@style/input_field"
+                android:background="@drawable/input_text_background"
                 android:layout_width="325dp"
-                android:layout_height="42dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 android:autofillHints=""
                 android:ems="10"

@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:fitsSystemWindows="true" >
 
     <FrameLayout
         android:id="@+id/fl_header_image"
@@ -36,11 +37,25 @@
 
     </FrameLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="end"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="300dp"
+        tools:ignore="RtlHardcoded">
+
     <EditText
         android:id="@+id/edtxt_email"
-        android:layout_width="325dp"
-        android:layout_height="42dp"
-        android:layout_marginBottom="75dp"
+        style="@style/input_field"
+        android:background="@drawable/input_text_background"
+        android:drawableStart="@drawable/ic_round_alternate_email_24"
+        android:drawablePadding="10dp"
+        android:layout_width="match_parent"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_height="wrap_content"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/email"
@@ -52,9 +67,15 @@
 
     <EditText
         android:id="@+id/edtxt_password"
-        android:layout_width="325dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="50dp"
+        style="@style/input_field"
+        android:background="@drawable/input_text_background"
+        android:drawableStart="@drawable/ic_round_vpn_key_24"
+        android:drawablePadding="10dp"
+        android:layout_width="match_parent"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/password"
@@ -69,14 +90,16 @@
         style="@style/button_main"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="30dp"
         android:text="@string/log_in"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.844"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.632"
         android:onClick="goHome" />
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"

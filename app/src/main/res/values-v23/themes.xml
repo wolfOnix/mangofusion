@@ -3,16 +3,31 @@
 
     <style name="Theme.ShopAssist" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/white</item>
-        <item name="colorPrimaryVariant">@color/white</item> <!-- Not set yet -->
-        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimary">@color/carbon</item>
+        <item name="colorPrimaryVariant">@color/carbon</item> <!-- Not set yet -->
+        <item name="colorOnPrimary">@color/carbon</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/magenta</item>
         <item name="colorSecondaryVariant">@color/secondmagenta</item> <!-- Not set yet -->
         <item name="colorOnSecondary">@color/carbon</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimary</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/white</item>
         <item name="android:windowLightStatusBar">true</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <!-- add: android:theme="@style/..." at gewünschte activity -->
+    <style name="theme_xml_transparent_navbar" parent="android:Theme.Material.Wallpaper.NoTitleBar">
+        <item name="colorPrimary">@color/carbon</item>
+        <item name="colorPrimaryVariant">@color/carbon</item>
+        <item name="colorOnPrimary">@color/carbon</item>
+
+        <item name="colorSecondary">@color/magenta</item>
+        <item name="colorSecondaryVariant">@color/secondmagenta</item>
+        <item name="colorOnSecondary">@color/carbon</item>
+
+        <item name="android:navigationBarColor">#00000000</item>
+        <item name="android:statusBarColor">#00000000</item>
+    </style>
+
 </resources>

@@ -49,4 +49,15 @@
         <item name="android:fontFamily">@font/rubik_semibold</item>
     </style>
 
+    <style name="input_field" parent="@style/Widget.MaterialComponents.TextView">
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@font/rubik</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="cornerRadius">10dp</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:paddingRight">20dp</item>
+        <item name="android:paddingTop">13dp</item>
+        <item name="android:paddingBottom">13dp</item>
+    </style>
+
 </resources>
