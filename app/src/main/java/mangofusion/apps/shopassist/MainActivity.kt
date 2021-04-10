@@ -13,6 +13,7 @@ import com.google.firebase.auth.FirebaseAuth
 class MainActivity : Activity(), View.OnClickListener {
 
     private var button_sign_up: Button? = null
+    private var button_forgot_password: Button? = null
     private var button_Login: Button? = null
     private var editTextEmail: EditText? = null
     private var editTextPassword: EditText? = null
@@ -29,6 +30,8 @@ class MainActivity : Activity(), View.OnClickListener {
 
         button_sign_up = findViewById<View>(R.id.button_sign_up) as Button
         button_sign_up!!.setOnClickListener(this)
+        button_forgot_password = findViewById<View>(R.id.button_forgot_password) as Button
+        button_forgot_password!!.setOnClickListener(this)
         button_Login = findViewById<View>(R.id.button_Login) as Button
         button_Login!!.setOnClickListener(this)
         editTextEmail = findViewById<View>(R.id.edtxt_email) as EditText
@@ -50,6 +53,7 @@ class MainActivity : Activity(), View.OnClickListener {
             when (v.id) {
                 R.id.button_sign_up -> startActivity(Intent(this, SignUpActivity::class.java))
                 R.id.button_Login -> userLogin()
+                R.id.button_forgot_password -> startActivity(Intent(this, ForgotPasswordActivity::class.java))
             }
         }
     }

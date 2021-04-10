@@ -12,6 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ShopAssist">
+        <activity android:name=".ForgotPasswordActivity"></activity>
         <activity android:name=".MyAccountActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".SignUpActivity" />
