@@ -22,4 +22,12 @@
     <string name="email_not_valid">Email-ul nu este valid</string>
     <string name="confirm">Confirmare</string>
     <string name="PHRASE_password_recovery">Pentru a reseta parola contului dvs., trebuie să introduceți în câmpul de mai jos email-ul contului</string>
+    <string name="back">Înapoi</string>
+    <string name="first_name_last_name">Prenume Nume</string>
+    <string name="update_contact_info">Actualizare informații de contact</string>
+    <string name="availability_preferences">Preferințe de disponibilitate</string>
+    <string name="completed_shopping_lists">Liste de cumpărături încheiate</string>
+    <string name="other_settings">Alte setări</string>
+    <string name="code_of_condcuct">Cod de conduită</string>
+    <string name="about_shop_assist">Despre Shop Assist</string>
 </resources>

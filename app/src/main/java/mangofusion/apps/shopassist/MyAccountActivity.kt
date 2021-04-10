@@ -18,18 +18,12 @@ class MyAccountActivity : Activity(),View.OnClickListener {
         button_Logout!!.setOnClickListener(this)
     }
 
-    fun goHome(view: View) {
-        val intent = Intent(this, HomeActivity::class.java).apply { }
-        startActivity(intent)
-    }
-
-    fun goToMyAccount(view: View) {
-        val intent = Intent(this, MyAccountActivity::class.java).apply { }
-        startActivity(intent)
+    fun goBack(view: View) {
+        finish()
     }
 
     fun logOut(view: View) {
-        FirebaseAuth.getInstance().signOut();
+        FirebaseAuth.getInstance().signOut()
         val intent = Intent(this, MainActivity::class.java).apply { }
         startActivity(intent)
     }

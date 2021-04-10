@@ -22,4 +22,12 @@
     <string name="email_not_valid">Das Email ist nicht gültig</string>
     <string name="confirm">Bestätigen</string>
     <string name="PHRASE_password_recovery">Um das Passwort des Kontos wiederherzustellen, müssen Sie die E-Mail-Adresse unten einfügen</string>
+    <string name="back">Zurück</string>
+    <string name="first_name_last_name">Vorname Nachname</string>
+    <string name="update_contact_info">Kontaktinformationen aktualisieren</string>
+    <string name="availability_preferences">Verfügbarkeit einpassen</string>
+    <string name="completed_shopping_lists">Abgeschlossene Einkaufslisten</string>
+    <string name="other_settings">Andere Einstellungen</string>
+    <string name="code_of_condcuct">Verhaltenskodex</string>
+    <string name="about_shop_assist">Über Shop Assist</string>
 </resources>

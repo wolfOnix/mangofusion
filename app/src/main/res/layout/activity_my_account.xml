@@ -10,42 +10,124 @@
         android:id="@+id/scrollView3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         android:fillViewport="true"
-        android:scrollbars="none"> <!-- Disable scrollbar -->
+        android:scrollbars="none">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center|top"
-            android:orientation="vertical"> <!-- Center elements inside -->
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/txtvw_greeting"
-                style="@style/title_1"
+                style="@style/title_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="68dp"
-                android:text="@string/my_account"
+                android:layout_marginTop="130dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:gravity="center"
+                android:text="@string/first_name_last_name"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtvw_description"
+                style="@style/description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:gravity="center"
+                android:text="firstname.lastname@email.co.uk\nCity, Street, Nr. 105\n+44 20 7234 3456"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.119" />
+                tools:ignore="HardcodedText" />
+
+            <Button
+                android:id="@+id/btn_update_data"
+                style="@style/button_text"
+                app:icon="@drawable/ic_baseline_edit_24"
+                android:drawablePadding="10dp"
+                android:layout_width="match_parent"
+                android:layout_marginTop="40dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_height="wrap_content"
+                android:text="@string/update_contact_info"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/btn_availability"
+                style="@style/button_text"
+                app:icon="@drawable/ic_baseline_remove_red_eye_24"
+                android:drawablePadding="10dp"
+                android:layout_width="match_parent"
+                android:layout_marginTop="0dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_height="wrap_content"
+                android:text="@string/availability_preferences"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/btn_done_lists"
+                style="@style/button_text"
+                app:icon="@drawable/ic_baseline_playlist_add_check_24"
+                android:drawablePadding="10dp"
+                android:layout_width="match_parent"
+                android:layout_marginTop="0dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_height="wrap_content"
+                android:text="@string/completed_shopping_lists"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/btn_other_settings"
+                style="@style/button_text"
+                app:icon="@drawable/ic_baseline_settings_24"
+                android:drawablePadding="10dp"
+                android:layout_width="match_parent"
+                android:layout_marginTop="0dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_height="wrap_content"
+                android:text="@string/other_settings"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <Button
                 android:id="@+id/button_Logout"
                 style="@style/button_main_red"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="70dp"
                 android:text="@string/log_out"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.844"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.632"
                 android:onClick="logOut" />
 
         </LinearLayout>
@@ -55,49 +137,73 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
+        android:gravity="center|bottom"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:weightSum="1.0">
 
-        <ImageButton
-            android:id="@+id/button_home"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
+        <Button
+            android:id="@+id/button_forgot_password"
+            style="@style/button_gray"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
             android:layout_marginBottom="10dp"
-            android:layout_marginEnd="15dp"
-            android:scaleType="fitCenter"
-            android:backgroundTint="#00000000"
-            android:src="@drawable/icon_home"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:onClick="goHome" />
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="10dp"
+            android:text="@string/code_of_condcuct"
+            android:layout_gravity="center"/>
 
-        <ImageButton
-            android:id="@+id/button_create_account"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_marginBottom="10dp"
-            android:scaleType="fitCenter"
-            android:backgroundTint="#00000000"
-            android:src="@drawable/icon_new_request"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <ImageButton
-            android:id="@+id/button_my_account"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+        <Button
+            android:id="@+id/button_sign_up"
+            style="@style/button_gray"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
             android:layout_marginBottom="10dp"
             android:layout_marginStart="10dp"
-            android:scaleType="fitCenter"
-            android:backgroundTint="#00000000"
-            android:src="@drawable/icon_my_account"
+            android:layout_marginEnd="20dp"
+            android:text="@string/about_shop_assist"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start|center"
+        android:background="#DDFFFFFF"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" >
+
+        <Button
+            android:id="@+id/button_sys_back"
+            style="@style/button_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="0dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="30dp"
+            android:text="@string/back"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:onClick="goToMyAccount" />
+            android:onClick="goBack" />
+
+        <TextView
+            android:id="@+id/txtvw_title_top"
+            style="@style/title_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="0dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="30dp"
+            android:text="@string/my_account"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </LinearLayout>
 

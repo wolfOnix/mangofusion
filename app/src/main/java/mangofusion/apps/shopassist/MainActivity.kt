@@ -22,7 +22,7 @@ class MainActivity : Activity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         mAuth = FirebaseAuth.getInstance()
         if (mAuth!!.getCurrentUser() != null) { // if user is already logged in, jump to HomeActivity
-            goHome(null)
+            startActivity(Intent(this, HomeActivity::class.java))
         }
 
         super.onCreate(savedInstanceState)
@@ -36,16 +36,6 @@ class MainActivity : Activity(), View.OnClickListener {
         button_Login!!.setOnClickListener(this)
         editTextEmail = findViewById<View>(R.id.edtxt_email) as EditText
         editTextPassword = findViewById<View>(R.id.edtxt_password) as EditText
-    }
-
-    fun goHome(view: View?) {
-        val intent = Intent(this, HomeActivity::class.java).apply { }
-        startActivity(intent)
-    }
-
-    fun goToSignUp(view: View) {
-        val intent = Intent(this, SignUpActivity::class.java).apply { }
-        startActivity(intent)
     }
 
     override fun onClick(v: View?) {
