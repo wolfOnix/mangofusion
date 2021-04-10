@@ -25,6 +25,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="68dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:gravity="center"
                 android:text="@string/hello"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -57,7 +60,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:onClick="goHome" />
+            android:onClick="goHome"
+            tools:ignore="ContentDescription" />
 
         <ImageButton
             android:id="@+id/button_create_account"
@@ -69,7 +73,8 @@
             android:src="@drawable/icon_new_request"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="ContentDescription" />
 
         <ImageButton
             android:id="@+id/button_my_account"
@@ -83,7 +88,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:onClick="goToMyAccount" />
+            android:onClick="goToMyAccount"
+            tools:ignore="ContentDescription" />
 
     </LinearLayout>
 

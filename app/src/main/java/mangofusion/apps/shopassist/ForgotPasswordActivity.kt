@@ -22,6 +22,10 @@ class ForgotPasswordActivity : AppCompatActivity() {
         resetPasswordButton!!.setOnClickListener { resetPassword() }
     }
 
+    fun goBack(view: View) {
+        finish()
+    }
+
     private fun resetPassword() {
         val email = emailEditText!!.text.toString().trim { it <= ' ' }
         if (email.isEmpty()) {

@@ -21,4 +21,6 @@
     <string name="login_not_successful">Login not successful</string>
     <string name="required_field">Required field</string>
     <string name="email_not_valid">The email is not valid</string>
+    <string name="confirm">Confirm</string>
+    <string name="PHRASE_password_recovery">In order to reset the password of your account, you must type in below the email of the account</string>
 </resources>

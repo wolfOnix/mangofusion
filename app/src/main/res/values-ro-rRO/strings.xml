@@ -20,4 +20,6 @@
     <string name="login_not_successful">Autentificarea a eșuat</string>
     <string name="required_field">Câmp obligatoriu</string>
     <string name="email_not_valid">Email-ul nu este valid</string>
+    <string name="confirm">Confirmare</string>
+    <string name="PHRASE_password_recovery">Pentru a reseta parola contului dvs., trebuie să introduceți în câmpul de mai jos email-ul contului</string>
 </resources>

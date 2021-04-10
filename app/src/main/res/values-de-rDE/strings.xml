@@ -20,4 +20,6 @@
     <string name="login_not_successful">Anmeldung nicht möglich</string>
     <string name="required_field">Pflichtfeld</string>
     <string name="email_not_valid">Das Email ist nicht gültig</string>
+    <string name="confirm">Bestätigen</string>
+    <string name="PHRASE_password_recovery">Um das Passwort des Kontos wiederherzustellen, müssen Sie die E-Mail-Adresse unten einfügen</string>
 </resources>
