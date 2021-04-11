@@ -9,7 +9,6 @@ import android.widget.EditText
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 
-
 class MainActivity : Activity(), View.OnClickListener {
 
     private var button_sign_up: Button? = null

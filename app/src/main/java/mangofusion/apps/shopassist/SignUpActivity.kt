@@ -22,6 +22,7 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener {
 
     private var banner: TextView? = null
     private var signUp: Button? = null
+    private var btn_sys_back: Button? = null
     private var editTextFirstName: EditText? = null
     private var editTextLastName: EditText? = null
     private var editTextEmail: EditText? = null
@@ -39,7 +40,9 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener {
         banner = findViewById<View>(R.id.txtvw_signup) as TextView
         banner!!.setOnClickListener(this)
         signUp = findViewById<View>(R.id.button_create_account) as Button
+        btn_sys_back = findViewById<View>(R.id.btn_sys_back) as Button
         signUp!!.setOnClickListener(this)
+        btn_sys_back!!.setOnClickListener(this)
         editTextFirstName = findViewById<View>(R.id.edtxt_firstname) as EditText
         editTextLastName = findViewById<View>(R.id.edtxt_lastname) as EditText
         editTextEmail = findViewById<View>(R.id.edtxt_email) as EditText
@@ -49,8 +52,12 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener {
         editTextTelephoneNumber = findViewById<View>(R.id.edtxt_telephonenumber) as EditText
     }
 
-    fun goBack(view: View) {
-        finish()
+    override fun onClick(v: View) {
+        when (v.id) {
+            R.id.txtvw_signup -> startActivity(Intent(this, MainActivity::class.java))
+            R.id.button_create_account -> registerUser()
+            R.id.btn_sys_back -> finish()
+        }
     }
 
     private fun getLocationPermission() {
@@ -82,13 +89,6 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener {
 
         // Used for selecting the current place.
         private const val M_MAX_ENTRIES = 5
-    }
-
-    override fun onClick(v: View) {
-        when (v.id) {
-            R.id.txtvw_signup -> startActivity(Intent(this, MainActivity::class.java))
-            R.id.button_create_account -> registerUser()
-        }
     }
 
     private fun registerUser() {

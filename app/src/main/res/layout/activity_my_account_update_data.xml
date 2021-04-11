@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignUpActivity">
+    tools:context=".MyAccountUpdateDataActivity">
 
     <ScrollView
         android:id="@+id/scrollView3"
@@ -13,7 +13,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:fillViewport="true"
-        android:scrollbars="none"> <!-- Disable scrollbar -->
+        android:scrollbars="none">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -30,7 +30,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
                 android:gravity="center"
-                android:text="@string/sign_up"
+                android:text="@string/update_contact_info"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
@@ -70,74 +70,6 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <EditText
-                android:id="@+id/edtxt_email"
-                style="@style/input_field"
-                android:background="@drawable/input_text_background"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginTop="32dp"
-                android:autofillHints=""
-                android:ems="10"
-                android:hint="@string/email"
-                android:inputType="textEmailAddress"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.497"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <EditText
-                android:id="@+id/edtxt_password"
-                style="@style/input_field"
-                android:background="@drawable/input_text_background"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginTop="32dp"
-                android:autofillHints=""
-                android:ems="10"
-                android:hint="@string/password"
-                android:inputType="textPassword"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.497"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <EditText
-                android:id="@+id/edtxt_confirmpassword"
-                style="@style/input_field"
-                android:background="@drawable/input_text_background"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginTop="32dp"
-                android:autofillHints=""
-                android:ems="10"
-                android:hint="@string/confirm_password"
-                android:inputType="textPassword"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.497"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <EditText
-                android:id="@+id/edtxt_birthdaydate"
-                style="@style/input_field"
-                android:background="@drawable/input_text_background"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginTop="32dp"
-                android:autofillHints=""
-                android:ems="10"
-                android:hint="@string/birthday_date"
-                android:inputType="date"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.497"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <EditText
                 android:id="@+id/edtxt_telephonenumber"
                 style="@style/input_field"
                 android:background="@drawable/input_text_background"
@@ -146,7 +78,6 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginTop="32dp"
-                android:layout_marginBottom="100dp"
                 android:autofillHints=""
                 android:ems="10"
                 android:hint="@string/telephone_number"
@@ -155,17 +86,22 @@
                 app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="parent" />
 
-            <!--
-            <com.google.android.gms.maps.MapView
-                android:id="@+id/mapView2"
-                android:layout_width="325dp"
-                android:layout_height="200dp"
+            <EditText
+                android:id="@+id/edtxt_address"
+                style="@style/input_field"
+                android:background="@drawable/input_text_background"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
                 android:layout_marginTop="32dp"
-                android:layout_marginBottom="90dp"
+                android:autofillHints=""
+                android:ems="10"
+                android:hint="@string/address"
+                android:inputType="phone"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="parent" />
-             -->
 
         </LinearLayout>
 
@@ -204,12 +140,12 @@
         app:layout_constraintStart_toStartOf="parent" >
 
         <Button
-            android:id="@+id/button_create_account"
+            android:id="@+id/btn_update_data"
             style="@style/button_main"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:text="@string/sign_up"
+            android:text="@string/update"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
