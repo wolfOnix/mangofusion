@@ -1,3 +1,36 @@
 <resources>
-    <string name="app_name">Shop Assist</string>
+    <string name="app_name" translatable="false">Shop Assist</string>
+    <string name="log_in_screen" translatable="false">LOGIN SCREEN</string>
+    <string name="log_in">LOGIN</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="address">Address</string>
+    <string name="telephone_number">Telephone number</string>
+    <string name="email">Email</string>
+    <string name="title">title</string>
+    <string name="password_recovery">Password recovery</string>
+    <string name="birthday_date">Birthday date</string>
+    <string name="hello">Hello</string>
+    <string name="home">Home</string>
+    <string name="cancel">Cancel</string>
+    <string name="my_account">My account</string>
+    <string name="log_out">Log out</string>
+    <string name="login_not_successful">Login not successful</string>
+    <string name="required_field">Required field</string>
+    <string name="email_not_valid">The email is not valid</string>
+    <string name="confirm">Confirm</string>
+    <string name="PHRASE_password_recovery">In order to reset the password of your account, you must type in below the email of the account</string>
+    <string name="back">Back</string>
+    <string name="first_name_last_name">Firstname Surname</string>
+    <string name="update_contact_info">Update contact information</string>
+    <string name="availability_preferences">Availability preferences</string>
+    <string name="completed_shopping_lists">Completed shopping lists</string>
+    <string name="other_settings">Other settings</string>
+    <string name="code_of_condcuct">Code of conduct</string>
+    <string name="about_shop_assist">About Shop Assist</string>
+    <string name="update">Update</string>
+    <string name="verification_email_sent">Verification email sent</string>
 </resources>

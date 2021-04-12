@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sign_up">Konto erstellen</string>
+    <string name="first_name">Vorname</string>
+    <string name="last_name">Nachname</string>
+    <string name="password">Passwort</string>
+    <string name="confirm_password">Passwort bestätigen</string>
+    <string name="address">Adresse</string>
+    <string name="telephone_number">Telefonnummer</string>
+    <string name="email">Email</string>
+    <string name="title">Titel</string>
+    <string name="password_recovery">Passwort wiederherstellen</string>
+    <string name="birthday_date">Geburtsdatum</string>
+    <string name="log_in">Anmelden</string>
+    <string name="hello">Guten Tag</string>
+    <string name="home">Zu Hause</string>
+    <string name="cancel">Abbrechen</string>
+    <string name="my_account">Mein Konto</string>
+    <string name="log_out">Abmelden</string>
+    <string name="login_not_successful">Anmeldung nicht möglich</string>
+    <string name="required_field">Pflichtfeld</string>
+    <string name="email_not_valid">Das Email ist nicht gültig</string>
+    <string name="confirm">Bestätigen</string>
+    <string name="PHRASE_password_recovery">Um das Passwort des Kontos wiederherzustellen, müssen Sie die E-Mail-Adresse unten einfügen</string>
+    <string name="back">Zurück</string>
+    <string name="first_name_last_name">Vorname Nachname</string>
+    <string name="update_contact_info">Kontaktinformationen aktualisieren</string>
+    <string name="availability_preferences">Verfügbarkeit einpassen</string>
+    <string name="completed_shopping_lists">Abgeschlossene Einkaufslisten</string>
+    <string name="other_settings">Andere Einstellungen</string>
+    <string name="code_of_condcuct">Verhaltenskodex</string>
+    <string name="about_shop_assist">Über Shop Assist</string>
+    <string name="update">Aktualisieren</string>
+    <string name="verification_email_sent">Bestätigung E-Mail gesendet</string>
+</resources>

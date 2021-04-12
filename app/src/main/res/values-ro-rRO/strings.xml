@@ -1,4 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Shop Assist</string>
+    <string name="sign_up">Creare cont</string>
+    <string name="first_name">Prenume</string>
+    <string name="last_name">Nume de familie</string>
+    <string name="password">Parolă</string>
+    <string name="confirm_password">Confirmare parolă</string>
+    <string name="address">Adresă</string>
+    <string name="telephone_number">Număr de telefon</string>
+    <string name="email">Email</string>
+    <string name="title">Titlu</string>
+    <string name="password_recovery">Recuperare parolă</string>
+    <string name="birthday_date">Data nașterii</string>
+    <string name="log_in">Conectare</string>
+    <string name="hello">Bună ziua</string>
+    <string name="home">Acasă</string>
+    <string name="cancel">Anulare</string>
+    <string name="my_account">Contul meu</string>
+    <string name="log_out">Deconectare</string>
+    <string name="login_not_successful">Autentificarea a eșuat</string>
+    <string name="required_field">Câmp obligatoriu</string>
+    <string name="email_not_valid">Email-ul nu este valid</string>
+    <string name="confirm">Confirmare</string>
+    <string name="PHRASE_password_recovery">Pentru a reseta parola contului dvs., trebuie să introduceți în câmpul de mai jos email-ul contului</string>
+    <string name="back">Înapoi</string>
+    <string name="first_name_last_name">Prenume Nume</string>
+    <string name="update_contact_info">Actualizare informații de contact</string>
+    <string name="availability_preferences">Preferințe de disponibilitate</string>
+    <string name="completed_shopping_lists">Liste de cumpărături încheiate</string>
+    <string name="other_settings">Alte setări</string>
+    <string name="code_of_condcuct">Cod de conduită</string>
+    <string name="about_shop_assist">Despre Shop Assist</string>
+    <string name="update">Actualizare</string>
+    <string name="verification_email_sent">Email-ul de confirmare a fost  trimis</string>
 </resources>

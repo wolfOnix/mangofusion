@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "65630012324",
+    "project_id": "shop-assist-e3ed0",
+    "storage_bucket": "shop-assist-e3ed0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:65630012324:android:e57d153f4077133fff3731",
+        "android_client_info": {
+          "package_name": "mangofusion.apps.shopassist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "65630012324-1sqb260a4tp6tkenc7bu8ufs8kbfa8ds.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAn22CFe67iJKpZ05Zl0JkS-9lqm_HUuDc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "65630012324-1sqb260a4tp6tkenc7bu8ufs8kbfa8ds.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

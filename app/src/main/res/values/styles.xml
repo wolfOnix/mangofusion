@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="button_main" parent="@style/Widget.MaterialComponents.Button">
+        <item name="android:textSize">15dp</item>
+        <item name="android:textColor">@color/purple</item>
+        <item name="android:hapticFeedbackEnabled">true</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:background">@drawable/radius_button_background</item>
+    </style>
+</resources>
