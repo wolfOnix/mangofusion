@@ -32,4 +32,15 @@
     <string name="about_shop_assist">Despre Shop Assist</string>
     <string name="update">Actualizare</string>
     <string name="verification_email_sent">Email-ul de confirmare a fost  trimis</string>
+    <string name="city">Oraș</string>
+    <string name="street_and_number">Numele străzii și numărul</string>
+    <string name="Romania">România</string>
+    <string name="Germany">Germania</string>
+    <string name="The_United_Kingdom">Marea Britanie</string>
+    <string name="PHRASE_create_account">Completați toate câmpurile de mai jos pentru a crea un cont. Datele de contact, precum numărul de telefon sau adresa, sunt necesare pentru a putea ține legătura cu ceilalți utilizatori</string>
+    <string name="field_should_not_be_empty">Acest câmp trebuie să fie completat</string>
+    <string name="password_is_too_weak">Parola este prea slabă</string>
+    <string name="passwords_do_not_match">Parolele nu se potrivesc</string>
+    <string name="this_field_does_not_respect_the_standard_format">Acest câmp nu respectă formatul standard</string>
+    <string name="country">Țară</string>
 </resources>

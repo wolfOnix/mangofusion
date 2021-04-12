@@ -6,6 +6,4 @@ import javax.crypto.Cipher
 import javax.crypto.spec.IvParameterSpec
 import javax.crypto.spec.SecretKeySpec
 
-open class Activity : AppCompatActivity() {
-
-}
+open class Activity : AppCompatActivity()

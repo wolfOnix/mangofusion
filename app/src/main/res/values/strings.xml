@@ -1,4 +1,9 @@
 <resources>
+    <string-array name="available_countries">
+        <item>@string/Romania</item>
+        <item>@string/Germany</item>
+        <item>@string/The_United_Kingdom</item>
+    </string-array>
     <string name="app_name" translatable="false">Shop Assist</string>
     <string name="log_in_screen" translatable="false">LOGIN SCREEN</string>
     <string name="log_in">LOGIN</string>
@@ -33,4 +38,15 @@
     <string name="about_shop_assist">About Shop Assist</string>
     <string name="update">Update</string>
     <string name="verification_email_sent">Verification email sent</string>
+    <string name="city">City</string>
+    <string name="street_and_number">Street name and number</string>
+    <string name="Romania">Romania</string>
+    <string name="Germany">Germany</string>
+    <string name="The_United_Kingdom">The United Kingdom</string>
+    <string name="PHRASE_create_account">Fill in bellow all the fields in order to create an account. Contact data, like telephone number and address, are necessary in order to keep you connected to the other users</string>
+    <string name="field_should_not_be_empty">This field should not be empty</string>
+    <string name="password_is_too_weak">Password is too weak</string>
+    <string name="passwords_do_not_match">Passwords do not match</string>
+    <string name="this_field_does_not_respect_the_standard_format">This field does not respect the standard format</string>
+    <string name="country">Country</string>
 </resources>

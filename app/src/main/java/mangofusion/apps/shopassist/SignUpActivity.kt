@@ -1,163 +1,201 @@
 package mangofusion.apps.shopassist
 
-import android.Manifest
 import android.content.Intent
-import android.content.pm.PackageManager
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Patterns
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
+import android.widget.*
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
-import java.security.MessageDigest
 import java.util.*
 
-class SignUpActivity : Activity(), View.OnClickListener {
+class SignUpActivity : Activity(), View.OnClickListener, AdapterView.OnItemSelectedListener {
 
-    private var locationPermissionGranted = false
+    // private var locationPermissionGranted = false
+    private var mAuth: FirebaseAuth? = null
 
-    private var banner: TextView? = null
     private var signUp: Button? = null
     private var btn_sys_back: Button? = null
-    private var editTextFirstName: EditText? = null
-    private var editTextLastName: EditText? = null
-    private var editTextEmail: EditText? = null
-    private var editTextPassword: EditText? = null
-    private var editTextConfirmPassword: EditText? = null
-    private var editTextBirthdayDate: EditText? = null
-    private var editTextTelephoneNumber: EditText? = null
-    private var mAuth: FirebaseAuth? = null
+    private var country: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
 
         mAuth = FirebaseAuth.getInstance()
-        banner = findViewById<View>(R.id.txtvw_signup) as TextView
-        banner!!.setOnClickListener(this)
+
         signUp = findViewById<View>(R.id.button_create_account) as Button
-        btn_sys_back = findViewById<View>(R.id.btn_sys_back) as Button
         signUp!!.setOnClickListener(this)
+        btn_sys_back = findViewById<View>(R.id.btn_sys_back) as Button
         btn_sys_back!!.setOnClickListener(this)
-        editTextFirstName = findViewById<View>(R.id.edtxt_firstname) as EditText
-        editTextLastName = findViewById<View>(R.id.edtxt_lastname) as EditText
-        editTextEmail = findViewById<View>(R.id.edtxt_email) as EditText
-        editTextPassword = findViewById<View>(R.id.edtxt_password) as EditText
-        editTextConfirmPassword = findViewById<View>(R.id.edtxt_confirmpassword) as EditText
-        editTextBirthdayDate = findViewById<View>(R.id.edtxt_birthdaydate) as EditText
-        editTextTelephoneNumber = findViewById<View>(R.id.edtxt_telephonenumber) as EditText
+
+        val spinner: Spinner = findViewById(R.id.spn_country)
+        ArrayAdapter.createFromResource(
+            this,
+            R.array.available_countries,
+            android.R.layout.simple_spinner_item
+        ).also { adapter ->
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item) // Specify the layout to use when the list of choices appears
+            spinner.adapter = adapter // Apply the adapter to the spinner
+        }
     }
 
     override fun onClick(v: View) {
         when (v.id) {
-            R.id.txtvw_signup -> startActivity(Intent(this, MainActivity::class.java))
             R.id.button_create_account -> registerUser()
             R.id.btn_sys_back -> finish()
         }
     }
 
-    private fun getLocationPermission() {
-        /*
-         * Request location permission, so that we can get the location of the
-         * device. The result of the permission request is handled by a callback,
-         * onRequestPermissionsResult.
-         */
-        if (ContextCompat.checkSelfPermission(this.applicationContext,
-                Manifest.permission.ACCESS_FINE_LOCATION)
-            == PackageManager.PERMISSION_GRANTED) {
-            locationPermissionGranted = true
-        } else {
-            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
-                PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION)
+    override fun onItemSelected(parent: AdapterView<*>, view: View?, pos: Int, id: Long) {
+        country = parent.getItemAtPosition(pos).toString()
+        when (country) {
+            R.string.Romania.toString() -> country = "RO"
+            R.string.Germany.toString() -> country = "DE"
+            R.string.The_United_Kingdom.toString() -> country = "UK"
         }
+        println("Hey")
     }
 
-    companion object {
-        private val TAG = MapsActivityCurrentPlace::class.java.simpleName
-        private const val DEFAULT_ZOOM = 15
-        private const val PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1
-
-        // Keys for storing activity state.
-        // [START maps_current_place_state_keys]
-        private const val KEY_CAMERA_POSITION = "camera_position"
-        private const val KEY_LOCATION = "location"
-        // [END maps_current_place_state_keys]
-
-        // Used for selecting the current place.
-        private const val M_MAX_ENTRIES = 5
+    override fun onNothingSelected(parent: AdapterView<*>) {
+        // Another interface callback
     }
 
     private fun registerUser() {
-        val firstName = editTextFirstName!!.text.toString().trim { it <= ' ' }
-        val lastName = editTextLastName!!.text.toString().trim { it <= ' ' }
-        val email = editTextEmail!!.text.toString().trim { it <= ' ' }
-        val password: String = editTextPassword!!.text.toString()
-        val confirmPassword: String = editTextConfirmPassword!!.text.toString()
-        val birthdayDate = editTextBirthdayDate!!.text.toString().trim { it <= ' ' }
-        val telephoneNumber = editTextTelephoneNumber!!.text.toString().trim { it <= ' ' }
+
+        var noError: Boolean = true
+
+        val edtxt_firstname: EditText = findViewById<View>(R.id.edtxt_firstname) as EditText
+        val edtxt_lastname: EditText = findViewById<View>(R.id.edtxt_lastname) as EditText
+        val edtxt_email: EditText = findViewById<View>(R.id.edtxt_email) as EditText
+        val edtxt_password: EditText = findViewById<View>(R.id.edtxt_password) as EditText
+        val edtxt_confirmpassword: EditText = findViewById<View>(R.id.edtxt_confirmpassword) as EditText
+        val edtxt_birthdaydate: EditText = findViewById<View>(R.id.edtxt_birthdaydate) as EditText
+        val edtxt_telephonenumber: EditText = findViewById<View>(R.id.edtxt_telephonenumber) as EditText
+        val edtxt_city: EditText = findViewById<View>(R.id.edtxt_city) as EditText
+        val edtxt_street_and_number: EditText = findViewById<View>(R.id.edtxt_street_and_number) as EditText
+
+        val firstName = edtxt_firstname.text.toString().trim { it <= ' ' }.filter { it.isLetter() || it == ' '}
+        val lastName = edtxt_lastname.text.toString().trim { it <= ' ' }.filter { it.isLetter() || it == ' ' }
+        val email = edtxt_email.text.toString().trim { it <= ' ' }
+        val password: String = edtxt_password.text.toString()
+        val confirmPassword: String = edtxt_confirmpassword.text.toString()
+        val birthdayDate = edtxt_birthdaydate.text.toString().filter { it.isDigit() || it == '.' || it == '/' || it == '-' }
+        val telephoneNumber = edtxt_telephonenumber.text.toString().filter { it.isDigit() || it == '+' || it == '.' || it == '-' }
+        val city = edtxt_city.text.toString().trim { it <= ' ' }.filter { it.isLetter() || it == ',' || it == '-' }
+        val streetAndNumber = edtxt_street_and_number.text.toString().trim { it <= ' ' }
+
+        val err_edtxt_firstname: TextView = findViewById<View>(R.id.txtvw_error_firstname) as TextView
+        val err_edtxt_lastname: TextView = findViewById<View>(R.id.txtvw_error_lastname) as TextView
+        val err_edtxt_email: TextView = findViewById<View>(R.id.txtvw_error_email) as TextView
+        val err_edtxt_password: TextView = findViewById<View>(R.id.txtvw_error_password) as TextView
+        val err_edtxt_birthdaydate: TextView = findViewById<View>(R.id.txtvw_error_birthdaydate) as TextView
+        val err_edtxt_telephonenumber: TextView = findViewById<View>(R.id.txtvw_error_telephonenumber) as TextView
+        val err_edtxt_city: TextView = findViewById<View>(R.id.txtvw_error_city) as TextView
+        val err_edtxt_street_and_number: TextView = findViewById<View>(R.id.txtvw_error_streetandnumber) as TextView
+        val err_edtxt_country: TextView = findViewById<View>(R.id.txtvw_error_country) as TextView
+
         if (firstName.isEmpty()) {
-            editTextFirstName!!.error = "First name is required!"
-            editTextFirstName!!.requestFocus()
-            return
+            err_edtxt_firstname.text = (getString(R.string.field_should_not_be_empty))
+            err_edtxt_firstname.visibility = View.VISIBLE
+            noError = false
+        } else {
+            err_edtxt_firstname.visibility = View.GONE
         }
         if (lastName.isEmpty()) {
-            editTextLastName!!.error = "Last name is required!"
-            editTextLastName!!.requestFocus()
-            return
+            err_edtxt_lastname.text = (getString(R.string.field_should_not_be_empty))
+            err_edtxt_lastname.visibility = View.VISIBLE
+            noError = false
+        } else {
+            err_edtxt_lastname.visibility = View.GONE
         }
         if (email.isEmpty()) {
-            editTextEmail!!.error = "Email is required!"
-            editTextEmail!!.requestFocus()
-            return
+            err_edtxt_email.text = (getString(R.string.field_should_not_be_empty))
+            err_edtxt_email.visibility = View.VISIBLE
+            noError = false
+        } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            err_edtxt_email.text = (getString(R.string.email_not_valid))
+            err_edtxt_email.visibility = View.VISIBLE
+            noError = false
+        } else {
+            err_edtxt_email.visibility = View.GONE
         }
-        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            editTextEmail!!.error = "Please provide a valid email"
-            editTextEmail!!.requestFocus()
-            return
-        }
+        
         if (password.isEmpty()) {
-            editTextPassword!!.error = "Password is required!"
-            editTextPassword!!.requestFocus()
-            return
+            err_edtxt_password.text = getString(R.string.field_should_not_be_empty)
+            err_edtxt_password.visibility = View.VISIBLE
+            noError = false
+        } else if (!confirmPassword.contentEquals(password)) {
+            err_edtxt_password.text = getString(R.string.passwords_do_not_match)
+            err_edtxt_password.visibility = View.VISIBLE
+            noError = false
+        } else if (password.length < 6) {
+            err_edtxt_password.text = getString(R.string.password_is_too_weak)
+            err_edtxt_password.visibility = View.VISIBLE
+            noError = false
+        } else {
+            err_edtxt_password.visibility = View.GONE
         }
-        if (password.length < 6) {
-            editTextPassword!!.error = "Minimum password should be 6 characters"
-            editTextPassword!!.requestFocus()
-            return
-        }
-        if (confirmPassword.isEmpty()) {
-            editTextConfirmPassword!!.error = "Confirm password is required!"
-            editTextConfirmPassword!!.requestFocus()
-            return
-        }
-        if (!confirmPassword.contentEquals(password)) {
-            editTextConfirmPassword!!.error = "Passwords don't match"
-            editTextConfirmPassword!!.requestFocus()
-            return
-        }
+
         if (birthdayDate.isEmpty()) {
-            return
-        }
+            err_edtxt_birthdaydate.text = getString(R.string.field_should_not_be_empty)
+            err_edtxt_birthdaydate.visibility = View.VISIBLE
+            noError = false
+        } else {
+            err_edtxt_birthdaydate.visibility = View.GONE
+        } /*else if (birthdayDate.length != 10) { // TODO regex check
+            errorTextView = findViewById<View>(R.id.txtvw_error_birthdaydate) as TextView
+            errorTextView.text = getString(R.string.this_field_does_not_respect_the_standard_format)
+            errorTextView.visibility = View.VISIBLE
+        }*/
+
         if (telephoneNumber.isEmpty()) {
-            editTextTelephoneNumber!!.error = "Telephone number is required!"
-            editTextTelephoneNumber!!.requestFocus()
+            err_edtxt_telephonenumber.text = getString(R.string.field_should_not_be_empty)
+            err_edtxt_telephonenumber.visibility = View.VISIBLE
+            noError = false
+        } else if (telephoneNumber.length != 10) { // TODO regex check
+            err_edtxt_telephonenumber.text = getString(R.string.this_field_does_not_respect_the_standard_format)
+            err_edtxt_telephonenumber.visibility = View.VISIBLE
+            noError = false
+        } else {
+            err_edtxt_telephonenumber.visibility = View.GONE
+        }
+
+        if (city.isEmpty()) {
+            err_edtxt_city.text = getString(R.string.field_should_not_be_empty)
+            err_edtxt_city.visibility = View.VISIBLE
+            noError = false
+        } else {
+            err_edtxt_city.visibility = View.GONE
+        }
+
+        if (streetAndNumber.isEmpty()) {
+            err_edtxt_street_and_number.text = getString(R.string.field_should_not_be_empty)
+            err_edtxt_street_and_number.visibility = View.VISIBLE
+            noError = false
+        } else {
+            err_edtxt_street_and_number.visibility = View.GONE
+        }
+
+        /*if (country == "") { // TODO
+            err_edtxt_country.text = getString(R.string.field_should_not_be_empty)
+            err_edtxt_country.visibility = View.VISIBLE
+            noError = false
+        } else {
+            err_edtxt_country.visibility = View.GONE
+        }*/
+
+        if (!noError) { // At least one error appeared
+            edtxt_password.setText("")
+            edtxt_confirmpassword.setText("")
             return
         }
-        if (telephoneNumber.length != 10) {
-            editTextTelephoneNumber!!.error = "Telephone number should be 10 digits"
-            editTextTelephoneNumber!!.requestFocus()
-        }
+
         mAuth!!.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     val user =
-                        User(firstName, lastName, email, birthdayDate, telephoneNumber, "NO_ADDRESS_ADDED")
+                        User(firstName, lastName, email, birthdayDate, telephoneNumber, city, streetAndNumber, "RO") // TODO RO
                     FirebaseDatabase.getInstance().getReference("users")
                         .child(FirebaseAuth.getInstance().currentUser.uid)
                         .setValue(user).addOnCompleteListener { task ->
@@ -179,7 +217,7 @@ class SignUpActivity : Activity(), View.OnClickListener {
                             }
                         }
                 } else {
-                    Toast.makeText(this@SignUpActivity, "", Toast.LENGTH_SHORT).show()
+                    // Toast.makeText(this@SignUpActivity, "", Toast.LENGTH_SHORT).show()
                 }
             }
     }

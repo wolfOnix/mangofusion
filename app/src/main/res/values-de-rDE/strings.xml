@@ -7,7 +7,7 @@
     <string name="confirm_password">Passwort bestätigen</string>
     <string name="address">Adresse</string>
     <string name="telephone_number">Telefonnummer</string>
-    <string name="email">Email</string>
+    <string name="email">E-Mail</string>
     <string name="title">Titel</string>
     <string name="password_recovery">Passwort wiederherstellen</string>
     <string name="birthday_date">Geburtsdatum</string>
@@ -19,7 +19,7 @@
     <string name="log_out">Abmelden</string>
     <string name="login_not_successful">Anmeldung nicht möglich</string>
     <string name="required_field">Pflichtfeld</string>
-    <string name="email_not_valid">Das Email ist nicht gültig</string>
+    <string name="email_not_valid">Das E-Mail ist nicht gültig</string>
     <string name="confirm">Bestätigen</string>
     <string name="PHRASE_password_recovery">Um das Passwort des Kontos wiederherzustellen, müssen Sie die E-Mail-Adresse unten einfügen</string>
     <string name="back">Zurück</string>
@@ -32,4 +32,15 @@
     <string name="about_shop_assist">Über Shop Assist</string>
     <string name="update">Aktualisieren</string>
     <string name="verification_email_sent">Bestätigung E-Mail gesendet</string>
+    <string name="city">Stadt</string>
+    <string name="street_and_number">Straßenname und Nummer</string>
+    <string name="Romania">Rumänien</string>
+    <string name="Germany">Deutschland</string>
+    <string name="The_United_Kingdom">Großbritannien</string>
+    <string name="PHRASE_create_account">Fügen Sie unten alle Felder ein, um ein Konto zu erstellen. Die Kontaktdaten, bspw. die Telefonnummer oder die Adresse, sind erforderlich, damit Sie im Verbindung mit den anderen Benutzern stehen können</string>
+    <string name="field_should_not_be_empty">Dieses Feld soll nicht leer sein</string>
+    <string name="password_is_too_weak">Das Passwort ist zu schwach</string>
+    <string name="passwords_do_not_match">Die Passwörter stimmen nicht überein</string>
+    <string name="this_field_does_not_respect_the_standard_format">Dieses Feld hält nicht ans Standardformat</string>
+    <string name="country">Land</string>
 </resources>

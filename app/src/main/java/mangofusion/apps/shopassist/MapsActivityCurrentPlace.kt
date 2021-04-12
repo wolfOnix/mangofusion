@@ -1,5 +1,3 @@
 package mangofusion.apps.shopassist
 
-class MapsActivityCurrentPlace {
-
-}
+class MapsActivityCurrentPlace
