@@ -31,4 +31,5 @@
     <string name="code_of_condcuct">Cod de conduită</string>
     <string name="about_shop_assist">Despre Shop Assist</string>
     <string name="update">Actualizare</string>
+    <string name="verification_email_sent">Email-ul de confirmare a fost  trimis</string>
 </resources>

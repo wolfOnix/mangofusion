@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
+import java.security.MessageDigest
 
 class MainActivity : Activity(), View.OnClickListener {
 
@@ -49,7 +50,7 @@ class MainActivity : Activity(), View.OnClickListener {
 
     private fun userLogin() {
         val email = editTextEmail!!.text.toString().trim { it <= ' ' }
-        val password = editTextPassword!!.text.toString().trim { it <= ' ' }
+        val password: String = editTextPassword!!.text.toString()
         if (email.isEmpty()) {
             editTextEmail!!.error = getString(R.string.required_field)
             editTextEmail!!.requestFocus()
@@ -73,7 +74,6 @@ class MainActivity : Activity(), View.OnClickListener {
                         // redirect to user profile
                         startActivity(Intent(this@MainActivity, HomeActivity::class.java))
                     } else {
-                        user.sendEmailVerification()
                         Toast.makeText(
                             this@MainActivity,
                             "Check your email to verify your account!",
@@ -83,7 +83,7 @@ class MainActivity : Activity(), View.OnClickListener {
                 } else {
                     Toast.makeText(
                         this@MainActivity,
-                        getString(R.string.login_not_successful), // @string resource. TO be changed to xml labels
+                        getString(R.string.login_not_successful), // TODO @string resource. TO be changed to xml labels
                         Toast.LENGTH_LONG
                     ).show()
                 }

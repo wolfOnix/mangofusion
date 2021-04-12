@@ -32,4 +32,5 @@
     <string name="code_of_condcuct">Code of conduct</string>
     <string name="about_shop_assist">About Shop Assist</string>
     <string name="update">Update</string>
+    <string name="verification_email_sent">Verification email sent</string>
 </resources>

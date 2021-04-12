@@ -15,8 +15,10 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
+import java.security.MessageDigest
+import java.util.*
 
-class SignUpActivity : AppCompatActivity(), View.OnClickListener {
+class SignUpActivity : Activity(), View.OnClickListener {
 
     private var locationPermissionGranted = false
 
@@ -95,8 +97,8 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener {
         val firstName = editTextFirstName!!.text.toString().trim { it <= ' ' }
         val lastName = editTextLastName!!.text.toString().trim { it <= ' ' }
         val email = editTextEmail!!.text.toString().trim { it <= ' ' }
-        val password = editTextPassword!!.text.toString().trim { it <= ' ' }
-        val confirmPassword = editTextConfirmPassword!!.text.toString().trim { it <= ' ' }
+        val password: String = editTextPassword!!.text.toString()
+        val confirmPassword: String = editTextConfirmPassword!!.text.toString()
         val birthdayDate = editTextBirthdayDate!!.text.toString().trim { it <= ' ' }
         val telephoneNumber = editTextTelephoneNumber!!.text.toString().trim { it <= ' ' }
         if (firstName.isEmpty()) {
@@ -134,7 +136,7 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener {
             editTextConfirmPassword!!.requestFocus()
             return
         }
-        if (confirmPassword != password) {
+        if (!confirmPassword.contentEquals(password)) {
             editTextConfirmPassword!!.error = "Passwords don't match"
             editTextConfirmPassword!!.requestFocus()
             return
@@ -155,16 +157,19 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener {
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     val user =
-                        User(firstName, lastName, email, password, birthdayDate, telephoneNumber)
+                        User(firstName, lastName, email, birthdayDate, telephoneNumber, "NO_ADDRESS_ADDED")
                     FirebaseDatabase.getInstance().getReference("users")
                         .child(FirebaseAuth.getInstance().currentUser.uid)
                         .setValue(user).addOnCompleteListener { task ->
                             if (task.isSuccessful) {
                                 Toast.makeText(
                                     this@SignUpActivity,
-                                    "User has been registered succesfully!",
+                                    getString(R.string.verification_email_sent),
                                     Toast.LENGTH_LONG
                                 ).show()
+                                FirebaseAuth.getInstance().currentUser?.sendEmailVerification()
+                                FirebaseAuth.getInstance().signOut()
+                                startActivity(Intent(this, MainActivity::class.java))
                             } else {
                                 Toast.makeText(
                                     this@SignUpActivity,
