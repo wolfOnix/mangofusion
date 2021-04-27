@@ -52,4 +52,5 @@
     <string name="quantity">Cantitate</string>
     <string name="unit">Unitate</string>
     <string name="new_shopping_list">Listă nouă</string>
+    <string name="PHRASE_no_requests_nearby">Momentan nu există nicio cerere de cumpărături în zonă. Acestea vor apărea aici de îndată ce vor fi solicitate</string>
 </resources>

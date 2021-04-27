@@ -58,7 +58,7 @@
 
     <style name="description" parent="@style/TextAppearance.AppCompat.Headline">
         <item name="android:textSize">15sp</item>
-        <item name="android:backgroundTint">@color/gray</item>
+        <item name="android:textColor">@color/carbon</item>
         <item name="android:fontFamily">@font/rubik</item>
     </style>
 
@@ -115,6 +115,12 @@
         <item name="android:backgroundTint">@color/black</item>
         <item name="android:fontFamily">@font/rubik_bold</item>
         <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="text_requests_number" parent="@style/TextAppearance.AppCompat.Headline">
+        <item name="android:textSize">50sp</item>
+        <item name="android:textColor">@color/purple</item>
+        <item name="android:fontFamily">@font/rubik_bold</item>
     </style>
 
 </resources>

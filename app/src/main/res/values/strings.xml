@@ -58,4 +58,5 @@
     <string name="quantity">Quantity</string>
     <string name="unit">Unit</string>
     <string name="new_shopping_list">New shopping list</string>
+    <string name="PHRASE_no_requests_nearby">There are no shopping requests nearby at the moment. They will appear right here immediately they are requested</string>
 </resources>
