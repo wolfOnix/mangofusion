@@ -1,10 +1,14 @@
 package mangofusion.apps.shopassist
 
-class ShoppingListElement(
-    private var elementName: String, // TODO Check avoiding the \ sign
-    private var quantity: Double,
-    private var unitOfMeasure: String
-) {
+import com.google.firebase.database.IgnoreExtraProperties
+import java.io.Serializable
+
+@IgnoreExtraProperties
+data class ShoppingListElement(
+    var elementName: String,
+    var quantity: Double,
+    var unitOfMeasure: String
+): Serializable {
 
     override fun toString(): String {
         return "$elementName\\$quantity\\$unitOfMeasure"
