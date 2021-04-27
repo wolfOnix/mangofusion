@@ -3,9 +3,7 @@ package mangofusion.apps.shopassist
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
 import android.widget.ImageButton
-import com.google.firebase.auth.FirebaseAuth
 
 class HomeActivity : Activity(), View.OnClickListener {
 
@@ -24,6 +22,24 @@ class HomeActivity : Activity(), View.OnClickListener {
         btn_home!!.setOnClickListener(this)
         btn_my_account!!.setOnClickListener(this)
         btn_new_request!!.setOnClickListener(this)
+
+        val els = mutableListOf<ShoppingListElement>()
+        val elMilk = ShoppingListElement("lapte", 1.0, "l")
+        val elTomato = ShoppingListElement("roșii", 1.5, "kg")
+        val elCoke = ShoppingListElement("Pop Cola", 500.0, "ml")
+        els.add(elMilk)
+        els.add(elTomato)
+        els.add(elCoke)
+
+        val shlist1 = ShoppingList(els, "Dacă nu este Pop Cola, nu cumpărați altceva", "W34OTV8WUMRG", 0)
+
+        val elApple = ShoppingListElement("mere verzi", 1.5, "kg")
+        els.add(elApple)
+
+        val shlist2 = ShoppingList(els, null, "W4IOTVN3Y489VN", 15)
+
+        /*shlist1.publishList()
+        shlist2.publishList()*/
     }
 
     override fun onClick(v: View?) {
