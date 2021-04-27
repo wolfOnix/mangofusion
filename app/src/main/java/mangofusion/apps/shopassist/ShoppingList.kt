@@ -13,7 +13,7 @@ data class ShoppingList (
     var elementArray: List<ShoppingListElement>,
     var observations: String?,
     var bonusSum: Long,
-    var dateCreated: String = SimpleDateFormat("dd/M/yyyy hh:mm:ss").format(Date()),
+    var dateCreated: String = SimpleDateFormat("yyyy.mm.dd/HH:mm:ss").format(Date()),
     var invoices: List<Invoice> = listOf(),
     var totalSum: Double = 0.0,
     var providerID: String? = null,

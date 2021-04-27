@@ -43,4 +43,8 @@
     <string name="passwords_do_not_match">Parolele nu se potrivesc</string>
     <string name="this_field_does_not_respect_the_standard_format">Acest câmp nu respectă formatul standard</string>
     <string name="country">Țară</string>
+    <string name="next_step">Pasul următor</string>
+    <string name="new_shopping_request">Solicitare cumpărături</string>
+    <string name="PHRASE_new_shopping_request">Pentru a trimite o cerere de cumpărături, completați lista cu articolele necesare dorite. Solicitarea va fi vizibilă pentru utilizatorii disponibili care locuiesc în apropierea dvs.</string>
+    <string name="shopping_list">Lista de cumpărături</string>
 </resources>

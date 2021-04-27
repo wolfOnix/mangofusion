@@ -49,4 +49,8 @@
     <string name="passwords_do_not_match">Passwords do not match</string>
     <string name="this_field_does_not_respect_the_standard_format">This field does not respect the standard format</string>
     <string name="country">Country</string>
+    <string name="next_step">Next step</string>
+    <string name="new_shopping_request">New shopping request</string>
+    <string name="PHRASE_new_shopping_request">Would you want to send a shopping request, you need to fill in the shopping list with all the articles you require. The request will be visible for all the available users living nearby.</string>
+    <string name="shopping_list">Shopping list</string>
 </resources>

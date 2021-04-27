@@ -43,4 +43,8 @@
     <string name="passwords_do_not_match">Die Passwörter stimmen nicht überein</string>
     <string name="this_field_does_not_respect_the_standard_format">Dieses Feld hält nicht ans Standardformat</string>
     <string name="country">Land</string>
+    <string name="next_step">Nächster Schritt</string>
+    <string name="new_shopping_request">Neue Einkaufsanforderung</string>
+    <string name="PHRASE_new_shopping_request">Wenn Sie eine Einkaufsanforderung senden möchten, sollten Sie die Einkaufsliste mit allen notwendigen Artikeln einfüllen. Die Anforderung wird für alle Benutzer in der Nähe sichtbar sein.</string>
+    <string name="shopping_list">Einkaufsliste</string>
 </resources>

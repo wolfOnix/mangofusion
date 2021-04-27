@@ -35,7 +35,7 @@ class User {
         this.streetAndNumber = streetAndNumber
         this.country = country
         val date = Calendar.getInstance().time
-        val dateFormat: DateFormat = SimpleDateFormat("yyyy.mm.dd/hh:mm:ss")
+        val dateFormat: DateFormat = SimpleDateFormat("yyyy.mm.dd/HH:mm:ss")
         this.dateStampOnCreate = dateFormat.format(date) // TODO to GMT0
     }
 
