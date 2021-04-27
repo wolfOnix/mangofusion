@@ -47,4 +47,9 @@
     <string name="new_shopping_request">Neue Einkaufsanforderung</string>
     <string name="PHRASE_new_shopping_request">Wenn Sie eine Einkaufsanforderung senden möchten, sollten Sie die Einkaufsliste mit allen notwendigen Artikeln einfüllen. Die Anforderung wird für alle Benutzer in der Nähe sichtbar sein.</string>
     <string name="shopping_list">Einkaufsliste</string>
+    <string name="article">Artikel</string>
+    <string name="add_article">Artikel hinzufügen</string>
+    <string name="quantity">Menge</string>
+    <string name="unit">Einheit</string>
+    <string name="new_shopping_list">Neue Einkaufsliste</string>
 </resources>

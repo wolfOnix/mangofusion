@@ -12,6 +12,7 @@ data class ShoppingList (
     var listID: String? = null, // shopping list unique ID
     var elementArray: List<ShoppingListElement>,
     var observations: String?,
+    var reason: String,
     var bonusSum: Long,
     var dateCreated: String = SimpleDateFormat("yyyy.mm.dd/HH:mm:ss").format(Date()),
     var invoices: List<Invoice> = listOf(),

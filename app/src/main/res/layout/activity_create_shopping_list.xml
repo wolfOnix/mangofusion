@@ -88,28 +88,189 @@
                     android:layout_marginTop="2dp"
                     android:layout_marginEnd="10dp"
                     android:gravity="start"
-                    android:text="3 Artikel"
+                    android:text="2 Artikel"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     tools:ignore="HardcodedText" />
 
-                <EditText
-                    android:id="@+id/edtxt_firstname"
-                    style="@style/input_field"
+                <LinearLayout
+                    android:id="@+id/lnly_art_1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="2.5dp"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                    <EditText
+                        android:id="@+id/edtxt_art_1"
+                        style="@style/input_field_card"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="0dp"
+                        android:autofillHints=""
+                        android:background="@drawable/input_text_background"
+                        android:ems="10"
+                        android:hint="@string/article"
+                        android:inputType="textPersonName"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:gravity="start"
+                        android:orientation="horizontal"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:weightSum="1.0">
+
+                        <EditText
+                            android:id="@+id/edtxt_quant_1"
+                            style="@style/input_field_card"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".5"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginEnd="0dp"
+                            android:autofillHints=""
+                            android:background="@drawable/input_text_background"
+                            android:ems="10"
+                            android:hint="@string/quantity"
+                            android:inputType="textPersonName"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <EditText
+                            android:id="@+id/edtxt_unit_1"
+                            style="@style/input_field_card"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".25"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginEnd="0dp"
+                            android:autofillHints=""
+                            android:background="@drawable/input_text_background"
+                            android:ems="10"
+                            android:hint="-"
+                            android:inputType="textPersonName"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            tools:ignore="HardcodedText" />
+
+                        <ImageButton
+                            android:id="@+id/btn_delete_1"
+                            android:background="@color/transparent"
+                            android:tint="@color/magenta"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".25"
+                            android:layout_marginEnd="0dp"
+                            android:src="@drawable/ic_baseline_close_24"
+                            android:layout_gravity="end"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lnly_art_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="2.5dp"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                    <EditText
+                        android:id="@+id/edtxt_art_2"
+                        style="@style/input_field_card"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="0dp"
+                        android:autofillHints=""
+                        android:background="@drawable/input_text_background"
+                        android:ems="10"
+                        android:hint="@string/article"
+                        android:inputType="textPersonName"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:gravity="start"
+                        android:orientation="horizontal"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:weightSum="1.0">
+
+                        <EditText
+                            android:id="@+id/edtxt_quant_2"
+                            style="@style/input_field_card"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".5"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginEnd="0dp"
+                            android:autofillHints=""
+                            android:background="@drawable/input_text_background"
+                            android:ems="10"
+                            android:hint="@string/quantity"
+                            android:inputType="textPersonName"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <EditText
+                            android:id="@+id/edtxt_unit_2"
+                            style="@style/input_field_card"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".25"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginEnd="0dp"
+                            android:autofillHints=""
+                            android:background="@drawable/input_text_background"
+                            android:ems="10"
+                            android:hint="-"
+                            android:inputType="textPersonName"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            tools:ignore="HardcodedText" />
+
+                        <ImageButton
+                            android:id="@+id/btn_delete_2"
+                            android:background="@color/transparent"
+                            android:tint="@color/magenta"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".25"
+                            android:layout_marginEnd="0dp"
+                            android:src="@drawable/ic_baseline_close_24"
+                            android:layout_gravity="end"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <ImageButton
+                    android:id="@+id/btn_add_article"
+                    android:background="@color/transparent"
+                    android:tint="@color/green"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_marginTop="10dp"
-                    android:layout_marginEnd="0dp"
-                    android:autofillHints=""
-                    android:background="@drawable/input_text_background"
-                    android:ems="10"
-                    android:hint="@string/first_name"
-                    android:inputType="textPersonName"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    android:layout_marginBottom="0dp"
+                    android:src="@drawable/ic_baseline_add_24"
+                    android:layout_gravity="end"/>
 
             </LinearLayout>
 
@@ -122,7 +283,7 @@
         android:layout_height="wrap_content"
         android:background="#DDFFFFFF"
         android:gravity="start"
-        android:orientation="vertical"
+        android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -132,13 +293,29 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:layout_marginBottom="0dp"
+            android:gravity="start|center"
             android:text="@string/cancel"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             android:onClick="goBack"/>
+
+        <TextView
+            android:id="@+id/txtvw_title_top"
+            style="@style/title_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="0dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="30dp"
+            android:gravity="end"
+            android:text="@string/new_shopping_list"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </LinearLayout>
 

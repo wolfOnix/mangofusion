@@ -47,4 +47,9 @@
     <string name="new_shopping_request">New shopping request</string>
     <string name="PHRASE_new_shopping_request">Would you want to send a shopping request, you need to fill in the shopping list with all the articles you require. The request will be visible for all the available users living nearby.</string>
     <string name="shopping_list">Shopping list</string>
+    <string name="add_article">Add article</string>
+    <string name="article">Article</string>
+    <string name="quantity">Quantity</string>
+    <string name="unit">Unit</string>
+    <string name="new_shopping_list">New shopping list</string>
 </resources>
