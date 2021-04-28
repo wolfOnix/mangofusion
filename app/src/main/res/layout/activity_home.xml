@@ -31,7 +31,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/txtvw_greeting"
+                    android:id="@+id/txvw_greeting"
                     style="@style/title_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -61,7 +61,7 @@
                 android:weightSum="1.0">
 
                 <TextView
-                    android:id="@+id/txtvw_requests_text"
+                    android:id="@+id/txvw_requests_text"
                     style="@style/description"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -79,7 +79,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/txtvw_requestsnr"
+                    android:id="@+id/txvw_requestsnr"
                     style="@style/text_requests_number"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"

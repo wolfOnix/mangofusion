@@ -53,4 +53,9 @@
     <string name="unit">Unitate</string>
     <string name="new_shopping_list">Listă nouă</string>
     <string name="PHRASE_no_requests_nearby">Momentan nu există nicio cerere de cumpărături în zonă. Acestea vor apărea aici de îndată ce vor fi solicitate</string>
+    <string name="shopping_list_review">Verificare listă de cumpărături</string>
+    <string name="PHRASE_shopping_list_review">Verificați ca toate detaliile din lista de cumpărături să fie corecte. Mai apoi selectați motivul solicitării și, opțional, alegeți o sumă bonus pentru livrator</string>
+    <string name="send_request">Trimitere solicitare</string>
+    <string name="notes">Observații</string>
+    <string name="delivery_bonus">Sumă bonus pentru livrare</string>
 </resources>

@@ -25,7 +25,7 @@
             android:paddingBottom="132dp">
 
             <TextView
-                android:id="@+id/txtvw_signup"
+                android:id="@+id/txvw_signup"
                 style="@style/title_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -33,14 +33,14 @@
                 android:layout_marginTop="100dp"
                 android:layout_marginEnd="20dp"
                 android:gravity="center"
-                android:text="@string/new_shopping_request"
+                android:text="@string/new_shopping_list"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/txtvw_description"
+                android:id="@+id/txvw_description"
                 style="@style/description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -87,6 +87,7 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="2dp"
                     android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="20dp"
                     android:gravity="start"
                     android:text="2 Artikel"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -172,7 +173,8 @@
                             android:layout_weight=".25"
                             android:layout_marginEnd="0dp"
                             android:src="@drawable/ic_baseline_close_24"
-                            android:layout_gravity="end"/>
+                            android:layout_gravity="end"
+                            tools:ignore="ContentDescription" />
 
                     </LinearLayout>
 
@@ -255,7 +257,8 @@
                             android:layout_weight=".25"
                             android:layout_marginEnd="0dp"
                             android:src="@drawable/ic_baseline_close_24"
-                            android:layout_gravity="end"/>
+                            android:layout_gravity="end"
+                            tools:ignore="ContentDescription" />
 
                     </LinearLayout>
 
@@ -270,7 +273,8 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="0dp"
                     android:src="@drawable/ic_baseline_add_24"
-                    android:layout_gravity="end"/>
+                    android:layout_gravity="end"
+                    tools:ignore="ContentDescription" />
 
             </LinearLayout>
 
@@ -303,7 +307,7 @@
             android:onClick="goBack"/>
 
         <TextView
-            android:id="@+id/txtvw_title_top"
+            android:id="@+id/txvw_title_top"
             style="@style/title_top"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -328,7 +332,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <Button
-            android:id="@+id/button_create_account"
+            android:id="@+id/btn_create_list_next"
             style="@style/button_main"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

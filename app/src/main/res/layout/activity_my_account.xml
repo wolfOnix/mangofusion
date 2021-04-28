@@ -23,7 +23,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/txtvw_greeting"
+                android:id="@+id/txvw_greeting"
                 style="@style/title_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -38,7 +38,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/txtvw_description"
+                android:id="@+id/txvw_description"
                 style="@style/description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -192,7 +192,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:id="@+id/txtvw_title_top"
+            android:id="@+id/txvw_title_top"
             style="@style/title_top"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

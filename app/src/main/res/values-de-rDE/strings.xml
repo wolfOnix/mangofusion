@@ -45,7 +45,7 @@
     <string name="country">Land</string>
     <string name="next_step">Nächster Schritt</string>
     <string name="new_shopping_request">Neue Einkaufsanforderung</string>
-    <string name="PHRASE_new_shopping_request">Wenn Sie eine Einkaufsanforderung senden möchten, sollten Sie die Einkaufsliste mit allen notwendigen Artikeln einfüllen. Die Anforderung wird für alle Benutzer in der Nähe sichtbar sein.</string>
+    <string name="PHRASE_new_shopping_request">Wenn Sie eine Einkaufsanforderung senden möchten, sollten Sie die Einkaufsliste mit allen notwendigen Artikeln einfüllen. Die Anforderung wird für alle Benutzer in der Nähe sichtbar sein</string>
     <string name="shopping_list">Einkaufsliste</string>
     <string name="article">Artikel</string>
     <string name="add_article">Artikel hinzufügen</string>
@@ -53,4 +53,9 @@
     <string name="unit">Einheit</string>
     <string name="new_shopping_list">Neue Einkaufsliste</string>
     <string name="PHRASE_no_requests_nearby">Es gibt keine Einkaufsanforderung in der Nähe im Moment. Sie werden hier erscheinen, sobald die beantragt geworden werden</string>
+    <string name="shopping_list_review">Einkaufsliste überprüfen</string>
+    <string name="PHRASE_shopping_list_review">Überprüfen Sie alle Details in der Einkaufsliste, um zu sehen, dass sie korrektgeschrieben sind. Danach, wählen Sie den Grund für die Einkaufsanforderung und eine Zugabesumme aus</string>
+    <string name="send_request">Anforderung versenden</string>
+    <string name="notes">Vermerke</string>
+    <string name="delivery_bonus">Lieferung-Zugabesumme</string>
 </resources>

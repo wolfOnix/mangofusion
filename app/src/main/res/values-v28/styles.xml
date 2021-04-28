@@ -31,6 +31,14 @@
         <item name="android:stateListAnimator">@null</item>
     </style>
 
+    <style name="button_bordered" parent="button_main">
+        <item name="android:backgroundTint">@color/white</item>
+        <item name="android:hapticFeedbackEnabled">true</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
     <style name="button_gray" parent="@style/Widget.MaterialComponents.Button">
         <item name="android:textSize">13sp</item>
         <item name="android:backgroundTint">#00000000</item>
@@ -99,15 +107,26 @@
     </style>
 
     <style name="title_card" parent="@style/TextAppearance.AppCompat.Headline">
-        <item name="android:textSize">17sp</item>
+        <item name="android:textSize">19sp</item>
         <item name="android:textColor">@color/purple</item>
         <item name="android:fontFamily">@font/rubik_bold</item>
+    </style>
+
+    <style name="title_card_1_2" parent="title_card">
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">@color/carbon</item>
     </style>
 
     <style name="title_card_2" parent="@style/TextAppearance.AppCompat.Headline">
         <item name="android:textSize">15sp</item>
         <item name="android:textColor">@color/carbon</item>
         <item name="android:fontFamily">@font/rubik</item>
+    </style>
+
+    <style name="title_card_art_name" parent="@style/TextAppearance.AppCompat.Headline">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/carbon</item>
+        <item name="android:fontFamily">@font/rubik_semibold</item>
     </style>
 
     <style name="title_top" parent="@style/TextAppearance.AppCompat.Headline">

@@ -85,15 +85,15 @@ class SignUpActivity : Activity(), View.OnClickListener, AdapterView.OnItemSelec
         val city = edtxt_city.text.toString().trim { it <= ' ' }.filter { it.isLetter() || it == ',' || it == '-' }
         val streetAndNumber = edtxt_street_and_number.text.toString().trim { it <= ' ' }
 
-        val err_edtxt_firstname: TextView = findViewById<View>(R.id.txtvw_error_firstname) as TextView
-        val err_edtxt_lastname: TextView = findViewById<View>(R.id.txtvw_error_lastname) as TextView
-        val err_edtxt_email: TextView = findViewById<View>(R.id.txtvw_error_email) as TextView
-        val err_edtxt_password: TextView = findViewById<View>(R.id.txtvw_error_password) as TextView
-        val err_edtxt_birthdaydate: TextView = findViewById<View>(R.id.txtvw_error_birthdaydate) as TextView
-        val err_edtxt_telephonenumber: TextView = findViewById<View>(R.id.txtvw_error_telephonenumber) as TextView
-        val err_edtxt_city: TextView = findViewById<View>(R.id.txtvw_error_city) as TextView
-        val err_edtxt_street_and_number: TextView = findViewById<View>(R.id.txtvw_error_streetandnumber) as TextView
-        val err_edtxt_country: TextView = findViewById<View>(R.id.txtvw_error_country) as TextView
+        val err_edtxt_firstname: TextView = findViewById<View>(R.id.txvw_error_firstname) as TextView
+        val err_edtxt_lastname: TextView = findViewById<View>(R.id.txvw_error_lastname) as TextView
+        val err_edtxt_email: TextView = findViewById<View>(R.id.txvw_error_email) as TextView
+        val err_edtxt_password: TextView = findViewById<View>(R.id.txvw_error_password) as TextView
+        val err_edtxt_birthdaydate: TextView = findViewById<View>(R.id.txvw_error_birthdaydate) as TextView
+        val err_edtxt_telephonenumber: TextView = findViewById<View>(R.id.txvw_error_telephonenumber) as TextView
+        val err_edtxt_city: TextView = findViewById<View>(R.id.txvw_error_city) as TextView
+        val err_edtxt_street_and_number: TextView = findViewById<View>(R.id.txvw_error_streetandnumber) as TextView
+        val err_edtxt_country: TextView = findViewById<View>(R.id.txvw_error_country) as TextView
 
         if (firstName.isEmpty()) {
             err_edtxt_firstname.text = (getString(R.string.field_should_not_be_empty))
@@ -144,7 +144,7 @@ class SignUpActivity : Activity(), View.OnClickListener, AdapterView.OnItemSelec
         } else {
             err_edtxt_birthdaydate.visibility = View.GONE
         } /*else if (birthdayDate.length != 10) { // TODO regex check
-            errorTextView = findViewById<View>(R.id.txtvw_error_birthdaydate) as TextView
+            errorTextView = findViewById<View>(R.id.txvw_error_birthdaydate) as TextView
             errorTextView.text = getString(R.string.this_field_does_not_respect_the_standard_format)
             errorTextView.visibility = View.VISIBLE
         }*/

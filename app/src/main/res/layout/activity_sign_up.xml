@@ -23,7 +23,7 @@
             android:paddingBottom="132dp">
 
             <TextView
-                android:id="@+id/txtvw_signup"
+                android:id="@+id/txvw_signup"
                 style="@style/title_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -38,7 +38,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/txtvw_description"
+                android:id="@+id/txvw_description"
                 style="@style/description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -70,7 +70,7 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
-                android:id="@+id/txtvw_error_firstname"
+                android:id="@+id/txvw_error_firstname"
                 style="@style/description_error"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -102,7 +102,7 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
-                android:id="@+id/txtvw_error_lastname"
+                android:id="@+id/txvw_error_lastname"
                 style="@style/description_error"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -134,7 +134,7 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
-                android:id="@+id/txtvw_error_email"
+                android:id="@+id/txvw_error_email"
                 style="@style/description_error"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -166,7 +166,7 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
-                android:id="@+id/txtvw_error_password"
+                android:id="@+id/txvw_error_password"
                 style="@style/description_error"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -214,7 +214,7 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
-                android:id="@+id/txtvw_error_birthdaydate"
+                android:id="@+id/txvw_error_birthdaydate"
                 style="@style/description_error"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -246,7 +246,7 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
-                android:id="@+id/txtvw_error_telephonenumber"
+                android:id="@+id/txvw_error_telephonenumber"
                 style="@style/description_error"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -278,7 +278,7 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
-                android:id="@+id/txtvw_error_city"
+                android:id="@+id/txvw_error_city"
                 style="@style/description_error"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -310,7 +310,7 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
-                android:id="@+id/txtvw_error_streetandnumber"
+                android:id="@+id/txvw_error_streetandnumber"
                 style="@style/description_error"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -339,7 +339,7 @@
             </Spinner>
 
             <TextView
-                android:id="@+id/txtvw_error_country"
+                android:id="@+id/txvw_error_country"
                 style="@style/description_error"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
