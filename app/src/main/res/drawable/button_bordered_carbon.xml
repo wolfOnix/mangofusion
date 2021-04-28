@@ -2,7 +2,7 @@
 
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:state_pressed="true">
+    <!--<item android:state_pressed="true">
         <shape android:shape="rectangle">
             <solid android:color="@color/carbon"/>
             <corners android:radius="100dp"/>
@@ -16,6 +16,12 @@
             <corners android:radius="100dp"/>
             <stroke android:color="@color/carbon" android:width="3dp"/>
         </shape>
-    </item>
+    </item>-->
+
+    <item android:drawable="@drawable/button_bordered_carbon_pressed"
+        android:state_pressed="true" />
+    <item android:drawable="@drawable/button_bordered_carbon_focused"
+        android:state_focused="true" />
+    <item android:drawable="@drawable/button_bordered_carbon_default" />
 
 </selector>
