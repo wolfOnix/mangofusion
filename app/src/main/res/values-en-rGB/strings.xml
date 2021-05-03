@@ -62,4 +62,12 @@
     <string name="send_request">Send request</string>
     <string name="notes">Notes</string>
     <string name="delivery_bonus">Delivery bonus</string>
+    <string name="PHRASE_err_invalid_shopping_list">Some articles in the shopping list seem to have an invalid input. Check all the articles to have the name, and the quantity written as a number</string>
+    <string name="PHRASE_add_here_notes">Write in here any existing observations regarding the articles in the list or other shopping mentions</string>
+    <string name="reason">Request reason</string>
+    <string name="home_isolation">Home isolation</string>
+    <string name="elderly_person">Elderly person</string>
+    <string name="time_shortage">Time shortage</string>
+    <string name="locomotive_deficiency">Locomotive disability</string>
+    <string name="unspecified">Unspecified</string>
 </resources>

@@ -63,4 +63,12 @@
     <string name="send_request">Trimitere solicitare</string>
     <string name="notes">Observații</string>
     <string name="delivery_bonus">Sumă bonus pentru livrare</string>
+    <string name="PHRASE_err_invalid_shopping_list">Se pare că unele articole din lista de cumpărături nu au un format valid. Verificați ca toate elementele să aibă un nume și o cantitate exprimată numeric</string>
+    <string name="PHRASE_add_here_notes">Scrieți aici observațiile existente referitoare la articolele din listă sau alte mențiuni legate de cumpărături</string>
+    <string name="reason">Motivul solicitării</string>
+    <string name="time_shortage">Lipsă de timp</string>
+    <string name="home_isolation">Izolare la domiciliu</string>
+    <string name="elderly_person">Persoană vârstnică</string>
+    <string name="locomotive_deficiency">Deficiență locomotorie</string>
+    <string name="unspecified">Nespecificat</string>
 </resources>

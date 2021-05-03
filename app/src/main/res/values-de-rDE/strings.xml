@@ -62,4 +62,12 @@
     <string name="send_request">Anforderung versenden</string>
     <string name="notes">Vermerke</string>
     <string name="delivery_bonus">Lieferung-Zugabesumme</string>
+    <string name="PHRASE_err_invalid_shopping_list">Es scheint, dass einige Artikel in der Einkaufsliste kein gültiges Format haben. Prüfen Sie über, dass jeder Artikel einen Name und eine numerische Menge hat</string>
+    <string name="PHRASE_add_here_notes">Schreiben Sie hier jeder Vermerk bezgülich der Artikel in der Liste oder andere Einkaufserwähnungen</string>
+    <string name="reason">Grund der Anforderung</string>
+    <string name="home_isolation">Hausisolation</string>
+    <string name="elderly_person">Ältere Person</string>
+    <string name="time_shortage">Zeitmangel</string>
+    <string name="locomotive_deficiency">Lokomotorische Behinderung</string>
+    <string name="unspecified">Nicht angegeben</string>
 </resources>

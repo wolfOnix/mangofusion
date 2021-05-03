@@ -14,21 +14,17 @@ data class ShoppingList (
     var observations: String?,
     var reason: String,
     var bonusSum: Long,
-    var dateCreated: String = SimpleDateFormat("yyyy.mm.dd/HH:mm:ss").format(Date()),
+    var dateCreated: String = SimpleDateFormat("yyyy.MM.dd/HH:mm:ss").format(Date()),
     var invoices: List<Invoice> = listOf(),
     var totalSum: Double = 0.0,
-    var providerID: String? = null,
+    var providerID: String = "",
     var taken: Boolean = false,
     var fulfilled: Boolean = false,
     var delivered: Boolean = false
 ): Serializable {
 
-    companion object {
-        private var userCounter: Int = 0
-    }
-
     private fun calculateTotalSum() {
-        if (invoices.size > 0) {
+        if (invoices.isNotEmpty()) {
             for (i in invoices) {
                 totalSum = totalSum.plus(i.getSum())
             }
@@ -38,16 +34,27 @@ data class ShoppingList (
     }
 
     fun publishList() {
-        //var database: DatabaseReference = Firebase.database.reference
-        listID = issuerID + "_" + userCounter
-        println("Fang")
-        FirebaseDatabase.getInstance().reference
-            .child("lists")
-            .child(issuerID)
-            .child(userCounter.toString())
-            .setValue(this)
-        userCounter++
-        println("Gesandt")
+        FirebaseDatabase.getInstance().reference.child("listIndex").get().addOnSuccessListener {
+            val globalCounter = it.value.toString().toLong()
+            FirebaseDatabase.getInstance().reference.child("listIndex").setValue(globalCounter + 1)
+            listID = issuerID + "_" + globalCounter.toString()
+            FirebaseDatabase.getInstance().reference
+                .child("lists")
+                .child(issuerID)
+                .child(globalCounter.toString())
+                .setValue(this)
+        }.addOnFailureListener { // listIndex is not set
+            val globalCounter: Long = 0
+            FirebaseDatabase.getInstance().reference.child("listIndex").setValue(globalCounter + 1)
+            listID = issuerID + "_" + globalCounter.toString()
+            FirebaseDatabase.getInstance().reference
+                .child("lists")
+                .child(issuerID)
+                .child(globalCounter.toString())
+                .setValue(this)
+        }
+        // to update a list, overwrite the new shoppinglist on that ID
+        println("Sent")
     }
 
     fun takeList() { // called when a provider takes the request

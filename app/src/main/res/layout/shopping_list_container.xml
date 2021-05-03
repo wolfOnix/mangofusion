@@ -20,7 +20,7 @@
         android:background="@drawable/input_text_background"
         android:ems="10"
         android:hint="@string/article"
-        android:inputType="textPersonName" />
+        android:inputType="text" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -41,7 +41,7 @@
             android:background="@drawable/input_text_background"
             android:ems="10"
             android:hint="@string/quantity"
-            android:inputType="textPersonName" />
+            android:inputType="number" />
 
         <EditText
             style="@style/input_field_card"
@@ -54,7 +54,7 @@
             android:background="@drawable/input_text_background"
             android:ems="10"
             android:hint="-"
-            android:inputType="textPersonName"
+            android:inputType="text"
             tools:ignore="HardcodedText" />
 
         <ImageButton
