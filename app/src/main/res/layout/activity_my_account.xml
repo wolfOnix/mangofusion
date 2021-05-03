@@ -23,7 +23,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/txvw_greeting"
+                android:id="@+id/txvw_firstname_lastname"
                 style="@style/title_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -38,7 +38,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/txvw_description"
+                android:id="@+id/txvw_user_email_add_telnr"
                 style="@style/description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
