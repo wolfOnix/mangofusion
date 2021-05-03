@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <plurals name="number_of_articles">
+        <item quantity="one">%d article</item>
+        <item quantity="other">%d articles</item>
+    </plurals>
     <string name="sign_up">Sign Up</string>
     <string name="first_name">Firstname</string>
     <string name="last_name">Lastname</string>

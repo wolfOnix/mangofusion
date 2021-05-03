@@ -81,6 +81,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
+                    android:id="@+id/txvw_article_number"
                     style="@style/title_card_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -89,7 +90,7 @@
                     android:layout_marginEnd="10dp"
                     android:layout_marginBottom="20dp"
                     android:gravity="start"
-                    android:text="2 Artikel"
+                    android:text="N Art"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
@@ -97,6 +98,12 @@
                     tools:ignore="HardcodedText" />
 
                 <LinearLayout
+                    android:id="@+id/lnly_element_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!--<LinearLayout
                     android:id="@+id/lnly_art_1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -107,7 +114,6 @@
                     app:layout_constraintBottom_toBottomOf="parent">
 
                     <EditText
-                        android:id="@+id/edtxt_art_1"
                         style="@style/input_field_card"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -132,7 +138,6 @@
                         android:weightSum="1.0">
 
                         <EditText
-                            android:id="@+id/edtxt_quant_1"
                             style="@style/input_field_card"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -148,7 +153,6 @@
                             app:layout_constraintStart_toStartOf="parent" />
 
                         <EditText
-                            android:id="@+id/edtxt_unit_1"
                             style="@style/input_field_card"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -165,7 +169,6 @@
                             tools:ignore="HardcodedText" />
 
                         <ImageButton
-                            android:id="@+id/btn_delete_1"
                             android:background="@color/transparent"
                             android:tint="@color/magenta"
                             android:layout_width="0dp"
@@ -178,89 +181,7 @@
 
                     </LinearLayout>
 
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/lnly_art_2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="2.5dp"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    app:layout_constraintBottom_toBottomOf="parent">
-
-                    <EditText
-                        android:id="@+id/edtxt_art_2"
-                        style="@style/input_field_card"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="0dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginEnd="0dp"
-                        android:autofillHints=""
-                        android:background="@drawable/input_text_background"
-                        android:ems="10"
-                        android:hint="@string/article"
-                        android:inputType="textPersonName"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:gravity="start"
-                        android:orientation="horizontal"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        android:weightSum="1.0">
-
-                        <EditText
-                            android:id="@+id/edtxt_quant_2"
-                            style="@style/input_field_card"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight=".5"
-                            android:layout_marginStart="0dp"
-                            android:layout_marginEnd="0dp"
-                            android:autofillHints=""
-                            android:background="@drawable/input_text_background"
-                            android:ems="10"
-                            android:hint="@string/quantity"
-                            android:inputType="textPersonName"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent" />
-
-                        <EditText
-                            android:id="@+id/edtxt_unit_2"
-                            style="@style/input_field_card"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight=".25"
-                            android:layout_marginStart="0dp"
-                            android:layout_marginEnd="0dp"
-                            android:autofillHints=""
-                            android:background="@drawable/input_text_background"
-                            android:ems="10"
-                            android:hint="-"
-                            android:inputType="textPersonName"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            tools:ignore="HardcodedText" />
-
-                        <ImageButton
-                            android:id="@+id/btn_delete_2"
-                            android:background="@color/transparent"
-                            android:tint="@color/magenta"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight=".25"
-                            android:layout_marginEnd="0dp"
-                            android:src="@drawable/ic_baseline_close_24"
-                            android:layout_gravity="end"
-                            tools:ignore="ContentDescription" />
-
-                    </LinearLayout>
+                </LinearLayout>-->
 
                 </LinearLayout>
 
@@ -268,13 +189,14 @@
                     android:id="@+id/btn_add_article"
                     android:background="@color/transparent"
                     android:tint="@color/green"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="0dp"
                     android:src="@drawable/ic_baseline_add_24"
                     android:layout_gravity="end"
-                    tools:ignore="ContentDescription" />
+                    tools:ignore="ContentDescription"
+                    android:onClick="addShoppingListElementField"/>
 
             </LinearLayout>
 

@@ -56,6 +56,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finishAffinity()
+    }
+
     private fun userLogin() {
         val email = editTextEmail!!.text.toString().trim { it <= ' ' }
         val password: String = editTextPassword!!.text.toString()

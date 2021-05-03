@@ -4,6 +4,10 @@
         <item>@string/Germany</item>
         <item>@string/The_United_Kingdom</item>
     </string-array>
+    <plurals name="number_of_articles">
+        <item quantity="one">%d article</item>
+        <item quantity="other">%d articles</item>
+    </plurals>
     <string name="shop_assist" translatable="false">Shop Assist</string>
     <string name="log_in_screen" translatable="false">LOGIN SCREEN</string>
     <string name="log_in">LOGIN</string>

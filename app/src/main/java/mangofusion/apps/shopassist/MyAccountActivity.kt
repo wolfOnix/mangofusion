@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.view.ViewStub
 import android.widget.Button
 import android.widget.TextView
 import com.google.firebase.auth.FirebaseAuth
@@ -19,38 +20,37 @@ class MyAccountActivity : Activity(), View.OnClickListener {
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_my_account)
 
-        window.decorView.post {
+        btn_logout = findViewById<View>(R.id.btn_logout) as Button
+        btn_logout!!.setOnClickListener(this)
 
-            setContentView(R.layout.activity_my_account)
+        btn_update_data = findViewById<View>(R.id.btn_update_data) as Button
+        btn_update_data!!.setOnClickListener(this)
 
-            btn_logout = findViewById<View>(R.id.btn_logout) as Button
-            btn_logout!!.setOnClickListener(this)
+        btn_sys_back = findViewById<View>(R.id.btn_sys_back) as Button
+        btn_sys_back!!.setOnClickListener(this)
 
-            btn_update_data = findViewById<View>(R.id.btn_update_data) as Button
-            btn_update_data!!.setOnClickListener(this)
-
-            btn_sys_back = findViewById<View>(R.id.btn_sys_back) as Button
-            btn_sys_back!!.setOnClickListener(this)
-
-            txvw_firstname_lastname = findViewById<View>(R.id.txvw_firstname_lastname) as TextView
-            mDatabase.child("users").child(getUserID()).get().addOnSuccessListener {
-                txvw_firstname_lastname!!.text =
-                    "${it.child("firstName").value} ${it.child("lastName").value}"
-            }.addOnFailureListener { // sign out if error has occurred
-                signOut(this)
-            }
-
-            txvw_user_email_add_telnr = findViewById<View>(R.id.txvw_user_email_add_telnr) as TextView
-            mDatabase.child("users").child(getUserID()).get().addOnSuccessListener {
-                txvw_user_email_add_telnr!!.text =
-                    "${it.child("email").value}\n${it.child("city").value}, ${it.child("streetAndNumber").value}\n${
-                        it.child("telephoneNumber").value
-                    }"
-            }.addOnFailureListener { // sign out if error has occurred
-                signOut(this)
-            }
+        txvw_firstname_lastname = findViewById<View>(R.id.txvw_firstname_lastname) as TextView
+        mDatabase.child("users").child(getUserID()).get().addOnSuccessListener {
+            txvw_firstname_lastname!!.text =
+                "${it.child("firstName").value} ${it.child("lastName").value}"
+        }.addOnFailureListener { // sign out if error has occurred
+            signOut(this)
         }
+
+        txvw_user_email_add_telnr = findViewById<View>(R.id.txvw_user_email_add_telnr) as TextView
+        mDatabase.child("users").child(getUserID()).get().addOnSuccessListener {
+            txvw_user_email_add_telnr!!.text =
+                "${it.child("email").value}\n${it.child("city").value}, ${it.child("streetAndNumber").value}\n${
+                    it.child("telephoneNumber").value
+                }"
+        }.addOnFailureListener { // sign out if error has occurred
+            signOut(this)
+        }
+
+        // val importPanel: View = findViewById<ViewStub>(R.id.stub_import).inflate()
+
     }
 
     override fun onClick(v: View?) {

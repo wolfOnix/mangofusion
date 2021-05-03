@@ -56,4 +56,9 @@ class HomeActivity : Activity(), View.OnClickListener {
         }
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finishAffinity()
+    }
+
 }
