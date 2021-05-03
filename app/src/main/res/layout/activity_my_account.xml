@@ -6,8 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".MyAccountActivity">
 
+    <ViewStub
+        android:id="@+id/stub_import"
+        android:inflatedId="@+id/scrollView"
+        android:layout="@layout/view_stub_loader"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
     <ScrollView
-        android:id="@+id/scrollView3"
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintStart_toStartOf="parent"

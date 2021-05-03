@@ -12,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ShopAssist"
-        android:windowSoftInputMode="adjustResize" >
+        android:windowSoftInputMode="adjustResize">
         <activity android:name=".PublishShoppingList" />
         <activity android:name=".CreateShoppingList" />
         <activity android:name=".MyAccountUpdateDataActivity" />
