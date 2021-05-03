@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         mAuth = FirebaseAuth.getInstance()
-        if (mAuth!!.getCurrentUser() != null) { // if user is already logged in, jump to HomeActivity
+        if (mAuth!!.currentUser != null) { // if user is already logged in, jump to HomeActivity
             startActivity(Intent(this, HomeActivity::class.java))
         }
 
@@ -46,6 +46,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 R.id.button_Login -> userLogin()
                 R.id.button_forgot_password -> startActivity(Intent(this, ForgotPasswordActivity::class.java))
             }
+        }
+    }
+
+    override fun onResume() { // when coming back to the activity from another one
+        super.onResume()
+        if (mAuth!!.currentUser != null) { // if user is already logged in, finish app
+            finishAffinity()
         }
     }
 

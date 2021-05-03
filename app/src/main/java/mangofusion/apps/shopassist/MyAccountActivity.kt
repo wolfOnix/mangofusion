@@ -41,8 +41,7 @@ class MyAccountActivity : Activity(), View.OnClickListener {
                 signOut(this)
             }
 
-            txvw_user_email_add_telnr =
-                findViewById<View>(R.id.txvw_user_email_add_telnr) as TextView
+            txvw_user_email_add_telnr = findViewById<View>(R.id.txvw_user_email_add_telnr) as TextView
             mDatabase.child("users").child(getUserID()).get().addOnSuccessListener {
                 txvw_user_email_add_telnr!!.text =
                     "${it.child("email").value}\n${it.child("city").value}, ${it.child("streetAndNumber").value}\n${
