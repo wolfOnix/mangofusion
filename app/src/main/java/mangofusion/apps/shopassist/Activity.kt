@@ -2,7 +2,6 @@ package mangofusion.apps.shopassist
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -17,8 +16,8 @@ open class Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mAuth = FirebaseAuth.getInstance()
-        if (mAuth!!.currentUser == null) { // if user is not signed in, go to MainActivity
-            startActivity(Intent(this, MainActivity::class.java))
+        if (mAuth!!.currentUser == null) { // if user is not signed in, close app
+            finishAffinity()
         }
     }
 
@@ -29,6 +28,9 @@ open class Activity : AppCompatActivity() {
 
     fun signOut(currActivity: AppCompatActivity) {
         FirebaseAuth.getInstance().signOut()
-        startActivity(Intent(currActivity, MainActivity::class.java))
+        val intent = Intent(currActivity, MainActivity::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_CLEAR_TASK) // prevent going to logged in activities, and exit the app
+        startActivity(intent)
+        finish()
     }
 }
