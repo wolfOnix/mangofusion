@@ -44,7 +44,11 @@ data class ShoppingList (
 
     fun publishList() {
         FirebaseDatabase.getInstance().reference.child("listIndex").get().addOnSuccessListener {
-            val globalCounter = it.value.toString().toLong()
+            val globalCounter: Long
+            if (it.value != null)
+                globalCounter = it.value.toString().toLong()
+            else
+                globalCounter = 0
             FirebaseDatabase.getInstance().reference.child("listIndex").setValue(globalCounter + 1)
             listID = issuerID + "_" + globalCounter.toString()
             FirebaseDatabase.getInstance().reference
@@ -52,7 +56,7 @@ data class ShoppingList (
                 .child(issuerID)
                 .child(globalCounter.toString())
                 .setValue(this)
-        }/*.addOnFailureListener { // listIndex is not set
+        }/*.addOnFailureListener { // listIndex is not set // VERY SUSPICIOUS UNDETECTION OF MISSING listIndex :.(
             val globalCounter: Long = 0
             FirebaseDatabase.getInstance().reference.child("listIndex").setValue(globalCounter + 1)
             listID = issuerID + "_" + globalCounter.toString()
@@ -62,7 +66,6 @@ data class ShoppingList (
                 .child(globalCounter.toString())
                 .setValue(this)
         }*/
-        // to update a list, overwrite the new shoppinglist on that ID
         println("Sent")
     }
 
