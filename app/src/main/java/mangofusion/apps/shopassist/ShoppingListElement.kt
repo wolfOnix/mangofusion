@@ -6,7 +6,7 @@ import java.io.Serializable
 @IgnoreExtraProperties
 data class ShoppingListElement(
     var elementName: String,
-    var quantity: Double,
+    var quantity: String,
     var unitOfMeasure: String
 ): Serializable {
 

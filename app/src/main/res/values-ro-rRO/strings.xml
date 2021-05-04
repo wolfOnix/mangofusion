@@ -50,7 +50,7 @@
     <string name="country">Țară</string>
     <string name="next_step">Pasul următor</string>
     <string name="new_shopping_request">Solicitare cumpărături</string>
-    <string name="PHRASE_new_shopping_request">Pentru a trimite o cerere de cumpărături, completați lista cu articolele necesare dorite. Solicitarea va fi vizibilă pentru utilizatorii disponibili care locuiesc în apropierea dvs.</string>
+    <string name="PHRASE_new_shopping_request">Pentru a trimite o cerere de cumpărături, completați lista cu articolele necesare dorite. Mai apoi selectați motivul solicitării și, opțional, alegeți o sumă bonus pentru livrator</string>
     <string name="shopping_list">Lista de cumpărături</string>
     <string name="article">Articol</string>
     <string name="add_article">Adăugare articol</string>
@@ -59,7 +59,7 @@
     <string name="new_shopping_list">Listă nouă</string>
     <string name="PHRASE_no_requests_nearby">Momentan nu există nicio cerere de cumpărături în zonă. Acestea vor apărea aici de îndată ce vor fi solicitate</string>
     <string name="shopping_list_review">Verificare listă de cumpărături</string>
-    <string name="PHRASE_shopping_list_review">Verificați ca toate detaliile din lista de cumpărături să fie corecte. Mai apoi selectați motivul solicitării și, opțional, alegeți o sumă bonus pentru livrator</string>
+    <string name="PHRASE_shopping_list_review">Verificați ca toate detaliile din lista de cumpărături să fie corecte. Solicitarea va fi vizibilă pentru utilizatorii disponibili care locuiesc în apropierea dvs., pregătită pentru a fi preluată</string>
     <string name="send_request">Trimitere solicitare</string>
     <string name="notes">Observații</string>
     <string name="delivery_bonus">Sumă bonus pentru livrare</string>

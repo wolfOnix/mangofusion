@@ -11,6 +11,7 @@ import androidx.core.content.ContextCompat
 import java.text.NumberFormat
 import java.util.*
 import mangofusion.apps.shopassist.ShoppingList.Companion.getReasonPos
+import java.io.Serializable
 
 
 class CreateShoppingList : Activity(), View.OnClickListener, AdapterView.OnItemSelectedListener {
@@ -23,6 +24,7 @@ class CreateShoppingList : Activity(), View.OnClickListener, AdapterView.OnItemS
     private var elementContainer: ViewGroup? = null
     private var bonusSum: Long = 0
     private var reasonPos: Int = 0
+    private var shoppingListKeeper: ShoppingList? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -78,10 +80,9 @@ class CreateShoppingList : Activity(), View.OnClickListener, AdapterView.OnItemS
     override fun onClick(v: View?) {
         if (v != null) {
             when (v.id) {
-                R.id.btn_create_list_next -> if (prepareShoppingList()) {
-                    println("Check OK")
+                R.id.btn_create_list_next -> if (prepareShoppingList() && shoppingListKeeper != null) {
                     findViewById<TextView>(R.id.txvw_error_invalid_shopping_list).visibility = View.GONE
-                    startActivity(Intent(this, HomeActivity::class.java))
+                    startActivity(Intent(this, PublishShoppingList::class.java).putExtra("shoppingListKeeper", shoppingListKeeper))
                 } else {
                     findViewById<TextView>(R.id.txvw_error_invalid_shopping_list).visibility = View.VISIBLE
                 }
@@ -105,11 +106,7 @@ class CreateShoppingList : Activity(), View.OnClickListener, AdapterView.OnItemS
 
     fun addShoppingListElementField(v: View?) {
         val inflater: LayoutInflater = LayoutInflater.from(applicationContext)
-        val v: View = layoutInflater.inflate(
-            R.layout.shopping_list_container,
-            elementContainer,
-            false
-        )
+        val v: View = layoutInflater.inflate(R.layout.shopping_list_container, elementContainer, false)
         elementContainer?.addView(v, art_nr)
         art_nr++
         println(elementContainer!!.childCount)
@@ -128,16 +125,10 @@ class CreateShoppingList : Activity(), View.OnClickListener, AdapterView.OnItemS
             val artName = edtxArtName.text.toString().trim(' ')
             if (artName == "" || artName == " " || artName.isEmpty()) return false
 
-            val tempStr: String = edtxQuantity.text.toString().trim(' ')
-            if (tempStr.isEmpty() || tempStr == " ") return false
-            if(!noLetter(tempStr)) return false
+            val quant = edtxQuantity.text.toString().trim(' ')
+            if (quant == "" || quant == " " || quant.isEmpty()) return false
 
-            val format: NumberFormat = NumberFormat.getInstance(Locale.getDefault()) // support number with comma decimal separation
-            val number: Number? = format.parse(tempStr)
-            if (number == null || number.toDouble() == 0.0) return false
-            val quant: Double = number.toDouble()
-
-            var unit = edtxUnit.text.toString().trim(' ').toLowerCase(Locale.ROOT)
+            var unit = edtxUnit.text.toString().trim(' ')
             if (unit.toIntOrNull() != null) return false // numbers are not expected in the unit of measure
             if (unit == "" || unit == " " || unit.isEmpty()) unit = "-"
 
@@ -146,16 +137,8 @@ class CreateShoppingList : Activity(), View.OnClickListener, AdapterView.OnItemS
             println("$i: $artName, $quant, $unit")
         }
         val observations: String = edtx_observations.text.toString().trim(' ')
-        val shoppingList = ShoppingList(getUserID(), null, shoppingElements, observations, reasonPos.toLong(), bonusSum)
-        shoppingList.publishList() // !! TEMPORARILY
-        return true
-    }
-
-    private fun noLetter(str: String): Boolean {
-        for (c in str) {
-            if (c !in '0'..'9' && c != '.' && c != ',')
-                return false
-        }
+        shoppingListKeeper = ShoppingList(getUserID(), null, shoppingElements, observations, reasonPos.toLong(), bonusSum)
+        //shoppingList.publishList() // !! TEMPORARILY
         return true
     }
 

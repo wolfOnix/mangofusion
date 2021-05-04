@@ -49,7 +49,7 @@
     <string name="country">Country</string>
     <string name="next_step">Next step</string>
     <string name="new_shopping_request">New shopping request</string>
-    <string name="PHRASE_new_shopping_request">Would you want to send a shopping request, you need to fill in the shopping list with all the articles you require. The request will be visible for all the available users living nearby</string>
+    <string name="PHRASE_new_shopping_request">"In order to send a shopping request, you need to fill in the shopping list with all the required articles. Then select a bonus at choice and the reason of the shopping request. "</string>
     <string name="shopping_list">Shopping list</string>
     <string name="add_article">Add article</string>
     <string name="article">Article</string>
@@ -58,7 +58,7 @@
     <string name="new_shopping_list">New shopping list</string>
     <string name="PHRASE_no_requests_nearby">There are no shopping requests nearby at the moment. They will appear right here immediately they are requested</string>
     <string name="shopping_list_review">Shopping list review</string>
-    <string name="PHRASE_shopping_list_review">Review all the details in the shopping list to check if they are correct. Then select the reason of the shopping request and a bonus at choice</string>
+    <string name="PHRASE_shopping_list_review">Review all the details in the shopping list to check if they are correct. After sending the request, it will be visible for all the available users nearby, ready to be taken over</string>
     <string name="send_request">Send request</string>
     <string name="notes">Notes</string>
     <string name="delivery_bonus">Delivery bonus</string>

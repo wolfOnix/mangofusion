@@ -12,7 +12,7 @@ data class ShoppingList (
     var issuerID: String,
     var listID: String? = null, // shopping list unique ID
     var elementArray: List<ShoppingListElement>,
-    var observations: String?,
+    var observations: String,
     var reason: Long,
     var bonusSum: Long,
     var dateCreated: String = SimpleDateFormat("yyyy.MM.dd/HH:mm:ss").format(Date()),
