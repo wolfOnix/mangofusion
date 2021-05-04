@@ -9,35 +9,49 @@
     android:fitsSystemWindows="true" >
 
     <FrameLayout
-        android:id="@+id/fl_header_image"
+        android:id="@+id/fl_footer"
         android:layout_width="wrap_content"
-        android:layout_height="400dp"
+        android:layout_height="wrap_content"
         android:gravity="center"
+        android:layout_marginBottom="0dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:layout_width="600dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="-250dp"
+            android:layout_width="550dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="-350dp"
             android:layout_gravity="center"
             android:src="@drawable/decoration_login_screen"
             android:contentDescription="decoration"
             tools:ignore="HardcodedText" />
 
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_header_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/lnly"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
         <ImageView
-            android:layout_width="150dp"
+            android:layout_width="124dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="0dp"
             android:layout_gravity="center"
-            android:src="@drawable/full_logo"
+            android:layout_marginBottom="0dp"
             android:contentDescription="background"
+            android:src="@drawable/full_logo"
             tools:ignore="HardcodedText" />
 
     </FrameLayout>
 
     <LinearLayout
+        android:id="@+id/lnly"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -111,6 +125,7 @@
         <Button
             android:id="@+id/button_forgot_password"
             style="@style/button_gray"
+            android:textColor="@color/white"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight=".5"
@@ -123,6 +138,7 @@
         <Button
             android:id="@+id/button_sign_up"
             style="@style/button_gray"
+            android:textColor="@color/white"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight=".5"

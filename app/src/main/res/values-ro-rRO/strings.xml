@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <plurals name="number_of_articles">
+        <item quantity="one">%d articol</item>
+        <item quantity="other">%d articole</item>
+        <item quantity="few">%d articole</item>
+    </plurals>
     <string name="sign_up">Creare cont</string>
     <string name="first_name">Prenume</string>
     <string name="last_name">Nume de familie</string>
@@ -32,4 +37,38 @@
     <string name="about_shop_assist">Despre Shop Assist</string>
     <string name="update">Actualizare</string>
     <string name="verification_email_sent">Email-ul de confirmare a fost  trimis</string>
+    <string name="city">Oraș</string>
+    <string name="street_and_number">Numele străzii și numărul</string>
+    <string name="Romania">România</string>
+    <string name="Germany">Germania</string>
+    <string name="The_United_Kingdom">Marea Britanie</string>
+    <string name="PHRASE_create_account">Completați toate câmpurile de mai jos pentru a crea un cont. Datele de contact, precum numărul de telefon sau adresa, sunt necesare pentru a putea ține legătura cu ceilalți utilizatori</string>
+    <string name="field_should_not_be_empty">Acest câmp trebuie să fie completat</string>
+    <string name="password_is_too_weak">Parola este prea slabă</string>
+    <string name="passwords_do_not_match">Parolele nu se potrivesc</string>
+    <string name="this_field_does_not_respect_the_standard_format">Acest câmp nu respectă formatul standard</string>
+    <string name="country">Țară</string>
+    <string name="next_step">Pasul următor</string>
+    <string name="new_shopping_request">Solicitare cumpărături</string>
+    <string name="PHRASE_new_shopping_request">Pentru a trimite o cerere de cumpărături, completați lista cu articolele necesare dorite. Mai apoi selectați motivul solicitării și, opțional, alegeți o sumă bonus pentru livrator</string>
+    <string name="shopping_list">Lista de cumpărături</string>
+    <string name="article">Articol</string>
+    <string name="add_article">Adăugare articol</string>
+    <string name="quantity">Cantitate</string>
+    <string name="unit">Unitate</string>
+    <string name="new_shopping_list">Listă nouă</string>
+    <string name="PHRASE_no_requests_nearby">Momentan nu există nicio cerere de cumpărături în zonă. Acestea vor apărea aici de îndată ce vor fi solicitate</string>
+    <string name="shopping_list_review">Verificare listă de cumpărături</string>
+    <string name="PHRASE_shopping_list_review">Verificați ca toate detaliile din lista de cumpărături să fie corecte. Solicitarea va fi vizibilă pentru utilizatorii disponibili care locuiesc în apropierea dvs., pregătită pentru a fi preluată</string>
+    <string name="send_request">Trimitere solicitare</string>
+    <string name="notes">Observații</string>
+    <string name="delivery_bonus">Sumă bonus pentru livrare</string>
+    <string name="PHRASE_err_invalid_shopping_list">Se pare că unele articole din lista de cumpărături nu au un format valid. Verificați ca toate elementele să aibă un nume și o cantitate exprimată numeric</string>
+    <string name="PHRASE_add_here_notes">Scrieți aici observațiile existente referitoare la articolele din listă sau alte mențiuni legate de cumpărături</string>
+    <string name="reason">Motivul solicitării</string>
+    <string name="time_shortage">Lipsă de timp</string>
+    <string name="home_isolation">Izolare la domiciliu</string>
+    <string name="elderly_person">Persoană vârstnică</string>
+    <string name="locomotive_deficiency">Deficiență locomotorie</string>
+    <string name="unspecified">Nespecificat</string>
 </resources>

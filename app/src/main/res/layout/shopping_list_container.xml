@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="2.5dp"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <EditText
+        style="@style/input_field_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="0dp"
+        android:autofillHints=""
+        android:background="@drawable/input_text_background"
+        android:ems="10"
+        android:hint="@string/article"
+        android:inputType="text" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:gravity="start"
+        android:orientation="horizontal"
+        android:weightSum="1.0">
+
+        <EditText
+            style="@style/input_field_card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="0dp"
+            android:autofillHints=""
+            android:background="@drawable/input_text_background"
+            android:ems="10"
+            android:hint="@string/quantity"
+            android:inputType="numberDecimal" />
+
+        <EditText
+            style="@style/input_field_card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".25"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="0dp"
+            android:autofillHints=""
+            android:background="@drawable/input_text_background"
+            android:ems="10"
+            android:hint="-"
+            android:inputType="text"
+            tools:ignore="HardcodedText" />
+
+        <ImageButton
+            android:background="@color/transparent"
+            android:tint="@color/magenta"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".25"
+            android:layout_marginEnd="0dp"
+            android:src="@drawable/ic_baseline_close_24"
+            android:layout_gravity="end"
+            tools:ignore="ContentDescription" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <plurals name="number_of_articles">
+        <item quantity="one">%d article</item>
+        <item quantity="other">%d articles</item>
+    </plurals>
     <string name="sign_up">Sign Up</string>
     <string name="first_name">Firstname</string>
     <string name="last_name">Lastname</string>
@@ -32,4 +36,38 @@
     <string name="about_shop_assist">About Shop Assist</string>
     <string name="update">Update</string>
     <string name="verification_email_sent">Verification email sent</string>
+    <string name="city">City</string>
+    <string name="street_and_number">Street name and number</string>
+    <string name="Romania">Romania</string>
+    <string name="Germany">Germany</string>
+    <string name="The_United_Kingdom">The United Kingdom</string>
+    <string name="PHRASE_create_account">Fill in bellow all the fields in order to create an account. Contact data, like telephone number and address, are necessary in order to keep you connected to the other users</string>
+    <string name="field_should_not_be_empty">This field should not be empty</string>
+    <string name="password_is_too_weak">Password is too weak</string>
+    <string name="passwords_do_not_match">Passwords do not match</string>
+    <string name="this_field_does_not_respect_the_standard_format">This field does not respect the standard format</string>
+    <string name="country">Country</string>
+    <string name="next_step">Next step</string>
+    <string name="new_shopping_request">New shopping request</string>
+    <string name="PHRASE_new_shopping_request">"In order to send a shopping request, you need to fill in the shopping list with all the required articles. Then select a bonus at choice and the reason of the shopping request. "</string>
+    <string name="shopping_list">Shopping list</string>
+    <string name="add_article">Add article</string>
+    <string name="article">Article</string>
+    <string name="quantity">Quantity</string>
+    <string name="unit">Unit</string>
+    <string name="new_shopping_list">New shopping list</string>
+    <string name="PHRASE_no_requests_nearby">There are no shopping requests nearby at the moment. They will appear right here immediately they are requested</string>
+    <string name="shopping_list_review">Shopping list review</string>
+    <string name="PHRASE_shopping_list_review">Review all the details in the shopping list to check if they are correct. After sending the request, it will be visible for all the available users nearby, ready to be taken over</string>
+    <string name="send_request">Send request</string>
+    <string name="notes">Notes</string>
+    <string name="delivery_bonus">Delivery bonus</string>
+    <string name="PHRASE_err_invalid_shopping_list">Some articles in the shopping list seem to have an invalid input. Check all the articles to have the name, and the quantity written as a number</string>
+    <string name="PHRASE_add_here_notes">Write in here any existing observations regarding the articles in the list or other shopping mentions</string>
+    <string name="reason">Request reason</string>
+    <string name="home_isolation">Home isolation</string>
+    <string name="elderly_person">Elderly person</string>
+    <string name="time_shortage">Time shortage</string>
+    <string name="locomotive_deficiency">Locomotive disability</string>
+    <string name="unspecified">Unspecified</string>
 </resources>

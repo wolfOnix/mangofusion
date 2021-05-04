@@ -7,10 +7,11 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import java.security.MessageDigest
 
-class MainActivity : Activity(), View.OnClickListener {
+class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private var button_sign_up: Button? = null
     private var button_forgot_password: Button? = null
@@ -21,7 +22,7 @@ class MainActivity : Activity(), View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         mAuth = FirebaseAuth.getInstance()
-        if (mAuth!!.getCurrentUser() != null) { // if user is already logged in, jump to HomeActivity
+        if (mAuth!!.currentUser != null) { // if user is already logged in, jump to HomeActivity
             startActivity(Intent(this, HomeActivity::class.java))
         }
 
@@ -46,6 +47,18 @@ class MainActivity : Activity(), View.OnClickListener {
                 R.id.button_forgot_password -> startActivity(Intent(this, ForgotPasswordActivity::class.java))
             }
         }
+    }
+
+    override fun onResume() { // when coming back to the activity from another one
+        super.onResume()
+        if (mAuth!!.currentUser != null) { // if user is already logged in, finish app
+            finishAffinity()
+        }
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finishAffinity()
     }
 
     private fun userLogin() {

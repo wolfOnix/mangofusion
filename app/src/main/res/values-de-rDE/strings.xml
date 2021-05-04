@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <plurals name="number_of_articles">
+        <item quantity="one">%d Artikel</item>
+        <item quantity="other">%d Artikel</item>
+    </plurals>
     <string name="sign_up">Konto erstellen</string>
     <string name="first_name">Vorname</string>
     <string name="last_name">Nachname</string>
@@ -7,7 +11,7 @@
     <string name="confirm_password">Passwort bestätigen</string>
     <string name="address">Adresse</string>
     <string name="telephone_number">Telefonnummer</string>
-    <string name="email">Email</string>
+    <string name="email">E-Mail</string>
     <string name="title">Titel</string>
     <string name="password_recovery">Passwort wiederherstellen</string>
     <string name="birthday_date">Geburtsdatum</string>
@@ -19,7 +23,7 @@
     <string name="log_out">Abmelden</string>
     <string name="login_not_successful">Anmeldung nicht möglich</string>
     <string name="required_field">Pflichtfeld</string>
-    <string name="email_not_valid">Das Email ist nicht gültig</string>
+    <string name="email_not_valid">Das E-Mail ist nicht gültig</string>
     <string name="confirm">Bestätigen</string>
     <string name="PHRASE_password_recovery">Um das Passwort des Kontos wiederherzustellen, müssen Sie die E-Mail-Adresse unten einfügen</string>
     <string name="back">Zurück</string>
@@ -32,4 +36,38 @@
     <string name="about_shop_assist">Über Shop Assist</string>
     <string name="update">Aktualisieren</string>
     <string name="verification_email_sent">Bestätigung E-Mail gesendet</string>
+    <string name="city">Stadt</string>
+    <string name="street_and_number">Straßenname und Nummer</string>
+    <string name="Romania">Rumänien</string>
+    <string name="Germany">Deutschland</string>
+    <string name="The_United_Kingdom">Großbritannien</string>
+    <string name="PHRASE_create_account">Fügen Sie unten alle Felder ein, um ein Konto zu erstellen. Die Kontaktdaten, bspw. die Telefonnummer oder die Adresse, sind erforderlich, damit Sie im Verbindung mit den anderen Benutzern stehen können</string>
+    <string name="field_should_not_be_empty">Dieses Feld soll nicht leer sein</string>
+    <string name="password_is_too_weak">Das Passwort ist zu schwach</string>
+    <string name="passwords_do_not_match">Die Passwörter stimmen nicht überein</string>
+    <string name="this_field_does_not_respect_the_standard_format">Dieses Feld hält nicht ans Standardformat</string>
+    <string name="country">Land</string>
+    <string name="next_step">Nächster Schritt</string>
+    <string name="new_shopping_request">Neue Einkaufsanforderung</string>
+    <string name="PHRASE_new_shopping_request">Wenn Sie eine Einkaufsanforderung senden möchten, sollten Sie die Einkaufsliste mit allen notwendigen Artikeln einfüllen. Danach, wählen Sie eine Zugabesumme und den Grund für die Einkaufsanforderung aus</string>
+    <string name="shopping_list">Einkaufsliste</string>
+    <string name="article">Artikel</string>
+    <string name="add_article">Artikel hinzufügen</string>
+    <string name="quantity">Menge</string>
+    <string name="unit">Einheit</string>
+    <string name="new_shopping_list">Neue Einkaufsliste</string>
+    <string name="PHRASE_no_requests_nearby">Es gibt keine Einkaufsanforderung in der Nähe im Moment. Sie werden hier erscheinen, sobald die beantragt geworden werden</string>
+    <string name="shopping_list_review">Einkaufsliste überprüfen</string>
+    <string name="PHRASE_shopping_list_review">Überprüfen Sie alle Details in der Einkaufsliste, um zu sehen, dass sie korrektgeschrieben sind.  Die Anforderung wird für alle Benutzer in der Nähe sichtbar sein, bereit, übernommen zu werden</string>
+    <string name="send_request">Anforderung versenden</string>
+    <string name="notes">Vermerke</string>
+    <string name="delivery_bonus">Lieferung-Zugabesumme</string>
+    <string name="PHRASE_err_invalid_shopping_list">Es scheint, dass einige Artikel in der Einkaufsliste kein gültiges Format haben. Prüfen Sie über, dass jeder Artikel einen Name und eine numerische Menge hat</string>
+    <string name="PHRASE_add_here_notes">Schreiben Sie hier jeder Vermerk bezgülich der Artikel in der Liste oder andere Einkaufserwähnungen</string>
+    <string name="reason">Grund der Anforderung</string>
+    <string name="home_isolation">Hausisolation</string>
+    <string name="elderly_person">Ältere Person</string>
+    <string name="time_shortage">Zeitmangel</string>
+    <string name="locomotive_deficiency">Lokomotorische Behinderung</string>
+    <string name="unspecified">Nicht angegeben</string>
 </resources>

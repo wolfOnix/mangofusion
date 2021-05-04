@@ -6,11 +6,15 @@
 
     <application
         android:allowBackup="true"
+        android:fullBackupContent="@xml/backup_descriptor"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="@string/shop_assist"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.ShopAssist" >
+        android:theme="@style/Theme.ShopAssist"
+        android:windowSoftInputMode="adjustResize">
+        <activity android:name=".PublishShoppingList" />
+        <activity android:name=".CreateShoppingList" />
         <activity android:name=".MyAccountUpdateDataActivity" />
         <activity android:name=".ForgotPasswordActivity" />
         <activity android:name=".MyAccountActivity" />
