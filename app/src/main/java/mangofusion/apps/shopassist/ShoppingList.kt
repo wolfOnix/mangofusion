@@ -1,6 +1,7 @@
 package mangofusion.apps.shopassist
 
 import com.google.firebase.database.FirebaseDatabase
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.IgnoreExtraProperties
 import java.text.SimpleDateFormat
 import java.util.*
@@ -12,7 +13,7 @@ data class ShoppingList (
     var listID: String? = null, // shopping list unique ID
     var elementArray: List<ShoppingListElement>,
     var observations: String?,
-    var reason: String,
+    var reason: Long,
     var bonusSum: Long,
     var dateCreated: String = SimpleDateFormat("yyyy.MM.dd/HH:mm:ss").format(Date()),
     var invoices: List<Invoice> = listOf(),
@@ -22,6 +23,14 @@ data class ShoppingList (
     var fulfilled: Boolean = false,
     var delivered: Boolean = false
 ): Serializable {
+
+    companion object {
+        private val reasonsArr = arrayOf<Int>(R.string.home_isolation, R.string.elderly_person, R.string.time_shortage, R.string.locomotive_deficiency, R.string.unspecified)
+
+        fun getReasonPos(pos: Int): Int {
+            return reasonsArr[pos]
+        }
+    }
 
     private fun calculateTotalSum() {
         if (invoices.isNotEmpty()) {
@@ -43,7 +52,7 @@ data class ShoppingList (
                 .child(issuerID)
                 .child(globalCounter.toString())
                 .setValue(this)
-        }.addOnFailureListener { // listIndex is not set
+        }/*.addOnFailureListener { // listIndex is not set
             val globalCounter: Long = 0
             FirebaseDatabase.getInstance().reference.child("listIndex").setValue(globalCounter + 1)
             listID = issuerID + "_" + globalCounter.toString()
@@ -52,7 +61,7 @@ data class ShoppingList (
                 .child(issuerID)
                 .child(globalCounter.toString())
                 .setValue(this)
-        }
+        }*/
         // to update a list, overwrite the new shoppinglist on that ID
         println("Sent")
     }

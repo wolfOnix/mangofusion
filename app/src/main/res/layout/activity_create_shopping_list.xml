@@ -227,27 +227,29 @@
                         tools:ignore="RtlSymmetry">
 
                         <Button
+                            android:id="@+id/btn_bonus_0"
                             style="@style/button_bordered"
+                            android:backgroundTint="@color/purple"
+                            android:textColor="@color/white"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="10dp"
                             android:layout_marginBottom="0dp"
-                            android:background="@drawable/button_bordered_carbon"
+                            android:gravity="center"
                             android:checked="false"
                             android:text="0"
-                            app:iconTint="#00FFFFFF"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             tools:ignore="HardcodedText" />
 
                         <Button
+                            android:id="@+id/btn_bonus_5"
                             style="@style/button_bordered"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="10dp"
                             android:layout_marginBottom="0dp"
-                            android:background="@drawable/button_bordered_carbon"
                             android:checked="false"
                             android:text="5"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -256,12 +258,26 @@
                             tools:ignore="HardcodedText" />
 
                         <Button
+                            android:id="@+id/btn_bonus_10"
                             style="@style/button_bordered"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="10dp"
                             android:layout_marginBottom="0dp"
-                            android:background="@drawable/button_bordered_carbon"
+                            android:checked="false"
+                            android:text="10"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            tools:ignore="HardcodedText" />
+
+                        <Button
+                            android:id="@+id/btn_bonus_15"
+                            style="@style/button_bordered"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="0dp"
                             android:checked="false"
                             android:text="15"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -270,28 +286,14 @@
                             tools:ignore="HardcodedText" />
 
                         <Button
+                            android:id="@+id/btn_bonus_20"
                             style="@style/button_bordered"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="10dp"
                             android:layout_marginBottom="0dp"
-                            android:background="@drawable/button_bordered_carbon"
                             android:checked="false"
                             android:text="20"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            tools:ignore="HardcodedText" />
-
-                        <Button
-                            style="@style/button_bordered"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginEnd="10dp"
-                            android:layout_marginBottom="0dp"
-                            android:background="@drawable/button_bordered_carbon"
-                            android:checked="false"
-                            android:text="30"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -320,6 +322,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/lnly_adapter"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"

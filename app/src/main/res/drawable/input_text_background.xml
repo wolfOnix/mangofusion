@@ -4,7 +4,7 @@
 
     <item android:state_enabled="true" android:state_focused="false">
         <shape android:shape="rectangle">
-            <solid android:color="#ECECECEC"/> <!-- The colour will be anyway changed in the @style -->
+            <solid android:color="@color/carbon10P"/> <!-- The colour will be anyway changed in the @style -->
             <corners android:radius="25dp"/>
             <stroke android:color="@color/transparent" android:width="3dp"/>
         </shape>
@@ -14,7 +14,7 @@
         <shape android:shape="rectangle">
             <solid android:color="@color/transparent"/> <!-- The colour will be anyway changed in the @style -->
             <corners android:radius="25dp"/>
-            <stroke android:color="#ECECECEC" android:width="2dp"/>
+            <stroke android:color="@color/carbon10P" android:width="2dp"/>
         </shape>
     </item>
 

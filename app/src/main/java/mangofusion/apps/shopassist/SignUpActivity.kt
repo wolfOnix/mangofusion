@@ -57,9 +57,7 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener, AdapterView.On
         println("Hey")
     }
 
-    override fun onNothingSelected(parent: AdapterView<*>) {
-        // Another interface callback
-    }
+    override fun onNothingSelected(parent: AdapterView<*>) { }
 
     private fun registerUser() {
 
