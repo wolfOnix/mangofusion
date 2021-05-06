@@ -8,7 +8,7 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
-open class Activity : AppCompatActivity() {
+open class Activity: AppCompatActivity() {
 
     private var mAuth: FirebaseAuth? = null
     var mDatabase: DatabaseReference = FirebaseDatabase.getInstance().reference

@@ -137,7 +137,7 @@ class CreateShoppingList : Activity(), View.OnClickListener, AdapterView.OnItemS
             println("$i: $artName, $quant, $unit")
         }
         val observations: String = edtx_observations.text.toString().trim(' ')
-        shoppingListKeeper = ShoppingList(getUserID(), null, shoppingElements, observations, reasonPos.toLong(), bonusSum)
+        shoppingListKeeper = ShoppingList(getUserID(), "", shoppingElements, observations, reasonPos.toLong(), bonusSum)
         //shoppingList.publishList() // !! TEMPORARILY
         return true
     }

@@ -1,20 +1,20 @@
 package mangofusion.apps.shopassist
 
+import com.google.firebase.database.Exclude
 import com.google.firebase.database.FirebaseDatabase
-import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.IgnoreExtraProperties
+import java.io.Serializable
 import java.text.SimpleDateFormat
 import java.util.*
-import java.io.Serializable
 
 @IgnoreExtraProperties
-data class ShoppingList (
-    var issuerID: String,
-    var listID: String? = null, // shopping list unique ID
-    var elementArray: List<ShoppingListElement>,
-    var observations: String,
-    var reason: Long,
-    var bonusSum: Long,
+data class ShoppingList(
+    var issuerID: String = "",
+    var listID: String = "", // shopping list unique ID
+    var elementArray: List<ShoppingListElement> = listOf(),
+    var observations: String = "",
+    var reason: Long = 0,
+    var bonusSum: Long = 0,
     var dateCreated: String = SimpleDateFormat("yyyy.MM.dd/HH:mm:ss").format(Date()),
     var invoices: List<Invoice> = listOf(),
     var totalSum: Double = 0.0,
@@ -25,11 +25,25 @@ data class ShoppingList (
 ): Serializable {
 
     companion object {
-        private val reasonsArr = arrayOf<Int>(R.string.home_isolation, R.string.elderly_person, R.string.time_shortage, R.string.locomotive_deficiency, R.string.unspecified)
+        private val reasonsArr = arrayOf<Int>(
+            R.string.home_isolation,
+            R.string.elderly_person,
+            R.string.time_shortage,
+            R.string.locomotive_deficiency,
+            R.string.unspecified
+        )
 
         fun getReasonPos(pos: Int): Int {
             return reasonsArr[pos]
         }
+    }
+
+    @Exclude
+    fun toMap(): Map<String, Any?> {
+        return mapOf(
+            "listID" to listID,
+            "issuerID" to issuerID
+        )
     }
 
     private fun calculateTotalSum() {
@@ -53,8 +67,7 @@ data class ShoppingList (
             listID = issuerID + "_" + globalCounter.toString()
             FirebaseDatabase.getInstance().reference
                 .child("lists")
-                .child(issuerID)
-                .child(globalCounter.toString())
+                .child(listID)
                 .setValue(this)
         }/*.addOnFailureListener { // listIndex is not set // VERY SUSPICIOUS UNDETECTION OF MISSING listIndex :.(
             val globalCounter: Long = 0
