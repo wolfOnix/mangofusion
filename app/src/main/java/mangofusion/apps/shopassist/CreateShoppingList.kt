@@ -106,7 +106,7 @@ class CreateShoppingList : Activity(), View.OnClickListener, AdapterView.OnItemS
 
     fun addShoppingListElementField(v: View?) {
         val inflater: LayoutInflater = LayoutInflater.from(applicationContext)
-        val v: View = layoutInflater.inflate(R.layout.shopping_list_container, elementContainer, false)
+        val v: View = layoutInflater.inflate(R.layout.shopping_list_input_fields, elementContainer, false)
         elementContainer?.addView(v, art_nr)
         art_nr++
         println(elementContainer!!.childCount)
