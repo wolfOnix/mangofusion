@@ -199,13 +199,13 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <Button
+        <android.widget.Button
             android:id="@+id/btn_publish_list"
-            style="@style/button_main"
+            style="@style/button_main_gradient"
+            android:background="@drawable/button_gradient"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/send_request"
-            app:iconTint="@null"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
