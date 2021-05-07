@@ -184,8 +184,7 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener, AdapterView.On
         mAuth!!.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    val user =
-                        User(firstName, lastName, email, birthdayDate, telephoneNumber, city, streetAndNumber, countryPos.toString()) // TODO RO
+                    val user = User(firstName, lastName, email, birthdayDate, telephoneNumber, city, streetAndNumber, countryPos.toString())
                     FirebaseDatabase.getInstance().getReference("users")
                         .child(FirebaseAuth.getInstance().currentUser.uid)
                         .setValue(user).addOnCompleteListener { task ->

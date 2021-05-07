@@ -30,12 +30,23 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
                 android:gravity="center"
-                android:text="@string/update_contact_info"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:text="@string/update_contact_info"/>
+
+            <TextView
+                android:id="@+id/txvw_error"
+                style="@style/description_error"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:gravity="center"
+                android:text="@string/no_field_should_be_empty"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                android:visibility="gone" />
 
             <EditText
                 android:id="@+id/edtxt_firstname"
@@ -49,9 +60,7 @@
                 android:autofillHints=""
                 android:ems="10"
                 android:hint="@string/first_name"
-                android:inputType="textPersonName"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                android:inputType="textPersonName"/>
 
             <EditText
                 android:id="@+id/edtxt_lastname"
@@ -65,9 +74,7 @@
                 android:autofillHints=""
                 android:ems="10"
                 android:hint="@string/last_name"
-                android:inputType="textPersonName"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                android:inputType="textPersonName" />
 
             <EditText
                 android:id="@+id/edtxt_telephonenumber"
@@ -81,10 +88,21 @@
                 android:autofillHints=""
                 android:ems="10"
                 android:hint="@string/telephone_number"
-                android:inputType="phone"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.497"
-                app:layout_constraintStart_toStartOf="parent" />
+                android:inputType="phone" />
+
+            <EditText
+                android:id="@+id/edtxt_city"
+                style="@style/input_field"
+                android:background="@drawable/input_text_background"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="32dp"
+                android:autofillHints=""
+                android:ems="10"
+                android:hint="@string/city"
+                android:inputType="text" />
 
             <EditText
                 android:id="@+id/edtxt_address"
@@ -97,11 +115,8 @@
                 android:layout_marginTop="32dp"
                 android:autofillHints=""
                 android:ems="10"
-                android:hint="@string/address"
-                android:inputType="phone"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.497"
-                app:layout_constraintStart_toStartOf="parent" />
+                android:hint="@string/street_and_number"
+                android:inputType="text" />
 
         </LinearLayout>
 
@@ -145,10 +160,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:text="@string/update"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            android:text="@string/update" />
 
     </LinearLayout>
 

@@ -87,4 +87,7 @@
     <string name="hello_">Hello,</string>
     <string name="address_of_delivery">Address of delivery</string>
     <string name="open">Open</string>
+    <string name="account_updated">Account details successfully updated</string>
+    <string name="there_was_nothing_to_update">There was nothing to update</string>
+    <string name="no_field_should_be_empty">No field should be empty</string>
 </resources>
