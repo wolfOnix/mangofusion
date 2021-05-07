@@ -39,4 +39,16 @@ class User {
         this.dateStampOnCreate = dateFormat.format(date) // TODO to GMT0
     }
 
+    companion object {
+        private val countriesArr = arrayOf<Int>(
+            R.string.Romania,
+            R.string.Germany,
+            R.string.The_United_Kingdom
+        )
+
+        fun getCountryPos(pos: Int): Int {
+            return countriesArr[pos]
+        }
+    }
+
 }

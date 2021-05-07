@@ -51,7 +51,7 @@
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
                     android:gravity="center"
-                    android:text="Casius"
+                    android:text=". . ."
                     tools:ignore="HardcodedText" />
 
             </LinearLayout>

@@ -13,10 +13,9 @@ import java.util.*
 class SignUpActivity : AppCompatActivity(), View.OnClickListener, AdapterView.OnItemSelectedListener {
 
     private var mAuth: FirebaseAuth? = null
-
     private var signUp: Button? = null
     private var btn_sys_back: Button? = null
-    private var country: String = ""
+    private var countryPos: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,6 +37,13 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener, AdapterView.On
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item) // Specify the layout to use when the list of choices appears
             spinner.adapter = adapter // Apply the adapter to the spinner
         }
+
+        with(spinner)
+        {
+            adapter = adapter
+            setSelection(0, false)
+            onItemSelectedListener = this@SignUpActivity
+        }
     }
 
     override fun onClick(v: View) {
@@ -47,14 +53,8 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener, AdapterView.On
         }
     }
 
-    override fun onItemSelected(parent: AdapterView<*>, view: View?, pos: Int, id: Long) {
-        country = parent.getItemAtPosition(pos).toString()
-        when (country) {
-            R.string.Romania.toString() -> country = "RO"
-            R.string.Germany.toString() -> country = "DE"
-            R.string.The_United_Kingdom.toString() -> country = "UK"
-        }
-        println("Hey")
+    override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
+        countryPos = position
     }
 
     override fun onNothingSelected(parent: AdapterView<*>) { }
@@ -175,14 +175,6 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener, AdapterView.On
             err_edtxt_street_and_number.visibility = View.GONE
         }
 
-        /*if (country == "") { // TODO
-            err_edtxt_country.text = getString(R.string.field_should_not_be_empty)
-            err_edtxt_country.visibility = View.VISIBLE
-            noError = false
-        } else {
-            err_edtxt_country.visibility = View.GONE
-        }*/
-
         if (!noError) { // At least one error appeared
             edtxt_password.setText("")
             edtxt_confirmpassword.setText("")
@@ -193,7 +185,7 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener, AdapterView.On
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     val user =
-                        User(firstName, lastName, email, birthdayDate, telephoneNumber, city, streetAndNumber, "RO") // TODO RO
+                        User(firstName, lastName, email, birthdayDate, telephoneNumber, city, streetAndNumber, countryPos.toString()) // TODO RO
                     FirebaseDatabase.getInstance().getReference("users")
                         .child(FirebaseAuth.getInstance().currentUser.uid)
                         .setValue(user).addOnCompleteListener { task ->
