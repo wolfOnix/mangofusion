@@ -70,4 +70,8 @@
     <string name="time_shortage">Zeitmangel</string>
     <string name="locomotive_deficiency">Lokomotorische Behinderung</string>
     <string name="unspecified">Nicht angegeben</string>
+    <string name="PHRASE_available_requests_nearby">Es gibt vorhandene Einkaufsanforderungen, woraus Sie irgendwelche Anforderung in der Nähe auswählen können. Soblad Sie eine Einkaufsanforderung übernehmen, Sie werden vom Markt zur Tür geleitet</string>
+    <string name="hello_">Guten Tag,</string>
+    <string name="address_of_delivery">Lieferadresse</string>
+    <string name="open">Öffnen</string>
 </resources>

@@ -71,4 +71,8 @@
     <string name="elderly_person">Persoană vârstnică</string>
     <string name="locomotive_deficiency">Deficiență locomotorie</string>
     <string name="unspecified">Nespecificat</string>
+    <string name="PHRASE_available_requests_nearby">Sunt disponibile cereri de cumpărături, dintre care puteți alege una care se află în vecintătatea dvs. După ce o selectați, veți fi ghidat la fiecare pas, din magazin până la ușa solicitantului</string>
+    <string name="hello_">Bună ziua,</string>
+    <string name="address_of_delivery">Adresa de livrare</string>
+    <string name="open">Deschidere</string>
 </resources>

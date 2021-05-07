@@ -11,7 +11,9 @@ import com.google.firebase.database.FirebaseDatabase
 open class Activity: AppCompatActivity() {
 
     private var mAuth: FirebaseAuth? = null
-    var mDatabase: DatabaseReference = FirebaseDatabase.getInstance().reference
+    protected var mDatabase: DatabaseReference = FirebaseDatabase.getInstance().reference
+    protected var USER_AS_ISSUER: Boolean = false
+    protected var USER_AS_PROVIDER: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

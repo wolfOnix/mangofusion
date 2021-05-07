@@ -83,4 +83,8 @@
     <string name="time_shortage">Time shortage</string>
     <string name="locomotive_deficiency">Locomotive disability</string>
     <string name="unspecified">Unspecified</string>
+    <string name="PHRASE_available_requests_nearby">There are shopping requests available. You can choose any shopping request nearby you. Once you select it and take it over, you will be guided from the market to the door</string>
+    <string name="hello_">Hello,</string>
+    <string name="address_of_delivery">Address of delivery</string>
+    <string name="open">Open</string>
 </resources>
