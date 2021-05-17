@@ -1,6 +1,5 @@
 package mangofusion.apps.shopassist
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,13 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.core.content.ContextCompat
-import java.text.NumberFormat
 import java.util.*
 import mangofusion.apps.shopassist.ShoppingList.Companion.getReasonPos
-import java.io.Serializable
 
 
-class CreateShoppingList : Activity(), View.OnClickListener, AdapterView.OnItemSelectedListener {
+class CreateShoppingListActivity : Activity(), View.OnClickListener, AdapterView.OnItemSelectedListener {
 
     private var btn_create_list_next: Button? = null
     private var btns_bonus = mutableListOf<Button>()
@@ -60,7 +57,7 @@ class CreateShoppingList : Activity(), View.OnClickListener, AdapterView.OnItemS
         {
             adapter = adapter
             setSelection(0, false)
-            onItemSelectedListener = this@CreateShoppingList
+            onItemSelectedListener = this@CreateShoppingListActivity
         }
     }
 

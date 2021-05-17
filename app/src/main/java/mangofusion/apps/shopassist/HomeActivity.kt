@@ -3,10 +3,8 @@ package mangofusion.apps.shopassist
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.ViewStub
 import android.widget.ImageButton
 import android.widget.TextView
 import com.google.firebase.database.DataSnapshot
@@ -174,7 +172,7 @@ class HomeActivity: Activity(), View.OnClickListener {
         if (v != null) {
             when (v.id) {
                 R.id.btn_home -> startActivity(Intent(this, HomeActivity::class.java))
-                R.id.btn_new_request -> startActivity(Intent(this, CreateShoppingList::class.java))
+                R.id.btn_new_request -> startActivity(Intent(this, CreateShoppingListActivity::class.java))
                 R.id.btn_my_account -> startActivity(Intent(this, MyAccountActivity::class.java))
             }
         }
