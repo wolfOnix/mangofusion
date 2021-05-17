@@ -83,15 +83,17 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     val user = FirebaseAuth.getInstance().currentUser
-                    if (user.isEmailVerified) {
-                        // redirect to user profile
-                        startActivity(Intent(this@MainActivity, HomeActivity::class.java))
-                    } else {
-                        Toast.makeText(
-                            this@MainActivity,
-                            "Check your email to verify your account!",
-                            Toast.LENGTH_LONG
-                        ).show()
+                    if (user != null) {
+                        if (user.isEmailVerified) {
+                            // redirect to user profile
+                            startActivity(Intent(this@MainActivity, HomeActivity::class.java))
+                        } else {
+                            Toast.makeText(
+                                this@MainActivity,
+                                "Check your email to verify your account!",
+                                Toast.LENGTH_LONG
+                            ).show()
+                        }
                     }
                 } else {
                     Toast.makeText(

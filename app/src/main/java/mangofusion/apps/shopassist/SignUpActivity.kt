@@ -185,26 +185,28 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener, AdapterView.On
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     val user = User(firstName, lastName, email, birthdayDate, telephoneNumber, city, streetAndNumber, countryPos.toString())
-                    FirebaseDatabase.getInstance().getReference("users")
-                        .child(FirebaseAuth.getInstance().currentUser.uid)
-                        .setValue(user).addOnCompleteListener { task ->
-                            if (task.isSuccessful) {
-                                Toast.makeText(
-                                    this@SignUpActivity,
-                                    getString(R.string.verification_email_sent),
-                                    Toast.LENGTH_LONG
-                                ).show()
-                                FirebaseAuth.getInstance().currentUser?.sendEmailVerification()
-                                FirebaseAuth.getInstance().signOut()
-                                startActivity(Intent(this, MainActivity::class.java))
-                            } else {
-                                Toast.makeText(
-                                    this@SignUpActivity,
-                                    "Failed to register! Try again!",
-                                    Toast.LENGTH_LONG
-                                ).show()
+                    FirebaseAuth.getInstance().currentUser?.let {
+                        FirebaseDatabase.getInstance().getReference("users")
+                            .child(it.uid)
+                            .setValue(user).addOnCompleteListener { task ->
+                                if (task.isSuccessful) {
+                                    Toast.makeText(
+                                        this@SignUpActivity,
+                                        getString(R.string.verification_email_sent),
+                                        Toast.LENGTH_LONG
+                                    ).show()
+                                    FirebaseAuth.getInstance().currentUser?.sendEmailVerification()
+                                    FirebaseAuth.getInstance().signOut()
+                                    startActivity(Intent(this, MainActivity::class.java))
+                                } else {
+                                    Toast.makeText(
+                                        this@SignUpActivity,
+                                        "Failed to register! Try again!",
+                                        Toast.LENGTH_LONG
+                                    ).show()
+                                }
                             }
-                        }
+                    }
                 } else {
                     // Toast.makeText(this@SignUpActivity, "", Toast.LENGTH_SHORT).show()
                 }
