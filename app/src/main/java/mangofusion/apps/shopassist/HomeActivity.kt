@@ -5,9 +5,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.ImageButton
-import android.widget.TextView
+import android.widget.*
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -27,17 +26,27 @@ class HomeActivity: Activity(), View.OnClickListener {
     private var shoppingListsReadyContainer: ViewGroup? = null
     private val listOfShLists: MutableList<ShoppingList> = ArrayList()
     private val listOfIssuers: MutableList<User> = ArrayList()
+    private var takenShoppingList: ShoppingList? = null
+    private var takenIssuerUser: User? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        shoppingListsReadyContainer = findViewById(R.id.lnly_all_lists_container)
+        if (intent.hasExtra("listAndIssuerMAP")) {
+            val listAndIssuer: HashMap<String, Any> = intent.getSerializableExtra("listAndIssuerMAP") as HashMap<String, Any>
+            takenShoppingList = listAndIssuer["shoppingList"] as ShoppingList
+            takenIssuerUser = listAndIssuer["issuerUser"] as User
+        }
 
-        txvwFirstname = findViewById(R.id.txvw_firstname)
-        mDatabase.child("users").child(getUserID()).get().addOnSuccessListener {
-            txvwFirstname!!.text = "${it.child("firstName").value}"
-        }.addOnFailureListener { }
+        if (CURR_USER == null) { // if user is not saved
+            FirebaseDatabase.getInstance().reference.child("users").child(FirebaseAuth.getInstance().currentUser.uid).get().addOnSuccessListener {
+                CURR_USER = it.getValue(User::class.java)
+                greet()
+            }
+        } else greet()
+
+        shoppingListsReadyContainer = findViewById(R.id.lnly_all_lists_container)
 
         txvwRequestsNr = findViewById(R.id.txvw_requests_nr)
         txvwRequestsText = findViewById(R.id.txvw_requests_text)
@@ -50,7 +59,14 @@ class HomeActivity: Activity(), View.OnClickListener {
         btnMyAccount!!.setOnClickListener(this)
         btnNewRequest!!.setOnClickListener(this)
 
-        loadShoppingRequests()
+        if (takenIssuerUser == null || takenShoppingList == null)
+            loadShoppingRequests()
+        else
+            displayRequest(takenShoppingList!!, 3, 0)
+    }
+
+    private fun greet() {
+        findViewById<TextView>(R.id.txvw_firstname).text = CURR_USER!!.firstName
     }
 
     @SuppressLint("SetTextI18n")
@@ -125,7 +141,73 @@ class HomeActivity: Activity(), View.OnClickListener {
         1 - user - issuer, shList - not taken
         2 - user - issuer, shList - taken
         3 - user - provider */
+
+            // inflate with shoppingListContainer
+            val v: View = layoutInflater.inflate(R.layout.shopping_list_ready_container_home, shoppingListsReadyContainer, false)
+            shoppingListsReadyContainer?.addView(v, order)
+
+            val oneListReadyContainer: ViewGroup = v as ViewGroup // this is the view which was added
+
+            // fill the shoppingListContainer
+            val sz: Int = shList.elementArray.size
+
+            val txvwArtNr: TextView = oneListReadyContainer.getChildAt(1) as TextView
+            txvwArtNr.text = resources.getQuantityString(R.plurals.number_of_articles, sz, sz)
+
+            val elementsReadyContainer: ViewGroup = oneListReadyContainer.getChildAt(2) as ViewGroup
+            val txvwSubtitleNotes: TextView = oneListReadyContainer.getChildAt(3) as TextView
+            val txvwNotesContent: TextView = oneListReadyContainer.getChildAt(4) as TextView
+            val txvwAddress: TextView = oneListReadyContainer.getChildAt(6) as TextView
+
+            val btnOpenList: Button = oneListReadyContainer.getChildAt(7) as Button
+            btnOpenList.setOnClickListener { openList(order) }
+
+            if (mode == 3) // remove btnOpenList
+                oneListReadyContainer.removeViewAt(7)
+
+            if (shList.observations.isEmpty()) {
+                txvwSubtitleNotes.visibility = View.GONE
+                txvwNotesContent.visibility = View.GONE
+            } else {
+                txvwNotesContent.text = shList.observations
+            }
+
+            if (takenIssuerUser == null) { // if the issuer is not allocated -> the user is certainly not a provider
+                mDatabase.child("users").child(shList.issuerID).get().addOnSuccessListener {
+                    val issuerUser: User? = it.getValue(User::class.java)
+                    if (issuerUser != null) txvwAddress.text = "${issuerUser.city}, ${issuerUser.streetAndNumber}"
+                    if (issuerUser != null) {
+                        listOfIssuers.add(issuerUser)
+                    }
+                }.addOnFailureListener { }
+            } else if (mode == 3) {
+                txvwAddress.text = "${takenIssuerUser!!.city}, ${takenIssuerUser!!.streetAndNumber}"
+            }
+
+            for (i in 0 until sz) { // fill in all the elements in the list
+                val v: View = layoutInflater.inflate(R.layout.shopping_list_element, elementsReadyContainer, false)
+                elementsReadyContainer.addView(v, i)
+
+                if (mode == 3) { // make checkbox tickable
+                    ((elementsReadyContainer.getChildAt(i) as ViewGroup).getChildAt(0) as CheckBox).isClickable = true
+                }
+
+                val txvwArtName: TextView = (elementsReadyContainer.getChildAt(i) as ViewGroup).getChildAt(1) as TextView? ?: return false
+                val txvwQuantAndUnit: TextView = (elementsReadyContainer.getChildAt(i) as ViewGroup).getChildAt(2) as TextView? ?: return false
+
+                txvwArtName.text = shList.elementArray[i].elementName
+                txvwQuantAndUnit.text = "${shList.elementArray[i].quantity} ${shList.elementArray[i].unitOfMeasure}"
+            }
+
         when (mode) {
+            3 -> {
+                findViewById<LinearLayout>(R.id.lnly_requests_nr).visibility = View.GONE
+                findViewById<LinearLayout>(R.id.lnly_alternative_phrase).visibility = View.VISIBLE
+
+            }
+        }
+
+        /*when (mode) {
             0 -> {
                 // inflate with shoppingListContainer
                 val v: View = layoutInflater.inflate(R.layout.shopping_list_ready_container_home, shoppingListsReadyContainer, false)
@@ -172,7 +254,11 @@ class HomeActivity: Activity(), View.OnClickListener {
                     txvwQuantAndUnit.text = "${shList.elementArray[i].quantity} ${shList.elementArray[i].unitOfMeasure}"
                 }
             }
-        }
+            3 -> { // the user is the provider
+                findViewById<LinearLayout>(R.id.lnly_requests_nr).visibility = View.GONE
+                findViewById<LinearLayout>(R.id.lnly_alternative_phrase).visibility = View.VISIBLE
+            }
+        }*/
         return true
     }
 

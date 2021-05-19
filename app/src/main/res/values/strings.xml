@@ -94,4 +94,6 @@
     <string name="PHRASE_call_if">Call if you would like to take the request but have some questions about the shopping list</string>
     <string name="take_request">Take request</string>
     <string name="PHRASE_take_request">By taking the request you will provide the articles in the list and deliver them to the specified address. Would you encounter any problem, feel free to call the requester</string>
+    <string name="PHRASE_provider_info_home">As you find an article from the list, tick it on the list. When you will have found everything on the list, pay the articles and scan the receipts, typing in the total sum</string>
+    <string name="shopping">Shopping</string>
 </resources>

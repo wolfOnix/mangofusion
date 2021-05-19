@@ -15,6 +15,12 @@ open class Activity: AppCompatActivity() {
     protected var USER_AS_ISSUER: Boolean = false
     protected var USER_AS_PROVIDER: Boolean = false
 
+    companion object {
+
+        var CURR_USER: User? = null
+
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mAuth = FirebaseAuth.getInstance()
@@ -23,7 +29,7 @@ open class Activity: AppCompatActivity() {
         }
     }
 
-    fun getUserID(): String {
+    protected fun getUserID(): String {
         val currUser: FirebaseUser? = FirebaseAuth.getInstance().currentUser
         return currUser?.uid ?: ""
     }
