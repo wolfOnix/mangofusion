@@ -46,6 +46,8 @@ class CreateShoppingList : Activity(), View.OnClickListener, AdapterView.OnItemS
 
         addShoppingListElementField(null)
 
+        recolour(0) // 0 RON as implicit bonus
+
         val spinner: Spinner = findViewById(R.id.spn_reason)
         ArrayAdapter.createFromResource(
             this,

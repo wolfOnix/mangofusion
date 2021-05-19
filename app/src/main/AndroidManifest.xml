@@ -13,16 +13,34 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ShopAssist"
         android:windowSoftInputMode="adjustResize">
-        <activity android:name=".PublishShoppingList" android:screenOrientation="portrait" />
-        <activity android:name=".CreateShoppingList" android:screenOrientation="portrait" />
-        <activity android:name=".MyAccountUpdateDataActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".ForgotPasswordActivity" android:screenOrientation="portrait" />
-        <activity android:name=".MyAccountActivity" android:screenOrientation="portrait" />
-        <activity android:name=".HomeActivity" android:screenOrientation="portrait" />
-        <activity android:name=".SignUpActivity" android:screenOrientation="portrait" />
-        <activity android:name=".MainActivity" android:screenOrientation="portrait">
+        <activity android:name=".TakeListActivity"></activity>
+        <activity
+            android:name=".PublishShoppingList"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CreateShoppingList"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MyAccountUpdateDataActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ForgotPasswordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MyAccountActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".HomeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SignUpActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

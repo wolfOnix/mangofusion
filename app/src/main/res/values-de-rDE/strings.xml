@@ -77,4 +77,6 @@
     <string name="account_updated">Konto-Details erfolgreich aktualisiert</string>
     <string name="there_was_nothing_to_update">Es gab nichts zu aktualisieren</string>
     <string name="no_field_should_be_empty">Kein Feld soll leer sein</string>
+    <string name="call">Anrufen</string>
+    <string name="take_request">Anforderung übernehmen</string>
 </resources>

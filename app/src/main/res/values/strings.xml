@@ -85,9 +85,13 @@
     <string name="unspecified">Unspecified</string>
     <string name="PHRASE_available_requests_nearby">There are shopping requests available. You can choose any shopping request nearby you. Once you select it and take it over, you will be guided from the market to the door</string>
     <string name="hello_">Hello,</string>
-    <string name="address_of_delivery">Address of delivery</string>
+    <string name="address_of_delivery">Delivery address</string>
     <string name="open">Open</string>
     <string name="account_updated">Account details successfully updated</string>
     <string name="there_was_nothing_to_update">There was nothing to update</string>
     <string name="no_field_should_be_empty">No field should be empty</string>
+    <string name="call">Call</string>
+    <string name="PHRASE_call_if">Call if you would like to take the request but have some questions about the shopping list</string>
+    <string name="take_request">Take request</string>
+    <string name="PHRASE_take_request">By taking the request you will provide the articles in the list and deliver them to the specified address. Would you encounter any problem, feel free to call the requester</string>
 </resources>

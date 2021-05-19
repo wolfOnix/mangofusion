@@ -3,10 +3,9 @@ package mangofusion.apps.shopassist
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.ViewStub
+import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
 import com.google.firebase.database.DataSnapshot
@@ -17,15 +16,17 @@ import com.google.firebase.database.ValueEventListener
 
 class HomeActivity: Activity(), View.OnClickListener {
 
-    private var btn_home: ImageButton? = null
-    private var btn_my_account: ImageButton? = null
-    private var btn_new_request: ImageButton? = null
+    private var btnHome: ImageButton? = null
+    private var btnMyAccount: ImageButton? = null
+    private var btnNewRequest: ImageButton? = null
     private var txvwRequestsNr: TextView? = null
     private var txvwRequestsText: TextView? = null
     private var txvwFirstname: TextView? = null
     private var nrIssuerLists: Int = 0
     private var nrNoRoleLists: Int = 0
     private var shoppingListsReadyContainer: ViewGroup? = null
+    private val listOfShLists: MutableList<ShoppingList> = ArrayList()
+    private val listOfIssuers: MutableList<User> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,13 +42,13 @@ class HomeActivity: Activity(), View.OnClickListener {
         txvwRequestsNr = findViewById(R.id.txvw_requests_nr)
         txvwRequestsText = findViewById(R.id.txvw_requests_text)
 
-        btn_home = findViewById(R.id.btn_home)
-        btn_my_account = findViewById(R.id.btn_my_account)
-        btn_new_request = findViewById(R.id.btn_new_request)
+        btnHome = findViewById(R.id.btn_home)
+        btnMyAccount = findViewById(R.id.btn_my_account)
+        btnNewRequest = findViewById(R.id.btn_new_request)
 
-        btn_home!!.setOnClickListener(this)
-        btn_my_account!!.setOnClickListener(this)
-        btn_new_request!!.setOnClickListener(this)
+        btnHome!!.setOnClickListener(this)
+        btnMyAccount!!.setOnClickListener(this)
+        btnNewRequest!!.setOnClickListener(this)
 
         loadShoppingRequests()
     }
@@ -56,7 +57,6 @@ class HomeActivity: Activity(), View.OnClickListener {
     private fun loadShoppingRequests() {
 
         val ref = FirebaseDatabase.getInstance().getReference("lists")
-        val listOfShLists: MutableList<ShoppingList> = ArrayList()
 
         val valueEventListener: ValueEventListener = object : ValueEventListener {
 
@@ -80,10 +80,10 @@ class HomeActivity: Activity(), View.OnClickListener {
                 if (USER_AS_PROVIDER) {
                     println("CP0")
                     USER_AS_ISSUER = false // the provider role has a greater priority, in case of conflicts caused by eventual future app design
-                } else if(listOfShLists.size > 0) {
+                } else if(listOfShLists.size > 0) { // there are lists to display
                     println("CP1")
                     loopRequests(listOfShLists.toTypedArray())
-                } else if (listOfShLists.size == 0) {
+                } else if (listOfShLists.size == 0) { // there is no list to display
                     println("CP2")
                     txvwRequestsNr?.text = "0"
                 }
@@ -97,7 +97,7 @@ class HomeActivity: Activity(), View.OnClickListener {
     }
 
     private fun loopRequests(shListArr: Array<ShoppingList>) {
-        if (USER_AS_ISSUER) {
+        if (USER_AS_ISSUER) { // user issued at least one list
             println("CP3")
             for (i in shListArr.indices) {
                 if (shListArr[i].issuerID == getUserID()) {
@@ -107,7 +107,7 @@ class HomeActivity: Activity(), View.OnClickListener {
                         displayRequest(shListArr[i], 1, i)
                 }
             }
-        } else if (!USER_AS_PROVIDER) {
+        } else if (!USER_AS_PROVIDER) { // user has no role
             println("CP4")
             nrNoRoleLists = shListArr.size
             txvwRequestsText?.text = resources.getString(R.string.PHRASE_available_requests_nearby)
@@ -131,7 +131,7 @@ class HomeActivity: Activity(), View.OnClickListener {
                 val v: View = layoutInflater.inflate(R.layout.shopping_list_ready_container_home, shoppingListsReadyContainer, false)
                 shoppingListsReadyContainer?.addView(v, order)
 
-                val oneListReadyContainer: ViewGroup = v as ViewGroup
+                val oneListReadyContainer: ViewGroup = v as ViewGroup // this is the view which was added
 
                 // fill the shoppingListContainer
                 val sz: Int = shList.elementArray.size
@@ -143,6 +143,8 @@ class HomeActivity: Activity(), View.OnClickListener {
                 val txvwSubtitleNotes: TextView = oneListReadyContainer.getChildAt(3) as TextView
                 val txvwNotesContent: TextView = oneListReadyContainer.getChildAt(4) as TextView
                 val txvwAddress: TextView = oneListReadyContainer.getChildAt(6) as TextView
+                val btnOpenList: Button = oneListReadyContainer.getChildAt(7) as Button
+                btnOpenList.setOnClickListener { openList(order) }
 
                 if (shList.observations.isEmpty()) {
                     txvwSubtitleNotes.visibility = View.GONE
@@ -152,15 +154,19 @@ class HomeActivity: Activity(), View.OnClickListener {
                 }
 
                 mDatabase.child("users").child(shList.issuerID).get().addOnSuccessListener {
-                    txvwAddress.text = "${it.child("city").value}, ${it.child("streetAndNumber").value}"
+                    val issuerUser: User? = it.getValue(User::class.java)
+                    if (issuerUser != null) txvwAddress.text = "${issuerUser.city}, ${issuerUser.streetAndNumber}"
+                    if (issuerUser != null) {
+                        listOfIssuers.add(issuerUser)
+                    }
                 }.addOnFailureListener { }
 
                 for (i in 0 until sz) {
                     val v: View = layoutInflater.inflate(R.layout.shopping_list_element, elementsReadyContainer, false)
-                    elementsReadyContainer?.addView(v, i)
+                    elementsReadyContainer.addView(v, i)
 
-                    val txvwArtName: TextView = (elementsReadyContainer?.getChildAt(i) as ViewGroup).getChildAt(1) as TextView? ?: return false
-                    val txvwQuantAndUnit: TextView = (elementsReadyContainer?.getChildAt(i) as ViewGroup).getChildAt(2) as TextView? ?: return false
+                    val txvwArtName: TextView = (elementsReadyContainer.getChildAt(i) as ViewGroup).getChildAt(1) as TextView? ?: return false
+                    val txvwQuantAndUnit: TextView = (elementsReadyContainer.getChildAt(i) as ViewGroup).getChildAt(2) as TextView? ?: return false
 
                     txvwArtName.text = shList.elementArray[i].elementName
                     txvwQuantAndUnit.text = "${shList.elementArray[i].quantity} ${shList.elementArray[i].unitOfMeasure}"
@@ -168,6 +174,13 @@ class HomeActivity: Activity(), View.OnClickListener {
             }
         }
         return true
+    }
+
+    private fun openList(i: Int) {
+        val listAndIssuer : HashMap<String, Any> = HashMap()
+        listAndIssuer["shoppingList"] = listOfShLists[i]
+        listAndIssuer["issuerUser"] = listOfIssuers[i]
+        startActivity(Intent(this, TakeListActivity::class.java).putExtra("listAndIssuerMAP", listAndIssuer))
     }
 
     override fun onClick(v: View?) {

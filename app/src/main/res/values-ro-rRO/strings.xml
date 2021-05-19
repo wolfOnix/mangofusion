@@ -78,4 +78,6 @@
     <string name="account_updated">Detaliile contului au fost actualizate</string>
     <string name="there_was_nothing_to_update">Contul nu a necesitat actualizarea datelor</string>
     <string name="no_field_should_be_empty">Câmpurile nu pot fi goale</string>
+    <string name="call">Apelare</string>
+    <string name="take_request">Preluare cerere</string>
 </resources>

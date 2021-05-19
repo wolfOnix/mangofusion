@@ -30,22 +30,14 @@ class MyAccountActivity : Activity(), View.OnClickListener {
         btn_sys_back!!.setOnClickListener(this)
 
         txvw_firstname_lastname = findViewById<View>(R.id.txvw_firstname_lastname) as TextView
-        mDatabase.child("users").child(getUserID()).get().addOnSuccessListener {
-            txvw_firstname_lastname!!.text =
-                "${it.child("firstName").value} ${it.child("lastName").value}"
-        }.addOnFailureListener { // sign out if error has occurred
-            signOut(this)
-        }
-
         txvw_user_email_add_telnr = findViewById<View>(R.id.txvw_user_email_add_telnr) as TextView
+
         mDatabase.child("users").child(getUserID()).get().addOnSuccessListener {
-            txvw_user_email_add_telnr!!.text =
-                "${it.child("email").value}\n${it.child("city").value}, ${it.child("streetAndNumber").value}\n${it.child("telephoneNumber").value}"
+            txvw_firstname_lastname!!.text = "${it.child("firstName").value} ${it.child("lastName").value}"
+            txvw_user_email_add_telnr!!.text = "${it.child("email").value}\n${it.child("city").value}, ${it.child("streetAndNumber").value}\n${it.child("telephoneNumber").value}"
         }.addOnFailureListener { // sign out if error has occurred
             signOut(this)
         }
-
-        // val importPanel: View = findViewById<ViewStub>(R.id.stub_import).inflate()
 
     }
 
