@@ -73,8 +73,6 @@ class MyAccountUpdateDataActivity : Activity(), View.OnClickListener {
         val city = edtxtCity.text.toString().trim { it <= ' ' }.filter { it.isLetter() || it == ',' || it == '-' }
         val streetAndNumber = edtxtAddress.text.toString().trim { it <= ' ' }
 
-        println("CP")
-
         if (firstName.isEmpty()) noError = false
         if (firstName != initFirstname) somethingChanged = true
 

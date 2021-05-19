@@ -82,8 +82,10 @@ data class ShoppingList(
         println("Sent")
     }
 
-    fun takeList() { // called when a provider takes the request
-
+    fun takeList(providerID: String) { // called when a provider takes the request
+        val ref = FirebaseDatabase.getInstance().reference.child("lists").child(this.listID) // point to the list in the database
+        ref.child("providerID").setValue(providerID)
+        ref.child("taken").setValue(true)
     }
 
     fun deliverList() { // called when the provider finishes the request

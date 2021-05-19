@@ -2,6 +2,7 @@ package mangofusion.apps.shopassist
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,7 +13,6 @@ import android.widget.TextView
 
 class TakeListActivity : Activity(), View.OnClickListener {
 
-    private var btnTakeRequest: Button? = null
     private lateinit var shoppingList: ShoppingList
     private lateinit var issuerUser: User
     private var elementsReadyContainer: ViewGroup? = null
@@ -23,8 +23,8 @@ class TakeListActivity : Activity(), View.OnClickListener {
 
         elementsReadyContainer = findViewById(R.id.lnly_elements_ready)
 
-        btnTakeRequest = findViewById(R.id.btn_take_request)
-        btnTakeRequest!!.setOnClickListener(this)
+        (findViewById<Button>(R.id.btn_take_request)).setOnClickListener(this)
+        (findViewById<Button>(R.id.btn_call)).setOnClickListener(this)
 
         val listAndIssuer : HashMap<String, Any> = intent.getSerializableExtra("listAndIssuerMAP") as HashMap<String, Any>
         shoppingList = listAndIssuer["shoppingList"] as ShoppingList
@@ -88,7 +88,10 @@ class TakeListActivity : Activity(), View.OnClickListener {
     override fun onClick(v: View?) {
         if (v != null) {
             when (v.id) {
-                R.id.btn_take_request -> { /*shoppingList.publishList(); startActivity(Intent(this, HomeActivity::class.java))*/ }
+                R.id.btn_take_request -> { shoppingList.takeList(getUserID()); startActivity(Intent(this, HomeActivity::class.java)) }
+                R.id.btn_call -> {
+                    startActivity(Intent(Intent.ACTION_DIAL).setData(Uri.parse("tel:${issuerUser.telephoneNumber}")))
+                }
             }
         }
     }

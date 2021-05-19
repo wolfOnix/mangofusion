@@ -9,6 +9,7 @@ import java.util.*
 
 @IgnoreExtraProperties
 data class User (
+    var userID: String = "",
     var firstName: String = "",
     var lastName: String = "",
     var email: String = "",
@@ -20,7 +21,7 @@ data class User (
     var dateStampOnCreate: String = SimpleDateFormat("yyyy.mm.dd/HH:mm:ss").format(Calendar.getInstance().time)
 ): Serializable {
 
-    @Exclude
+    /*@Exclude
     fun toMap(): Map<String, Any?> {
         return mapOf(
             "firstName" to firstName,
@@ -29,7 +30,7 @@ data class User (
             "city" to city,
             "streetAndNumber" to streetAndNumber
         )
-    }
+    }*/
 
     private val countriesArr = arrayOf<Int>(
         R.string.Romania,
