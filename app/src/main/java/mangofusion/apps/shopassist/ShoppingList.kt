@@ -57,6 +57,9 @@ data class ShoppingList(
     }
 
     fun publishList() {
+
+        // TODO DO NOT PUBLISH MORE THAN ONE LIST !!!
+
         FirebaseDatabase.getInstance().reference.child("listIndex").get().addOnSuccessListener {
             val globalCounter: Long
             if (it.value != null)

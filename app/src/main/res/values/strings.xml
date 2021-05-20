@@ -96,4 +96,8 @@
     <string name="PHRASE_take_request">By taking the request you will provide the articles in the list and deliver them to the specified address. Would you encounter any problem, feel free to call the requester</string>
     <string name="PHRASE_provider_info_home">As you find an article from the list, tick it on the list. When you will have found everything on the list, pay the articles and scan the receipts, typing in the total sum</string>
     <string name="shopping">Shopping</string>
+    <string name="PHRASE_issuer_taken_info_home">Someone has taken it</string>
+    <string name="the_request_is_taken">Your request has been taken</string>
+    <string name="waiting_to_be_taken">Waiting to be taken</string>
+    <string name="PHRASE_the_list_is_waiting_to_be_taken">The list is waiting to be taken</string>
 </resources>

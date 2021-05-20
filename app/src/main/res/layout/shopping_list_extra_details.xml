@@ -37,7 +37,7 @@
             android:layout_marginStart="0dp"
             android:layout_marginEnd="40dp"
             android:gravity="end"
-            android:text="[N] RON"
+            android:text=". . ."
             tools:ignore="HardcodedText" />
 
     </LinearLayout>

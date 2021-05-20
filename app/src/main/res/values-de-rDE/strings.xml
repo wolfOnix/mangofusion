@@ -80,4 +80,6 @@
     <string name="call">Anrufen</string>
     <string name="take_request">Anforderung übernehmen</string>
     <string name="shopping">Einkaufen</string>
+    <string name="the_request_is_taken">Ihre Anforderung wurde übernommen</string>
+    <string name="waiting_to_be_taken">Noch ausstehend</string>
 </resources>

@@ -65,17 +65,18 @@
                 app:lineHeight="20dp"
                 tools:ignore="HardcodedText" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_update_data"
                 style="@style/button_text"
-                app:icon="@drawable/ic_baseline_edit_24"
-                android:drawablePadding="10dp"
                 android:layout_width="match_parent"
-                android:layout_marginTop="40dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="20dp"
+                android:drawablePadding="10dp"
                 android:text="@string/update_contact_info"
+                app:icon="@drawable/ic_baseline_edit_24"
+                app:iconTint="@color/magenta"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -91,11 +92,8 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
                 android:layout_height="wrap_content"
-                android:text="@string/availability_preferences"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:iconTint="@color/magenta"
+                android:text="@string/availability_preferences" />
 
             <Button
                 android:id="@+id/btn_done_lists"
@@ -103,15 +101,12 @@
                 app:icon="@drawable/ic_baseline_playlist_add_check_24"
                 android:drawablePadding="10dp"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="0dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
-                android:layout_height="wrap_content"
-                android:text="@string/completed_shopping_lists"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:iconTint="@color/magenta"
+                android:text="@string/completed_shopping_lists" />
 
             <Button
                 android:id="@+id/btn_other_settings"
@@ -123,11 +118,8 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
                 android:layout_height="wrap_content"
-                android:text="@string/other_settings"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:iconTint="@color/magenta"
+                android:text="@string/other_settings" />
 
             <Button
                 android:id="@+id/btn_logout"
@@ -135,11 +127,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="70dp"
-                android:text="@string/log_out"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:text="@string/log_out" />
 
         </LinearLayout>
 

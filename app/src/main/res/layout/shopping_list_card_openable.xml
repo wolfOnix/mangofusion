@@ -5,6 +5,8 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
+    <!-- Doubled LnLy in order to have a similar syntax to the shopping_list_ready_container -->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -14,7 +16,8 @@
         android:background="@drawable/card_background"
         android:gravity="start"
         android:orientation="vertical"
-        android:padding="30dp">
+        android:padding="30dp"
+        tools:ignore="UselessParent">
 
         <TextView
             style="@style/title_card"
@@ -36,7 +39,7 @@
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="20dp"
             android:gravity="start"
-            android:text=". . ."
+            android:text="[N] Artikel"
             tools:ignore="HardcodedText" />
 
         <LinearLayout
@@ -72,8 +75,37 @@
             android:text=". . ."
             tools:ignore="HardcodedText" />
 
-    </LinearLayout>
+        <TextView
+            style="@style/title_card_1_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
+            android:gravity="start"
+            android:text="@string/address_of_delivery" />
 
-    <include layout="@layout/shopping_list_extra_details"/>
+        <TextView
+            style="@style/title_card_2"
+            android:textColor="@color/purple"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="10dp"
+            android:gravity="start"
+            android:text=". . ."
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/button_create_account"
+            style="@style/button_secondary"
+            android:layout_gravity="end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/open" />
+
+    </LinearLayout>
 
 </LinearLayout>

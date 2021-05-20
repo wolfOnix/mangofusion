@@ -81,4 +81,6 @@
     <string name="call">Apelare</string>
     <string name="take_request">Preluare cerere</string>
     <string name="shopping">La cumpărături</string>
+    <string name="the_request_is_taken">Solicitarea dvs. a fost preluată</string>
+    <string name="waiting_to_be_taken">În așteptare</string>
 </resources>

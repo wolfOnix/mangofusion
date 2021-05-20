@@ -3,7 +3,6 @@ package mangofusion.apps.shopassist
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -30,7 +29,7 @@ class TakeListActivity : Activity(), View.OnClickListener {
         shoppingList = listAndIssuer["shoppingList"] as ShoppingList
         issuerUser = listAndIssuer["issuerUser"] as User
 
-        (findViewById<View>(R.id.txvw_issuer_name) as TextView).text = "${issuerUser.firstName} ${issuerUser.lastName}"
+        (findViewById<View>(R.id.txvw_other_user_name) as TextView).text = "${issuerUser.firstName} ${issuerUser.lastName}"
         (findViewById<View>(R.id.txvw_delivery_address) as TextView).text = "${issuerUser.city}, ${issuerUser.streetAndNumber}"
 
         /*mDatabase.child("users").child(getUserID()).get().addOnSuccessListener {
@@ -54,11 +53,8 @@ class TakeListActivity : Activity(), View.OnClickListener {
         val txvwNotesContent = findViewById<TextView>(R.id.txvw_notes_content)
         val txvwSubtitleNotes = findViewById<TextView>(R.id.txvw_subtitle_notes)
 
-        val txvwBonusSum = findViewById<TextView>(R.id.txvw_bonus_sum)
-        txvwBonusSum.text = "${shList.bonusSum} RON"
-
-        val txvwReason = findViewById<TextView>(R.id.txvw_reason)
-        txvwReason.text = getString(ShoppingList.getReasonPos(shList.reason.toInt()))
+        (findViewById<TextView>(R.id.txvw_bonus_sum)).text = "${shList.bonusSum} RON"
+        (findViewById<TextView>(R.id.txvw_reason)).text = getString(ShoppingList.getReasonPos(shList.reason.toInt()))
 
         if (shList.observations.isEmpty()) {
             txvwSubtitleNotes.visibility = View.GONE
@@ -89,9 +85,7 @@ class TakeListActivity : Activity(), View.OnClickListener {
         if (v != null) {
             when (v.id) {
                 R.id.btn_take_request -> { shoppingList.takeList(getUserID()); startActivity(Intent(this, HomeActivity::class.java)) }
-                R.id.btn_call -> {
-                    startActivity(Intent(Intent.ACTION_DIAL).setData(Uri.parse("tel:${issuerUser.telephoneNumber}")))
-                }
+                R.id.btn_call -> { startActivity(Intent(Intent.ACTION_DIAL).setData(Uri.parse("tel:${issuerUser.telephoneNumber}"))) }
             }
         }
     }

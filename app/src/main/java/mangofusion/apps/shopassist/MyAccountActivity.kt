@@ -32,13 +32,17 @@ class MyAccountActivity : Activity(), View.OnClickListener {
         txvw_firstname_lastname = findViewById<View>(R.id.txvw_firstname_lastname) as TextView
         txvw_user_email_add_telnr = findViewById<View>(R.id.txvw_user_email_add_telnr) as TextView
 
-        mDatabase.child("users").child(getUserID()).get().addOnSuccessListener {
-            txvw_firstname_lastname!!.text = "${it.child("firstName").value} ${it.child("lastName").value}"
-            txvw_user_email_add_telnr!!.text = "${it.child("email").value}\n${it.child("city").value}, ${it.child("streetAndNumber").value}\n${it.child("telephoneNumber").value}"
-        }.addOnFailureListener { // sign out if error has occurred
-            signOut(this)
+        if (CURR_USER == null) {
+            mDatabase.child("users").child(getUserID()).get().addOnSuccessListener {
+                txvw_firstname_lastname!!.text = "${it.child("firstName").value} ${it.child("lastName").value}"
+                txvw_user_email_add_telnr!!.text = "${it.child("email").value}\n${it.child("city").value}, ${it.child("streetAndNumber").value}\n${it.child("telephoneNumber").value}"
+            }.addOnFailureListener { // sign out if error has occurred
+                signOut(this)
+            }
+        } else {
+            txvw_firstname_lastname!!.text = "${CURR_USER!!.firstName} ${CURR_USER!!.lastName}"
+            txvw_user_email_add_telnr!!.text = "${CURR_USER!!.email}\n${CURR_USER!!.city}, ${CURR_USER!!.streetAndNumber}\n${CURR_USER!!.telephoneNumber}"
         }
-
     }
 
     override fun onClick(v: View?) {

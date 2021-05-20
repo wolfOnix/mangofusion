@@ -57,7 +57,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/lnly_alternative_phrase"
+                android:id="@+id/lnly_status_and_contact"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -70,50 +70,45 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="50dp"
+                    android:layout_marginTop="50dp"
                     android:gravity="center"
                     android:orientation="horizontal"
                     app:layout_constraintBottom_toBottomOf="parent" >
 
                     <ImageView
+                        android:id="@+id/imvw_circle_indicator"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
                         android:background="@drawable/state_indicator_circle" />
 
                     <TextView
-                        style="@style/title_top"
+                        android:id="@+id/txvw_current_state"
+                        style="@style/title_state"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="5dp"
                         android:layout_marginEnd="20dp"
                         android:padding="2dp"
                         android:gravity="start"
-                        android:text="@string/shopping"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        android:text=". . ."
+                        tools:ignore="HardcodedText" />
 
                 </LinearLayout>
 
-                <include layout="@layout/the_other_user_contact"/>
-
                 <TextView
+                    android:id="@+id/txvw_alternative_phrase"
                     style="@style/description"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="50dp"
                     android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="50dp"
                     android:padding="2dp"
                     android:gravity="center"
-                    android:text="@string/PHRASE_provider_info_home"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:text=". . ."
+                    tools:ignore="HardcodedText" />
 
             </LinearLayout>
 
@@ -177,17 +172,19 @@
     </ScrollView>
 
     <LinearLayout
+        android:id="@+id/lnly_nav_bckg"
         android:layout_width="250dp"
         android:layout_height="70dp"
         android:layout_marginBottom="14dp"
         android:background="@drawable/navigation_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="horizontal" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="90dp"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent">
@@ -196,7 +193,7 @@
             android:id="@+id/btn_home"
             android:layout_width="44dp"
             android:layout_height="44dp"
-            android:layout_marginBottom="7dp"
+            android:layout_marginBottom="4dp"
             android:scaleType="fitCenter"
             android:backgroundTint="#00000000"
             android:src="@drawable/icon_home"
@@ -224,7 +221,7 @@
             android:id="@+id/btn_my_account"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginBottom="7dp"
+            android:layout_marginBottom="4dp"
             android:scaleType="fitCenter"
             android:backgroundTint="#00000000"
             android:src="@drawable/icon_my_account"
