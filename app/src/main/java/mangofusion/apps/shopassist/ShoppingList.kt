@@ -85,14 +85,19 @@ data class ShoppingList(
         println("Sent")
     }
 
-    fun takeList(providerID: String) { // called when a provider takes the request
+    fun takeList(provID: String) { // called when a provider takes the request
+        this.providerID = provID
+        this.taken = true
         val ref = FirebaseDatabase.getInstance().reference.child("lists").child(this.listID) // point to the list in the database
-        ref.child("providerID").setValue(providerID)
+        ref.child("providerID").setValue(provID)
         ref.child("taken").setValue(true)
     }
 
     fun deliverList() { // called when the provider finishes the request
-
+        this.fulfilled = true
+        val ref = FirebaseDatabase.getInstance().reference.child("lists").child(this.listID) // point to the list in the database
+        ref.child("fulfilled").setValue(true)
+        ref.child("totalSum").setValue(this.totalSum)
     }
 
     fun killList() { // called when the shopping bag was delivered and the provider received the money

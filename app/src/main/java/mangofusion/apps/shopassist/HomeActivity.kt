@@ -165,7 +165,7 @@ class HomeActivity: Activity(), View.OnClickListener {
                     findViewById<TextView>(R.id.txvw_current_state).text = getString(R.string.shopping)
                     findViewById<TextView>(R.id.txvw_alternative_phrase).text = getString(R.string.PHRASE_provider_info_home)
 
-                    findViewById<ImageButton>(R.id.btn_new_request).setImageResource(R.drawable.icon_cancel)
+                    findViewById<ImageButton>(R.id.btn_new_request).setImageResource(R.drawable.icon_shopping_finished)
                 }
 
                 val v: View = layoutInflater.inflate(R.layout.the_other_user_contact, infoContainer, false)
@@ -266,7 +266,7 @@ class HomeActivity: Activity(), View.OnClickListener {
     }
 
     private fun openList(i: Int) {
-        val listAndIssuer : HashMap<String, Any> = HashMap()
+        val listAndIssuer: HashMap<String, Any> = HashMap()
         listAndIssuer["shoppingList"] = listOfShLists[i]
         listAndIssuer["issuerUser"] = listOfIssuers[i]
         startActivity(Intent(this, TakeListActivity::class.java).putExtra("listAndIssuerMAP", listAndIssuer))
@@ -279,6 +279,8 @@ class HomeActivity: Activity(), View.OnClickListener {
                 R.id.btn_new_request -> {
                     if (!USER_AS_PROVIDER && !USER_AS_ISSUER) {
                         startActivity(Intent(this, CreateShoppingList::class.java))
+                    } else if (USER_AS_PROVIDER) {
+                        startActivity(Intent(this, FulfillShoppingActivity::class.java).putExtra("takenShoppingList", takenShoppingList).putExtra("issuerUser", THE_OTHER_USER))
                     }
                 }
                 R.id.btn_my_account -> startActivity(Intent(this, MyAccountActivity::class.java))

@@ -140,7 +140,6 @@ class CreateShoppingList : Activity(), View.OnClickListener, AdapterView.OnItemS
         }
         val observations: String = edtx_observations.text.toString().trim(' ')
         shoppingListKeeper = ShoppingList(getUserID(), "", shoppingElements, observations, reasonPos.toLong(), bonusSum)
-        //shoppingList.publishList() // !! TEMPORARILY
         return true
     }
 

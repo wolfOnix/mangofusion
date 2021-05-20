@@ -1,0 +1,11 @@
+package mangofusion.apps.shopassist
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+
+class DeliveryViewActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_delivery_view)
+    }
+}

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PublishShoppingList">
+    tools:context=".FulfillShoppingActivity">
 
     <ScrollView
         android:id="@+id/scrollView3"
@@ -33,14 +33,9 @@
                 android:layout_marginTop="100dp"
                 android:layout_marginEnd="20dp"
                 android:gravity="center"
-                android:text="@string/shopping_list_review"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:text="@string/total_sum" />
 
             <TextView
-                android:id="@+id/txvw_description"
                 style="@style/description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -48,14 +43,71 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="20dp"
                 android:gravity="center"
-                android:text="@string/PHRASE_shopping_list_review"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:text="@string/PHRASE_total_sum"/>
+
+            <TextView
+                style="@style/description_error"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="20dp"
+                android:gravity="center"
+                android:text="@string/keep_all_the_receipts"/>
+
+        <LinearLayout
+            android:id="@+id/lnly_elements_ready"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="68dp"
+            android:weightSum="1.0">
+
+            <EditText
+                android:id="@+id/edtxt_total_sum"
+                style="@style/input_field_total_sum"
+                android:background="@drawable/input_total_sum"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".8"
+                android:padding="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:gravity="center"
+                android:ems="10"
+                android:hint="@string/total_sum"
+                android:inputType="numberDecimal"
+                tools:ignore="Autofill" />
+
+            <TextView
+                style="@style/text_currency"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".2"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="20dp"
+                android:gravity="start"
+                android:text="RON"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="HardcodedText" />
 
-            <include layout="@layout/shopping_list_ready_container"/>
+        </LinearLayout>
+
+            <TextView
+                android:id="@+id/txvw_err"
+                style="@style/description_error"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:gravity="center"
+                android:text=""/>
 
         </LinearLayout>
 
@@ -80,6 +132,9 @@
             android:layout_marginBottom="0dp"
             android:gravity="start|center"
             android:text="@string/back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             android:onClick="goBack"/>
 
         <TextView
@@ -91,7 +146,7 @@
             android:layout_marginTop="5dp"
             android:layout_marginEnd="30dp"
             android:gravity="end"
-            android:text="@string/new_shopping_list" />
+            android:text="@string/finish_shopping" />
 
     </LinearLayout>
 
@@ -106,13 +161,24 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
+        <TextView
+            style="@style/title_card_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:text="@string/PHRASE_begin_delivery" />
+
         <android.widget.Button
-            android:id="@+id/btn_publish_list"
+            android:id="@+id/btn_begin_delivery"
             style="@style/button_main_gradient"
             android:background="@drawable/button_gradient"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/send_request"
+            android:text="@string/begin_delivery"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />

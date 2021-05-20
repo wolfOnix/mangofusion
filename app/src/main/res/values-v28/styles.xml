@@ -113,6 +113,18 @@
         <item name="android:paddingBottom">12dp</item>
     </style>
 
+    <style name="input_field_total_sum" parent="input_field">
+        <item name="android:textSize">30sp</item>
+        <item name="android:fontFamily">@font/rubik_light</item>
+        <item name="android:color">@color/carbon</item>
+    </style>
+
+    <style name="text_currency" parent="@style/TextAppearance.AppCompat">
+        <item name="android:textSize">25sp</item>
+        <item name="android:textColor">@color/carbon</item>
+        <item name="android:fontFamily">@font/rubik_light</item>
+    </style>
+
     <style name="title_1" parent="@style/TextAppearance.AppCompat.Headline">
         <item name="android:textSize">25sp</item>
         <item name="android:textColor">@color/black</item>

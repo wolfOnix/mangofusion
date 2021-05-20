@@ -100,4 +100,11 @@
     <string name="the_request_is_taken">Your request has been taken</string>
     <string name="waiting_to_be_taken">Waiting to be taken</string>
     <string name="PHRASE_the_list_is_waiting_to_be_taken">The list is waiting to be taken</string>
+    <string name="finish_shopping">Finish shopping</string>
+    <string name="total_sum">Total sum</string>
+    <string name="PHRASE_total_sum">Insert below the exact amount of money by summing up the receipts. Do not include the bonus sum</string>
+    <string name="begin_delivery">Begin delivery</string>
+    <string name="PHRASE_begin_delivery">Begin the delivery if you have bought everything that you could find</string>
+    <string name="keep_all_the_receipts">Keep and hand all the receipts at the delivery</string>
+    <string name="the_sum_does_not_have_a_valid_format">The sum does not have a valid format. Use \'.\' instead of \',\' as decimal separator</string>
 </resources>

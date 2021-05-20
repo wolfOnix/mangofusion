@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -17,13 +18,29 @@
         android:text=". . ."
         tools:ignore="HardcodedText" />
 
-    <Button
-        android:id="@+id/btn_call"
-        style="@style/button_secondary"
-        android:backgroundTint="@color/carbon"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/call" />
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btn_call"
+            style="@style/button_secondary"
+            android:backgroundTint="@color/carbon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/call" />
+
+        <!--<Button
+            android:id="@+id/btn_maps"
+            style="@style/button_secondary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/ic_baseline_edit_24"
+            app:iconTint="@color/white" />-->
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"

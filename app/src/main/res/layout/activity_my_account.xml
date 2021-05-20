@@ -41,11 +41,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
                 android:gravity="center"
-                android:text=". . ."
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:text=". . ." />
 
             <TextView
                 android:id="@+id/txvw_user_email_add_telnr"
@@ -57,15 +53,10 @@
                 android:layout_marginEnd="20dp"
                 android:gravity="center"
                 android:text=". . .\n. . .\n. . ."
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
                 app:lineHeight="20dp"
                 tools:ignore="HardcodedText" />
 
-            <com.google.android.material.button.MaterialButton
+            <Button
                 android:id="@+id/btn_update_data"
                 style="@style/button_text"
                 android:layout_width="match_parent"
@@ -76,11 +67,7 @@
                 android:drawablePadding="10dp"
                 android:text="@string/update_contact_info"
                 app:icon="@drawable/ic_baseline_edit_24"
-                app:iconTint="@color/magenta"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:iconTint="@color/magenta" />
 
             <Button
                 android:id="@+id/btn_availability"
