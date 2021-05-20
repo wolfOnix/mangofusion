@@ -82,4 +82,12 @@
     <string name="shopping">Einkaufen</string>
     <string name="the_request_is_taken">Ihre Anforderung wurde übernommen</string>
     <string name="waiting_to_be_taken">Noch ausstehend</string>
+    <string name="on_delivery">Jetzt liefern</string>
+    <string name="route">Route</string>
+    <string name="finish_delivery">Lieferung fertigstellen</string>
+    <string name="finish_shopping">Einkaufen abschließen</string>
+    <string name="total_sum">Gesamtbetrag</string>
+    <string name="begin_delivery">Lieferung beginnen</string>
+    <string name="keep_all_the_receipts">Bewahren Sie alle Kassebons und geben Sie die an der Lieferung über</string>
+    <string name="the_sum_does_not_have_a_valid_format">Die eingesetzte Summe hat kein gültiges Format</string>
 </resources>

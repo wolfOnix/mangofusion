@@ -25,9 +25,19 @@
         android:gravity="center">
 
         <Button
+            android:id="@+id/btn_maps"
+            style="@style/button_secondary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:text="@string/route"/>
+
+        <Button
             android:id="@+id/btn_call"
             style="@style/button_secondary"
-            android:backgroundTint="@color/carbon"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/call" />

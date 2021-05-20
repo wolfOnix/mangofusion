@@ -50,7 +50,7 @@ class MyAccountActivity : Activity(), View.OnClickListener {
             when (v.id) {
                 R.id.btn_logout -> signOut(this)
                 R.id.btn_update_data -> startActivity(Intent(this, MyAccountUpdateDataActivity::class.java))
-                R.id.btn_sys_back -> startActivity(Intent(this, HomeActivity::class.java))
+                R.id.btn_sys_back -> finish()
             }
         }
     }

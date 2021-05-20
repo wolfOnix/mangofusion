@@ -30,13 +30,6 @@ class HomeActivity: Activity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        /*if (intent.hasExtra("listAndIssuerMAP") && USER_AS_PROVIDER) { // at returning from TakeRequest; try to allocate the taken shopping list and the other user (the issuer/ provider)
-            val listAndIssuer: HashMap<String, Any> = intent.getSerializableExtra("listAndIssuerMAP") as HashMap<String, Any>
-            takenShoppingList = listAndIssuer["shoppingList"] as ShoppingList
-            THE_OTHER_USER = listAndIssuer["issuerUser"] as User
-            println("Luat pe ${THE_OTHER_USER!!.firstName}")
-        }*/
-
         if (CURR_USER == null) { // if the user is not allocated
             FirebaseDatabase.getInstance().reference.child("users").child(FirebaseAuth.getInstance().currentUser.uid).get().addOnSuccessListener {
                 CURR_USER = it.getValue(User::class.java)
@@ -56,11 +49,6 @@ class HomeActivity: Activity(), View.OnClickListener {
         btnHome!!.setOnClickListener(this)
         btnMyAccount!!.setOnClickListener(this)
         btnNewRequest!!.setOnClickListener(this)
-
-        /*if (THE_OTHER_USER == null || takenShoppingList == null)
-            loadShoppingRequests()
-        else
-            displayCard(takenShoppingList!!, 3, 0)*/
 
         loadShoppingRequests()
     }
@@ -85,7 +73,11 @@ class HomeActivity: Activity(), View.OnClickListener {
                             USER_AS_PROVIDER = true
                             USER_AS_ISSUER = false
                             takenShoppingList = shList
-                            displayCard(shList, 3, 0)
+                            if (!shList.fulfilled) // is still not in the delivery process
+                                displayCard(shList, 3, 0)
+                            else { // is in the delivery process
+                                startActivity(Intent(this@HomeActivity, DeliveryViewActivity::class.java).putExtra("takenShoppingList", shList))
+                            }
                             //adaptLayout(3)
                             listOfShLists.clear()
                             break

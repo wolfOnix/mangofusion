@@ -83,4 +83,12 @@
     <string name="shopping">La cumpărături</string>
     <string name="the_request_is_taken">Solicitarea dvs. a fost preluată</string>
     <string name="waiting_to_be_taken">În așteptare</string>
+    <string name="on_delivery">În curs de livrare</string>
+    <string name="route">Rută</string>
+    <string name="finish_delivery">Finalizare livrare</string>
+    <string name="finish_shopping">Finalizare cumpărături</string>
+    <string name="total_sum">Suma totală</string>
+    <string name="begin_delivery">Livrare</string>
+    <string name="keep_all_the_receipts">Păstrați toate bonurile și înmânați-le la sosire</string>
+    <string name="the_sum_does_not_have_a_valid_format">Suma introdusă nu are un format numeric valid</string>
 </resources>
