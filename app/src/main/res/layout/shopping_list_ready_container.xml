@@ -3,68 +3,77 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="40dp"
-    android:layout_marginStart="5dp"
-    android:layout_marginEnd="5dp"
-    android:background="@drawable/card_background"
-    android:gravity="start"
-    android:orientation="vertical"
-    android:padding="30dp">
-
-    <TextView
-        style="@style/title_card"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:gravity="start"
-        android:text="@string/shopping_list"/>
-
-    <TextView
-        android:id="@+id/txvw_article_number"
-        style="@style/title_card_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="20dp"
-        android:gravity="start"
-        android:text="[N] Artikel"
-        tools:ignore="HardcodedText" />
+    android:orientation="vertical">
 
     <LinearLayout
-        android:id="@+id/lnly_elements_ready"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/card_background"
+        android:gravity="start"
+        android:orientation="vertical"
+        android:padding="30dp">
 
-        <!-- Dynamic addition -->
+        <TextView
+            style="@style/title_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:gravity="start"
+            android:text="@string/shopping_list"/>
+
+        <TextView
+            android:id="@+id/txvw_article_number"
+            style="@style/title_card_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="start"
+            android:text="[N] Artikel"
+            tools:ignore="HardcodedText" />
+
+        <LinearLayout
+            android:id="@+id/lnly_elements_ready"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Dynamic addition -->
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txvw_subtitle_notes"
+            style="@style/title_card_1_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
+            android:gravity="start"
+            android:text="@string/notes" />
+
+        <TextView
+            android:id="@+id/txvw_notes_content"
+            style="@style/title_card_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="10dp"
+            android:gravity="start"
+            android:text=". . ."
+            tools:ignore="HardcodedText" />
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/txvw_subtitle_notes"
-        style="@style/title_card_1_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="10dp"
-        android:gravity="start"
-        android:text="@string/notes" />
-
-    <TextView
-        android:id="@+id/txvw_notes_content"
-        style="@style/title_card_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="10dp"
-        android:gravity="start"
-        android:text=". . ."
-        tools:ignore="HardcodedText" />
+    <include layout="@layout/shopping_list_extra_details"/>
 
 </LinearLayout>

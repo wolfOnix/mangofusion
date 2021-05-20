@@ -97,6 +97,8 @@
 
                 </LinearLayout>
 
+                <include layout="@layout/the_other_user_contact"/>
+
                 <TextView
                     style="@style/description"
                     android:layout_width="match_parent"
