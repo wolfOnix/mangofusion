@@ -111,7 +111,6 @@ class CreateShoppingList : Activity(), View.OnClickListener, AdapterView.OnItemS
         val v: View = layoutInflater.inflate(R.layout.shopping_list_input_fields, elementContainer, false)
         elementContainer?.addView(v, art_nr)
         art_nr++
-        println(elementContainer!!.childCount)
         updateDisplay()
     }
 
@@ -125,7 +124,7 @@ class CreateShoppingList : Activity(), View.OnClickListener, AdapterView.OnItemS
             val edtxUnit: EditText = (lnlyContainer.getChildAt(1) as ViewGroup).getChildAt(1) as EditText? ?: return false
 
             val artName = edtxArtName.text.toString().trim(' ')
-            if (artName == "" || artName == " " || artName.isEmpty()) return false
+            if (artName == "" || artName == " " || artName.isEmpty()) continue
 
             val quant = edtxQuantity.text.toString().trim(' ')
             if (quant == "" || quant == " " || quant.isEmpty()) return false
@@ -138,6 +137,7 @@ class CreateShoppingList : Activity(), View.OnClickListener, AdapterView.OnItemS
 
             println("$i: $artName, $quant, $unit")
         }
+        if (shoppingElements.size < 1) return false
         val observations: String = edtx_observations.text.toString().trim(' ')
         shoppingListKeeper = ShoppingList(getUserID(), "", shoppingElements, observations, reasonPos.toLong(), bonusSum)
         return true

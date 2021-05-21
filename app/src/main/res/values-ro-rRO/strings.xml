@@ -63,7 +63,7 @@
     <string name="send_request">Trimitere solicitare</string>
     <string name="notes">Observații</string>
     <string name="delivery_bonus">Sumă bonus pentru livrare</string>
-    <string name="PHRASE_err_invalid_shopping_list">Se pare că unele articole din lista de cumpărături nu au un format valid. Verificați ca toate elementele să aibă un nume și o cantitate exprimată numeric</string>
+    <string name="PHRASE_err_invalid_shopping_list">Se pare că unele articole din lista de cumpărături nu au un format valid. Verificați ca toate elementele să aibă un nume și o cantitate exprimată numeric. Lista trebuie să conțină cel puțin un articol</string>
     <string name="PHRASE_add_here_notes">Scrieți aici observațiile existente referitoare la articolele din listă sau alte mențiuni legate de cumpărături</string>
     <string name="reason">Motivul solicitării</string>
     <string name="time_shortage">Lipsă de timp</string>
@@ -103,6 +103,18 @@
     <string name="check_delivery">Verificare cumpărături</string>
     <string name="the_issuer_has_to_confirm_the_delivery">Confirmarea expiră în %1$s s</string>
     <string name="congratulations">Felicitări, %1$s!</string>
-    <string name="you_have_successfully_received_the_shopping_from">Cumpărăturile dvs. au fost livrate cu succes de către %1$s</string>
+    <string name="you_have_successfully_received_the_shopping_from">Cumpărăturile dvs. au fost livrate de către %1$s</string>
     <string name="shopping_is_done">Pe curând!</string>
+    <string name="PHRASE_call_if">Veți putea apela solicitantul la orice pas dacă veți întâmpina probleme. În cazul în care doriți să preluați cererea și aveți anumite întrebări legate de lista de cumpărături, îl puteți apela și acum</string>
+    <string name="PHRASE_take_request">Prin preluarea cererii, veți achiziționa produsele din listă și le veți livra la domiciliul specificat</string>
+    <string name="PHRASE_provider_info_home">Pe măsură ce găsiți câte un articol, bifați-l pe listă. Când ați găsit toate articolele disponibile în magazin, plătiți-le și păstrați bonurile de la casă</string>
+    <string name="PHRASE_issuer_taken_info_home">%1$s a preluat cererea dvs. Dacă ați uitat să menționați vreo obervație, puteți să apelați persoana care vă asistă</string>
+    <string name="PHRASE_the_list_is_waiting_to_be_taken">Lista dvs. este vizibilă pentru toți utilizatorii, așteptând ca aceasta să fie preluată de unul dintre ei</string>
+    <string name="PHRASE_total_sum">Introduceți suma exactă achitată pe produse, prin însumarea bonurilor. <b>Nu includeți suma bonus sau prețul altor produse nesolicitate</b></string>
+    <string name="PHRASE_begin_delivery">Dacă ați finalizat cumpărăturile, sunteți gata de livrare</string>
+    <string name="PHRASE_delivery_info">Acum puteți livra cumpărăturile. Când ajungeți la destinație, solicitați suma arătată mai jos și înmânați produsele, alături de bonurile fiscale. După aceea, apăsați pe <b>Finalizare livrare</b></string>
+    <string name="by_creating_an_account_you_agree_with_the_terms_and_conditions">Prin crearea unui cont sunteți de acord cu <b>Termenii și condițiile</b> și cu <b>Codul de conduită</b></string>
+    <string name="PHRASE_delivery_info_by_issuer">Cumpărăturile au fost finalizate de către %1$s. Când va sosi, solicitați bonurile și cumpărăturile și verificați prețul. Dacă totul este în regulă, înmânați suma afișată, care include suma bonus, și solicitați cumpărăturile</string>
+    <string name="PHRASE_confirm_delivery_by_issuer">%1$s a setat cumpărăturile ca fiind finalizate. Dacă ați verificat bonurile, ați primit cumpărăturile și ați înmânat suma totală, <b>confirmați</b> livrarea</string>
+    <string name="you_have_successfully_delivered_the_shopping_to">Ați livrat cu succes cumpărăturile pentru %1$s</string>
 </resources>

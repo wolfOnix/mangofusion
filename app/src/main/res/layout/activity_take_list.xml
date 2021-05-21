@@ -27,6 +27,17 @@
 
             <include layout="@layout/the_other_user_contact"/>
 
+            <TextView
+                style="@style/title_card_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:text="@string/PHRASE_call_if" />
+
             <include layout="@layout/shopping_list_ready_container"/>
 
         </LinearLayout>
@@ -89,6 +100,7 @@
             style="@style/title_card_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/green"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:layout_marginTop="2dp"

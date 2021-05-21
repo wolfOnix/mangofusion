@@ -157,7 +157,7 @@ class HomeActivity: Activity(), View.OnClickListener {
 
                 if (mode == 2) {
                     findViewById<TextView>(R.id.txvw_current_status).text = getString(R.string.the_request_is_taken)
-                    findViewById<TextView>(R.id.txvw_alternative_phrase).text = getString(R.string.PHRASE_issuer_taken_info_home)
+                    findViewById<TextView>(R.id.txvw_alternative_phrase).text = getString(R.string.PHRASE_issuer_taken_info_home, "${THE_OTHER_USER!!.firstName} ${THE_OTHER_USER!!.lastName}")
 
                     findViewById<ImageButton>(R.id.btn_new_request).visibility = View.GONE // hide '+' button
                 } else {
