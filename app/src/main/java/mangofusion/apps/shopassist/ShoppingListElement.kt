@@ -5,9 +5,10 @@ import java.io.Serializable
 
 @IgnoreExtraProperties
 data class ShoppingListElement(
-    var elementName: String,
-    var quantity: String,
-    var unitOfMeasure: String
+    var elementName: String = "",
+    var quantity: String = "",
+    var unitOfMeasure: String = "",
+    var ticked: Boolean = false
 ): Serializable {
 
     override fun toString(): String {

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp"
+    android:background="@drawable/card_background"
+    android:padding="30dp"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <TextView
+        style="@style/title_card_max"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginEnd="10dp"
+        android:gravity="center"
+        android:text="@string/confirm_delivery" />
+
+    <TextView
+        android:id="@+id/txvw_confirm_by_issuer_info"
+        style="@style/description"
+        android:textSize="13sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:gravity="start"
+        android:text="@string/PHRASE_confirm_delivery_by_issuer"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:weightSum="1"
+        android:gravity="center">
+
+        <TextView
+            style="@style/title_top"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".6"
+            android:layout_marginStart="10dp"
+            android:gravity="start"
+            android:text="@string/to_pay" />
+
+        <TextView
+            android:id="@+id/txvw_complete_sum_small"
+            style="@style/text_price_1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".4"
+            android:layout_marginStart="10dp"
+            android:textSize="15sp"
+            android:gravity="end"
+            android:text="73,41 RON"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+    <android.widget.Button
+        android:id="@+id/btn_confirm_delivery"
+        style="@style/button_main_gradient"
+        android:background="@drawable/button_gradient"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/confirm"/>
+
+</LinearLayout>

@@ -353,17 +353,15 @@
                 app:layout_constraintTop_toTopOf="parent"
                 android:visibility="gone" />
 
-            <!--
-            <com.google.android.gms.maps.MapView
-                android:id="@+id/mapView2"
-                android:layout_width="325dp"
-                android:layout_height="200dp"
-                android:layout_marginTop="32dp"
-                android:layout_marginBottom="90dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
-                app:layout_constraintStart_toStartOf="parent" />
-             -->
+            <TextView
+                style="@style/description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="20dp"
+                android:gravity="center"
+                android:text="@string/by_creating_an_account_you_agree_with_the_terms_and_conditions" />
 
         </LinearLayout>
 

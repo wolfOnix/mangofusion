@@ -24,33 +24,64 @@
             android:orientation="vertical"
             android:paddingBottom="132dp">
 
+            <include layout="@layout/greeting_simple" />
+
             <LinearLayout
+                android:id="@+id/lnly_status_and_contact"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center|top"
-                android:orientation="vertical">
+                android:layout_marginTop="20dp"
+                android:gravity="start|center"
+                android:paddingBottom="15dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp"
+                    android:gravity="center"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:id="@+id/imvw_circle_indicator"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:background="@drawable/state_indicator_circle" />
+
+                    <TextView
+                        android:id="@+id/txvw_current_status"
+                        style="@style/title_state"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="20dp"
+                        android:padding="2dp"
+                        android:gravity="start"
+                        android:text=". . ."
+                        tools:ignore="HardcodedText" />
+
+                </LinearLayout>
 
                 <TextView
-                    android:id="@+id/txvw_greeting"
-                    style="@style/title_1"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/txvw_alternative_phrase"
+                    style="@style/description"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="68dp"
                     android:layout_marginStart="20dp"
+                    android:layout_marginTop="50dp"
                     android:layout_marginEnd="20dp"
+                    android:padding="2dp"
                     android:gravity="center"
-                    android:text="@string/hello"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintHorizontal_bias="0.498"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.119" />
+                    android:text=". . ."
+                    tools:ignore="HardcodedText" />
 
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/lnly_requests_nr"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="70dp"
@@ -65,12 +96,12 @@
                     style="@style/description"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight=".7"
+                    android:layout_weight=".8"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="3dp"
                     android:padding="2dp"
-                    android:gravity="end"
+                    android:gravity="start"
                     android:text="@string/PHRASE_no_requests_nearby"
                     android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -79,14 +110,14 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/txvw_requestsnr"
+                    android:id="@+id/txvw_requests_nr"
                     style="@style/text_requests_number"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight=".3"
+                    android:layout_weight=".2"
                     android:layout_marginStart="3dp"
                     android:layout_marginTop="5dp"
-                    android:layout_marginEnd="20dp"
+                    android:layout_marginEnd="10dp"
                     android:gravity="center"
                     android:text="0"
                     android:textAppearance="@style/TextAppearance.AppCompat.Display1"
@@ -94,27 +125,43 @@
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="HardcodedText" />
+                    tools:ignore="HardcodedText"/>
 
             </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lnly_all_lists_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
 
         </LinearLayout>
 
     </ScrollView>
 
     <LinearLayout
+        android:id="@+id/lnly_nav_bckg"
+        android:layout_width="250dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="14dp"
+        android:background="@drawable/navigation_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="horizontal" />
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="90dp"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent">
 
         <ImageButton
             android:id="@+id/btn_home"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginEnd="15dp"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_marginBottom="4dp"
             android:scaleType="fitCenter"
             android:backgroundTint="#00000000"
             android:src="@drawable/icon_home"
@@ -125,9 +172,11 @@
 
         <ImageButton
             android:id="@+id/btn_new_request"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_marginBottom="10dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
             android:scaleType="fitCenter"
             android:backgroundTint="#00000000"
             android:src="@drawable/icon_new_request"
@@ -140,8 +189,7 @@
             android:id="@+id/btn_my_account"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginStart="10dp"
+            android:layout_marginBottom="4dp"
             android:scaleType="fitCenter"
             android:backgroundTint="#00000000"
             android:src="@drawable/icon_my_account"

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="5dp"
+    android:layout_marginEnd="5dp"
+    android:gravity="start"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/description"
+        android:textSize="13sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:gravity="start"
+        android:text="@string/PHRASE_delivery_info"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/card_background"
+        android:padding="30dp"
+        android:orientation="horizontal"
+        android:gravity="start|center"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/txvw_complete_sum"
+            style="@style/text_price_1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".6"
+            android:layout_marginStart="10dp"
+            android:gravity="start"
+            android:text="73,41 RON"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/txvw_shopping_sum_and_bonus"
+            style="@style/text_price_2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".35"
+            android:gravity="end"
+            android:text="63,41 RON\n10 RON"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            style="@style/text_price_2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".05"
+            android:layout_marginEnd="10dp"
+            android:gravity="center"
+            android:text="+\n"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+</LinearLayout>

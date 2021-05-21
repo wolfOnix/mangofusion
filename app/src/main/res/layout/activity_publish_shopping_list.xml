@@ -13,7 +13,7 @@
         android:fillViewport="true"
         android:scrollbars="none"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"> <!-- Disable scrollbar -->
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -55,420 +55,7 @@
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
-                android:layout_marginStart="5dp"
-                android:layout_marginEnd="5dp"
-                android:background="@drawable/card_background"
-                android:gravity="start"
-                android:orientation="vertical"
-                android:padding="30dp">
-
-                <TextView
-                    style="@style/title_card"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:gravity="start"
-                    android:text="@string/shopping_list"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/txvw_article_number"
-                    style="@style/title_card_2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="2dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="20dp"
-                    android:gravity="start"
-                    android:text="[N] Artikel"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="HardcodedText" />
-
-                <LinearLayout
-                    android:id="@+id/lnly_elements_ready"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <!-- Dynamic addition -->
-
-                </LinearLayout>
-
-                <!--<LinearLayout
-                    android:id="@+id/lnly_art_1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="2.5dp"
-                    android:orientation="horizontal"
-                    android:gravity="start|center"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    android:weightSum="1.0">
-
-                    <CheckBox
-                        android:id="@+id/chbx_1"
-                        android:background="@color/transparent"
-                        android:clickable="false"
-                        android:tint="@color/carbon"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight=".1"
-                        android:layout_marginStart="0dp"
-                        android:layout_marginEnd="5dp"
-                        android:src="@drawable/ic_baseline_check_box_outline_blank_24"
-                        android:layout_gravity="end"
-                        tools:ignore="ContentDescription" />
-
-                    <TextView
-                        android:id="@+id/txvw_art_1"
-                        style="@style/title_card_art_name"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight=".7"
-                        android:layout_marginStart="0dp"
-                        android:layout_marginTop="0dp"
-                        android:layout_marginEnd="5dp"
-                        android:gravity="start"
-                        android:text="Lapte"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        tools:ignore="HardcodedText" />
-
-                    <TextView
-                        android:id="@+id/txvw_quant_unit_1"
-                        style="@style/title_card_2"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight=".2"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginTop="0dp"
-                        android:layout_marginEnd="5dp"
-                        android:gravity="end"
-                        android:text="1 l"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        tools:ignore="HardcodedText" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/lnly_art_2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="2.5dp"
-                    android:orientation="horizontal"
-                    android:gravity="start|center"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    android:weightSum="1.0">
-
-                    <CheckBox
-                        android:id="@+id/chbx_2"
-                        android:background="@color/transparent"
-                        android:clickable="false"
-                        android:tint="@color/carbon"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight=".1"
-                        android:layout_marginStart="0dp"
-                        android:layout_marginEnd="5dp"
-                        android:src="@drawable/ic_baseline_check_box_outline_blank_24"
-                        android:layout_gravity="end"
-                        tools:ignore="ContentDescription" />
-
-                    <TextView
-                        android:id="@+id/txvw_art_2"
-                        style="@style/title_card_art_name"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight=".7"
-                        android:layout_marginStart="0dp"
-                        android:layout_marginTop="0dp"
-                        android:layout_marginEnd="5dp"
-                        android:gravity="start"
-                        android:text="Prosecco Blanco"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        tools:ignore="HardcodedText" />
-
-                    <TextView
-                        android:id="@+id/txvw_quant_unit_2"
-                        style="@style/title_card_2"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight=".2"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginTop="0dp"
-                        android:layout_marginEnd="5dp"
-                        android:gravity="end"
-                        android:text="1 st"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        tools:ignore="HardcodedText" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/lnly_art_3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="2.5dp"
-                    android:orientation="horizontal"
-                    android:gravity="start|center"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    android:weightSum="1.0">
-
-                    <CheckBox
-                        android:id="@+id/btn_tick_3"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:clickable="false"
-                        android:layout_gravity="end"
-                        android:layout_marginStart="0dp"
-                        android:layout_marginEnd="5dp"
-                        android:layout_weight=".1"
-                        android:background="@color/transparent"
-                        android:src="@drawable/ic_baseline_check_box_outline_blank_24"
-                        android:tint="@color/carbon"
-                        tools:ignore="ContentDescription" />
-
-                    <TextView
-                        android:id="@+id/txvw_art_3"
-                        style="@style/title_card_art_name"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight=".7"
-                        android:layout_marginStart="0dp"
-                        android:layout_marginTop="0dp"
-                        android:layout_marginEnd="5dp"
-                        android:gravity="start"
-                        android:text="Banane"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        tools:ignore="HardcodedText" />
-
-                    <TextView
-                        android:id="@+id/txvw_quant_unit_3"
-                        style="@style/title_card_2"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight=".2"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginTop="0dp"
-                        android:layout_marginEnd="5dp"
-                        android:gravity="end"
-                        android:text="1,5 kg"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        tools:ignore="HardcodedText" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/lnly_art_4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="2.5dp"
-                    android:orientation="horizontal"
-                    android:gravity="start|center"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    android:weightSum="1.0">
-
-                    <CheckBox
-                        android:id="@+id/btn_tick_4"
-                        android:background="@color/transparent"
-                        android:tint="@color/carbon"
-                        android:clickable="false"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight=".1"
-                        android:layout_marginStart="0dp"
-                        android:layout_marginEnd="5dp"
-                        android:src="@drawable/ic_baseline_check_box_outline_blank_24"
-                        android:layout_gravity="end"
-                        tools:ignore="ContentDescription" />
-
-                    <TextView
-                        android:id="@+id/txvw_art_4"
-                        style="@style/title_card_art_name"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight=".7"
-                        android:layout_marginStart="0dp"
-                        android:layout_marginTop="0dp"
-                        android:layout_marginEnd="5dp"
-                        android:gravity="start"
-                        android:text="Pâine neagră"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        tools:ignore="HardcodedText" />
-
-                    <TextView
-                        android:id="@+id/txvw_quant_unit_4"
-                        style="@style/title_card_2"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight=".2"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginTop="0dp"
-                        android:layout_marginEnd="5dp"
-                        android:gravity="end"
-                        android:text="1 buc"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        tools:ignore="HardcodedText" />
-
-                </LinearLayout>-->
-
-                <TextView
-                    android:id="@+id/txvw_subtitle_notes"
-                    style="@style/title_card_1_2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="10dp"
-                    android:gravity="start"
-                    android:text="@string/notes"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/txvw_notes_content"
-                    style="@style/title_card_2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="2dp"
-                    android:layout_marginEnd="10dp"
-                    android:gravity="start"
-                    android:text=". . ."
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="HardcodedText" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:weightSum="1.0"
-                android:layout_marginTop="20dp"
-                android:layout_marginStart="0dp"
-                android:layout_marginEnd="0dp"
-                android:gravity="start|center"
-                android:orientation="horizontal"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp" >
-
-                <TextView
-                    style="@style/title_card_1_2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.75"
-                    android:layout_marginStart="40dp"
-                    android:layout_marginEnd="0dp"
-                    android:gravity="start"
-                    android:text="@string/delivery_bonus"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/txvw_bonus_sum"
-                    style="@style/title_card_2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.25"
-                    android:layout_marginStart="0dp"
-                    android:layout_marginEnd="40dp"
-                    android:gravity="end"
-                    android:text="[N] RON"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="HardcodedText" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginStart="0dp"
-                android:layout_marginEnd="0dp"
-                android:gravity="start|center"
-                android:orientation="vertical"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp" >
-
-                <TextView
-                    style="@style/title_card_1_2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="40dp"
-                    android:layout_marginEnd="40dp"
-                    android:gravity="start"
-                    android:text="@string/reason"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/txvw_reason"
-                    style="@style/title_card_2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="40dp"
-                    android:layout_marginEnd="40dp"
-                    android:layout_marginTop="2dp"
-                    android:gravity="start"
-                    android:text=". . ."
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="HardcodedText" />
-
-            </LinearLayout>
+            <include layout="@layout/shopping_list_ready_container"/>
 
         </LinearLayout>
 
@@ -478,7 +65,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#DDFFFFFF"
-        android:gravity="start"
+        android:gravity="start|center"
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -493,9 +80,6 @@
             android:layout_marginBottom="0dp"
             android:gravity="start|center"
             android:text="@string/back"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             android:onClick="goBack"/>
 
         <TextView
@@ -507,11 +91,7 @@
             android:layout_marginTop="5dp"
             android:layout_marginEnd="30dp"
             android:gravity="end"
-            android:text="@string/new_shopping_list"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:text="@string/new_shopping_list" />
 
     </LinearLayout>
 
@@ -526,18 +106,17 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <Button
+        <android.widget.Button
             android:id="@+id/btn_publish_list"
-            style="@style/button_main"
+            style="@style/button_main_gradient"
+            android:background="@drawable/button_gradient"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/send_request"
-            app:iconTint="@null"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
     </LinearLayout>
-    <!--style="@style/button_main_coloured"-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

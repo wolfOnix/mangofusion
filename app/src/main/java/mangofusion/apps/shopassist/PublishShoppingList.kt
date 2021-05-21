@@ -2,20 +2,16 @@ package mangofusion.apps.shopassist
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.graphics.Color
-import android.graphics.drawable.GradientDrawable
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.EditText
 import android.widget.TextView
 
 class PublishShoppingList : Activity(), View.OnClickListener {
 
-    private var btn_publish_list: Button? = null
+    private var btnPublishList: Button? = null
     private lateinit var shoppingList: ShoppingList
     private var elementsReadyContainer: ViewGroup? = null
 
@@ -25,28 +21,16 @@ class PublishShoppingList : Activity(), View.OnClickListener {
 
         elementsReadyContainer = findViewById(R.id.lnly_elements_ready)
 
-        btn_publish_list = findViewById(R.id.btn_publish_list)
-        btn_publish_list!!.setOnClickListener(this)
+        btnPublishList = findViewById(R.id.btn_publish_list)
+        btnPublishList!!.setOnClickListener(this)
 
         shoppingList = intent.getSerializableExtra("shoppingListKeeper") as ShoppingList
 
-        if (!fillList(shoppingList)) println("something is not ok")
-
-        println("Bonus sum: ${shoppingList.bonusSum}")
-
-        /*val gradientDrawable = GradientDrawable(
-            GradientDrawable.Orientation.TOP_BOTTOM,
-            intArrayOf(
-                Color.parseColor(R.color.purple.toString()),
-                Color.parseColor(R.color.magenta.toString()))
-        );
-        gradientDrawable.cornerRadius = 0f;
-
-        findViewById<View>(R.id.btn_publish_list).background = gradientDrawable;*/
+        fillList(shoppingList)
     }
 
     @SuppressLint("SetTextI18n")
-    fun fillList(shList: ShoppingList): Boolean {
+    fun fillList(shList: ShoppingList) {
         val sz: Int = shList.elementArray.size
 
         val txvwArtNr = findViewById<TextView>(R.id.txvw_article_number)
@@ -74,14 +58,12 @@ class PublishShoppingList : Activity(), View.OnClickListener {
 
             elementsReadyContainer?.addView(v, i)
 
-            val txvwArtName: TextView = (elementsReadyContainer?.getChildAt(i) as ViewGroup).getChildAt(1) as TextView? ?: return false
-            val txvwQuantAndUnit: TextView = (elementsReadyContainer?.getChildAt(i) as ViewGroup).getChildAt(2) as TextView? ?: return false
+            val txvwArtName: TextView = (elementsReadyContainer?.getChildAt(i) as ViewGroup).getChildAt(1) as TextView
+            val txvwQuantAndUnit: TextView = (elementsReadyContainer?.getChildAt(i) as ViewGroup).getChildAt(2) as TextView
 
             txvwArtName.text = shList.elementArray[i].elementName
             txvwQuantAndUnit.text = "${shList.elementArray[i].quantity} ${shList.elementArray[i].unitOfMeasure}"
-
         }
-        return true
     }
 
     fun goBack(view: View) {
@@ -91,7 +73,7 @@ class PublishShoppingList : Activity(), View.OnClickListener {
     override fun onClick(v: View?) {
         if (v != null) {
             when (v.id) {
-                R.id.btn_publish_list -> { shoppingList.publishList(); startActivity(Intent(this, HomeActivity::class.java)) }
+                R.id.btn_publish_list -> { shoppingList.publishList(); startActivity(Intent(this, HomeActivity::class.java).putExtra("publishedList", shoppingList)) }
             }
         }
     }

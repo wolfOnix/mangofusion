@@ -12,4 +12,5 @@
     <color name="black">#000000</color>
     <color name="transparent">#00000000</color>
     <color name="carbon10P">#ECECECEC</color>
+    <color name="orange">#FFDB6729</color>
 </resources>

@@ -13,14 +13,36 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ShopAssist"
         android:windowSoftInputMode="adjustResize">
-        <activity android:name=".PublishShoppingList" />
-        <activity android:name=".CreateShoppingList" />
-        <activity android:name=".MyAccountUpdateDataActivity" />
-        <activity android:name=".ForgotPasswordActivity" />
-        <activity android:name=".MyAccountActivity" />
-        <activity android:name=".HomeActivity" />
-        <activity android:name=".SignUpActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".DeliveryDoneByIssuerActivity"></activity>
+        <activity android:name=".DeliveryDoneActivity" />
+        <activity android:name=".DeliveryViewByIssuerActivity" />
+        <activity android:name=".DeliveryViewActivity" />
+        <activity android:name=".FulfillShoppingActivity" />
+        <activity android:name=".TakeListActivity" />
+        <activity
+            android:name=".PublishShoppingList"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CreateShoppingList"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MyAccountUpdateDataActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ForgotPasswordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MyAccountActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".HomeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SignUpActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
