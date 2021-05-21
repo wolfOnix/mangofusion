@@ -96,4 +96,10 @@
     <string name="delete">Ștergere</string>
     <string name="the_request_was_deleted">Cererea a fost ștersă</string>
     <string name="view_receipts">Vizualizare bonuri</string>
+    <string name="delivery_completed">Livrare încheiată</string>
+    <string name="to_pay">De achitat</string>
+    <string name="confirm_delivery">Confirmare livrare</string>
+    <string name="The_shopping_is_being_delivered">Cumpărăturile se livrează</string>
+    <string name="check_delivery">Verificare cumpărături</string>
+    <string name="the_issuer_has_to_confirm_the_delivery">Confirmarea expiră în %1$s s</string>
 </resources>

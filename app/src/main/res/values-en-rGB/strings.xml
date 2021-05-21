@@ -103,4 +103,9 @@
     <string name="the_request_was_deleted">Delete request</string>
     <string name="do_you_want_to_delete_the_request">Do you want to delete the request?</string>
     <string name="delete">Delete</string>
+    <string name="confirm_delivery">Confirm delivery</string>
+    <string name="to_pay">To pay</string>
+    <string name="delivery_completed">Delivery completed</string>
+    <string name="the_issuer_has_to_confirm_the_delivery">Confirmation expires in %1$s s</string>
+    <string name="check_delivery">Check delivery</string>
 </resources>

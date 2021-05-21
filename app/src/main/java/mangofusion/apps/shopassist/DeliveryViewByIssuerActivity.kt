@@ -5,8 +5,10 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
+import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.LinearLayout
 import android.widget.TextView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
@@ -46,7 +48,20 @@ class DeliveryViewByIssuerActivity : Activity(), View.OnClickListener {
             }
         } else greet()
 
+        if (shList.claimedDelivered) {
+            val deliveryConfirmationContainer: ViewGroup = findViewById<LinearLayout>(R.id.lnly_delivery_confirmation_container)
+            val v: View = layoutInflater.inflate(R.layout.delivery_confirm_card, deliveryConfirmationContainer, false)
+            deliveryConfirmationContainer.addView(v, 0)
+
+            findViewById<TextView>(R.id.txvw_confirm_by_issuer_info).text = getString(R.string.PHRASE_confirm_delivery_by_issuer, "${THE_OTHER_USER!!.firstName} ${THE_OTHER_USER!!.lastName}")
+            findViewById<TextView>(R.id.txvw_complete_sum_small).text = "${shList.totalSum + shList.bonusSum} RON"
+
+            findViewById<Button>(R.id.btn_confirm_delivery).setOnClickListener(this)
+        }
+
         findViewById<TextView>(R.id.txvw_other_user_name).text = "${THE_OTHER_USER!!.firstName} ${THE_OTHER_USER!!.lastName}"
+
+        findViewById<LinearLayout>(R.id.lnly_status_container).visibility = View.GONE
 
         findViewById<TextView>(R.id.txvw_complete_sum).text = "${shList.totalSum + (shList.bonusSum.toDouble())} RON"
         findViewById<TextView>(R.id.txvw_shopping_sum_and_bonus).text = "${shList.totalSum} RON\n${shList.bonusSum} RON"
@@ -66,6 +81,7 @@ class DeliveryViewByIssuerActivity : Activity(), View.OnClickListener {
                 R.id.btn_home -> startActivity(Intent(this, HomeActivity::class.java))
                 R.id.btn_my_account -> startActivity(Intent(this, MyAccountActivity::class.java))
                 R.id.btn_call -> { startActivity(Intent(Intent.ACTION_DIAL).setData(Uri.parse("tel:${THE_OTHER_USER?.telephoneNumber}"))) }
+                R.id.btn_confirm_delivery -> { shList.closeList(); startActivity(Intent(this, HomeActivity::class.java)) }
             }
         }
     }

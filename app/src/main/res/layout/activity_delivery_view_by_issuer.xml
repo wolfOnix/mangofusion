@@ -24,7 +24,7 @@
             android:orientation="vertical"
             android:paddingBottom="132dp">
 
-            <include layout="@layout/greeting_simple"/>
+            <include layout="@layout/greeting_with_status"/>
 
             <include layout="@layout/the_other_user_contact_only_call"
                 android:layout_width="match_parent"
@@ -32,7 +32,20 @@
                 android:layout_marginTop="50dp"
                 android:layout_marginBottom="50dp" />
 
-            <include layout="@layout/price_card_by_issuer" />
+            <LinearLayout
+                android:id="@+id/lnly_delivery_confirmation_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:animateLayoutChanges="true" >
+
+                <!-- Dynamic addition and removal -> -->
+
+                <include layout="@layout/price_card_by_issuer" />
+
+                <!-- <- -->
+
+            </LinearLayout>
 
         </LinearLayout>
 

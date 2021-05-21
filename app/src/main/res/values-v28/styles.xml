@@ -167,6 +167,12 @@
         <item name="android:fontFamily">@font/rubik_bold</item>
     </style>
 
+    <style name="title_card_max" parent="@style/TextAppearance.AppCompat.Headline">
+        <item name="android:textSize">25sp</item>
+        <item name="android:textColor">@color/carbon</item>
+        <item name="android:fontFamily">@font/rubik</item>
+    </style>
+
     <style name="title_card_1_2" parent="title_card">
         <item name="android:textSize">17sp</item>
         <item name="android:textColor">@color/carbon</item>

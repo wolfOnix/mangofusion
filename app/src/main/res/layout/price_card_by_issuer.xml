@@ -40,11 +40,22 @@
     </LinearLayout>
 
     <TextView
-        style="@style/title_card"
+        style="@style/title_card_max"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="50dp"
+        android:layout_marginEnd="10dp"
+        android:gravity="center"
+        android:text="@string/check_delivery" />
+
+    <TextView
+        style="@style/title_top"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="20dp"
         android:layout_marginEnd="10dp"
         android:gravity="start"
         android:text="@string/total_sum_to_pay" />
@@ -104,7 +115,7 @@
     <Button
         android:id="@+id/btn_view_receipts"
         style="@style/button_secondary"
-        android:layout_gravity="end"
+        android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"

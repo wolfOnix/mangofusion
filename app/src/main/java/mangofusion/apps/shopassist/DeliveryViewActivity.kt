@@ -4,12 +4,15 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.view.View
-import android.widget.Button
-import android.widget.ImageButton
-import android.widget.TextView
+import android.view.ViewGroup
+import android.widget.*
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 class DeliveryViewActivity : Activity(), View.OnClickListener {
 
@@ -56,6 +59,9 @@ class DeliveryViewActivity : Activity(), View.OnClickListener {
 
         (findViewById<Button>(R.id.btn_call)).setOnClickListener(this)
         (findViewById<Button>(R.id.btn_route)).setOnClickListener(this)
+        findViewById<Button>(R.id.btn_finish_delivery).setOnClickListener(this)
+
+        if (shList.claimedDelivered) waitUntilConfirmed()
     }
 
     private fun greet() {
@@ -69,8 +75,54 @@ class DeliveryViewActivity : Activity(), View.OnClickListener {
                 R.id.btn_my_account -> startActivity(Intent(this, MyAccountActivity::class.java))
                 R.id.btn_call -> { startActivity(Intent(Intent.ACTION_DIAL).setData(Uri.parse("tel:${THE_OTHER_USER?.telephoneNumber}"))) }
                 R.id.btn_route -> { startActivity(Intent(Intent.ACTION_VIEW).setData(Uri.parse("http://maps.google.com/maps?saddr=${THE_OTHER_USER?.city}, ${THE_OTHER_USER?.streetAndNumber}"))) }
+                R.id.btn_finish_delivery -> { shList.claimDeliveredList(); waitUntilConfirmed() }
             }
         }
+    }
+
+    private fun waitUntilConfirmed() {
+        /*val deliveryConfirmationContainer: ViewGroup = findViewById<LinearLayout>(R.id.lnly_delivery_confirmation_container)
+        deliveryConfirmationContainer.removeViewAt(1)*/
+
+        findViewById<Button>(R.id.btn_finish_delivery).visibility = View.GONE
+
+        val txvwWaitForDelivery: TextView = findViewById(R.id.txvw_wait_for_delivery)
+        txvwWaitForDelivery.visibility = View.VISIBLE
+        txvwWaitForDelivery.text = getString(R.string.the_issuer_has_to_confirm_the_delivery, "60")
+
+        findViewById<ProgressBar>(R.id.prbr_linear).visibility = View.VISIBLE
+
+        val timer = object: CountDownTimer(60000, 1000) { // check every 5 s for delivery confirmation but not more than 60 s
+            override fun onTick(millisUntilFinished: Long) {
+                if (millisUntilFinished / 1000 % 5 == 0L)
+                    mDatabase.child("lists").child(shList.listID).child("delivered").get().addOnSuccessListener {
+                        if (it.value == true) {
+                            println("ok")
+                            this.cancel() // stop countdown
+                            findViewById<ImageButton>(R.id.btn_home).performClick() // TODO momentan
+                        }
+                    }.addOnFailureListener {
+                        println("sumting is not ok")
+                    }
+                txvwWaitForDelivery.text = getString(R.string.the_issuer_has_to_confirm_the_delivery, (millisUntilFinished / 1000 + 1).toString())
+            }
+            override fun onFinish() {
+                shList.claimDeliveredList(false) // cancel delivered claim
+                shList.closeList(false) // cancel eventual delivered confirmation
+                findViewById<Button>(R.id.btn_finish_delivery).visibility = View.VISIBLE
+                txvwWaitForDelivery.visibility = View.INVISIBLE
+                findViewById<ProgressBar>(R.id.prbr_linear).visibility = View.INVISIBLE
+            }
+        }
+        timer.start()
+
+        /*mDatabase.child("users").child(shList.issuerID).get().on {
+            if (it.child("delivered").value == true) {
+                println("ok")
+                findViewById<ImageButton>(R.id.btn_home).performClick()
+            }
+        }*/
+
     }
 
     override fun onBackPressed() {

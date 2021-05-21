@@ -118,4 +118,10 @@
     <string name="the_request_was_deleted">The request was deleted</string>
     <string name="do_you_want_to_delete_the_request">Do you want to delete the request?</string>
     <string name="delete">Delete</string>
+    <string name="confirm_delivery">Confirm delivery</string>
+    <string name="to_pay">To pay</string>
+    <string name="delivery_completed">Delivery completed</string>
+    <string name="PHRASE_confirm_delivery_by_issuer">%1$s set your request as being delivered. If you have checked the receipts, have taken the shopping articles and have handed the total sum to the provider, <b>confirm</b> the delivery</string>
+    <string name="check_delivery">Check delivery</string>
+    <string name="the_issuer_has_to_confirm_the_delivery">Confirmation expires in %1$s s</string>
 </resources>

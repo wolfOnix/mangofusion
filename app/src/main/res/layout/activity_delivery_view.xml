@@ -22,7 +22,8 @@
             android:layout_marginEnd="0dp"
             android:gravity="center|top"
             android:orientation="vertical"
-            android:paddingBottom="132dp">
+            android:paddingBottom="132dp"
+            android:animateLayoutChanges="true">
 
             <include layout="@layout/greeting_with_status"/>
 
@@ -33,23 +34,47 @@
                 android:layout_marginBottom="100dp" />
 
             <LinearLayout
+                android:id="@+id/lnly_delivery_confirmation_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:gravity="center">
+                android:gravity="center"
+                android:animateLayoutChanges="true">
 
                 <include layout="@layout/price_card" />
 
                 <android.widget.Button
-                    android:id="@+id/btn_begin_delivery"
+                    android:id="@+id/btn_finish_delivery"
                     style="@style/button_main_gradient"
                     android:background="@drawable/button_gradient"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:text="@string/finish_delivery"/>
+                    android:text="@string/finish_delivery" />
 
             </LinearLayout>
+
+            <TextView
+                android:id="@+id/txvw_wait_for_delivery"
+                style="@style/title_top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:textColor="@color/magenta"
+                android:gravity="center"
+                android:text="@string/the_issuer_has_to_confirm_the_delivery"
+                android:visibility="invisible"/>
+
+            <ProgressBar
+                android:id="@+id/prbr_linear"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                android:layout_marginTop="5dp"
+                android:visibility="invisible"/>
 
         </LinearLayout>
 

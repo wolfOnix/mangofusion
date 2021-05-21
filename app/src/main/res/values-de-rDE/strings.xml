@@ -95,4 +95,10 @@
     <string name="delete">Löschen</string>
     <string name="the_request_was_deleted">Die Anforderung wurde gelöscht</string>
     <string name="view_receipts">Kassebons ansehen</string>
+    <string name="delivery_completed">Lieferung abgeschlossen</string>
+    <string name="to_pay">Zu bezahlen</string>
+    <string name="confirm_delivery">Lieferung bestätigen</string>
+    <string name="The_shopping_is_being_delivered">Die Einkäufe werden geliefert</string>
+    <string name="check_delivery">Einkäufe überprüfen</string>
+    <string name="the_issuer_has_to_confirm_the_delivery">Bestätigung läuft in %1$s s ab</string>
 </resources>

@@ -78,8 +78,14 @@ data class ShoppingList(
         ref.child("totalSum").setValue(this.totalSum)
     }
 
-    fun closeList() { // called when the shopping bag was delivered and the provider received the money
+    fun claimDeliveredList(value: Boolean = true) {
+        this.claimedDelivered = value;
+        val ref = FirebaseDatabase.getInstance().reference.child("lists").child(this.listID).child("claimedDelivered").setValue(value)
+    }
 
+    fun closeList(value: Boolean = true) { // called when the shopping bag was delivered and the provider received the money
+        this.delivered = value;
+        val ref = FirebaseDatabase.getInstance().reference.child("lists").child(this.listID).child("delivered").setValue(value)
     }
 
     fun eraseList() { // called to permanently erase the shopping list before being taken
