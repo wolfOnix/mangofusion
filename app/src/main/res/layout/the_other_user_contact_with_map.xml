@@ -25,7 +25,7 @@
         android:gravity="center">
 
         <Button
-            android:id="@+id/btn_maps"
+            android:id="@+id/btn_route"
             style="@style/button_secondary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

@@ -30,7 +30,7 @@
         android:weightSum="1">
 
         <TextView
-            android:id="@+id/complete_sum"
+            android:id="@+id/txvw_complete_sum"
             style="@style/text_price_1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -41,7 +41,7 @@
             tools:ignore="HardcodedText" />
 
         <TextView
-            android:id="@+id/shopping_sum_and_bonus"
+            android:id="@+id/txvw_shopping_sum_and_bonus"
             style="@style/text_price_2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

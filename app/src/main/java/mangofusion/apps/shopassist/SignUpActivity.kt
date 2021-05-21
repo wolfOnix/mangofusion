@@ -151,7 +151,7 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener, AdapterView.On
             err_edtxt_telephonenumber.text = getString(R.string.field_should_not_be_empty)
             err_edtxt_telephonenumber.visibility = View.VISIBLE
             noError = false
-        } else if (telephoneNumber.length != 10) { // TODO regex check
+        } else if (telephoneNumber.length != 10) { // TODO regex check: filter spaces and '.' and ^[+]?[0-9]{10,13}$
             err_edtxt_telephonenumber.text = getString(R.string.this_field_does_not_respect_the_standard_format)
             err_edtxt_telephonenumber.visibility = View.VISIBLE
             noError = false
