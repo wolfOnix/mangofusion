@@ -95,4 +95,5 @@
     <string name="do_you_want_to_delete_the_request">Doriți să ștergeți cererea?</string>
     <string name="delete">Ștergere</string>
     <string name="the_request_was_deleted">Cererea a fost ștersă</string>
+    <string name="view_receipts">Vizualizare bonuri</string>
 </resources>

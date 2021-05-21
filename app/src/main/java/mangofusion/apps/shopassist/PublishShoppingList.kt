@@ -73,7 +73,7 @@ class PublishShoppingList : Activity(), View.OnClickListener {
     override fun onClick(v: View?) {
         if (v != null) {
             when (v.id) {
-                R.id.btn_publish_list -> { shoppingList.publishList(); startActivity(Intent(this, HomeActivity::class.java)) }
+                R.id.btn_publish_list -> { shoppingList.publishList(); startActivity(Intent(this, HomeActivity::class.java).putExtra("publishedList", shoppingList)) }
             }
         }
     }

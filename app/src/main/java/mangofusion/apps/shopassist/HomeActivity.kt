@@ -1,7 +1,6 @@
 package mangofusion.apps.shopassist
 
 import android.annotation.SuppressLint
-import android.app.AlertDialog
 import android.app.Dialog
 import android.content.Intent
 import android.net.Uri
@@ -19,15 +18,13 @@ import com.google.firebase.database.ValueEventListener
 class HomeActivity: Activity(), View.OnClickListener {
 
     private var btnHome: ImageButton? = null
-    private var btnMyAccount: ImageButton? = null
-    private var btnNewRequest: ImageButton? = null
     private var txvwRequestsNr: TextView? = null
     private var txvwRequestsText: TextView? = null
     private var nrNoRoleLists: Int = 0
     private var shoppingListsReadyContainer: ViewGroup? = null
     private val listOfShLists: MutableList<ShoppingList> = ArrayList()
     private val listOfIssuers: MutableList<User> = ArrayList()
-    private var takenShoppingList: ShoppingList? = null
+    private var singleShList: ShoppingList? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,14 +43,17 @@ class HomeActivity: Activity(), View.OnClickListener {
         txvwRequestsText = findViewById(R.id.txvw_requests_text)
 
         btnHome = findViewById(R.id.btn_home)
-        btnMyAccount = findViewById(R.id.btn_my_account)
-        btnNewRequest = findViewById(R.id.btn_new_request)
-
         btnHome!!.setOnClickListener(this)
-        btnMyAccount!!.setOnClickListener(this)
-        btnNewRequest!!.setOnClickListener(this)
+        findViewById<ImageButton>(R.id.btn_my_account).setOnClickListener(this)
+        findViewById<ImageButton>(R.id.btn_new_request).setOnClickListener(this)
 
-        loadShoppingRequests()
+        if (intent.hasExtra("publishedList")) { // if activity is returned after shopping list publish, load it immediately, without firebase consulting
+            USER_AS_PROVIDER = false
+            USER_AS_ISSUER = true
+            val shList = intent.getSerializableExtra("publishedList") as ShoppingList
+            singleShList = shList
+            displayCard(shList, (if (shList.taken) 2 else 1), 0)
+        } else loadShoppingRequests()
     }
 
     private fun greet() {
@@ -75,7 +75,7 @@ class HomeActivity: Activity(), View.OnClickListener {
                         if (shList.providerID == getUserID()) { // the current user is the provider of the shopping list -> no other shopping list will be displayed
                             USER_AS_PROVIDER = true
                             USER_AS_ISSUER = false
-                            takenShoppingList = shList
+                            singleShList = shList
                             if (!shList.fulfilled) // is still not in the delivery process
                                 displayCard(shList, 3, 0)
                             else { // is in the delivery process
@@ -89,13 +89,13 @@ class HomeActivity: Activity(), View.OnClickListener {
                             if (shList.fulfilled) // is on delivery
                                 startActivity(Intent(this@HomeActivity, DeliveryViewByIssuerActivity::class.java).putExtra("takenShoppingList", shList))
                             else {
-                                takenShoppingList = shList
+                                singleShList = shList
                                 displayCard(shList, (if (shList.taken) 2 else 1), 0)
                             }
                             // adaptLayout(2 || 1)
                             listOfShLists.clear()
                             break
-                        } else listOfShLists.add(shList)
+                        } else if(!shList.taken && !shList.fulfilled) listOfShLists.add(shList)
                     }
                 }
 
@@ -279,7 +279,7 @@ class HomeActivity: Activity(), View.OnClickListener {
                     if (!USER_AS_PROVIDER && !USER_AS_ISSUER) {
                         startActivity(Intent(this, CreateShoppingList::class.java))
                     } else if (USER_AS_PROVIDER) {
-                        startActivity(Intent(this, FulfillShoppingActivity::class.java).putExtra("takenShoppingList", takenShoppingList).putExtra("issuerUser", THE_OTHER_USER))
+                        startActivity(Intent(this, FulfillShoppingActivity::class.java).putExtra("takenShoppingList", singleShList).putExtra("issuerUser", THE_OTHER_USER))
                     } else if (USER_AS_ISSUER) {
                         openEraseDialog()
                     }
@@ -296,7 +296,7 @@ class HomeActivity: Activity(), View.OnClickListener {
     }
 
     private fun openEraseDialog() {
-        if (takenShoppingList != null) {
+        if (singleShList != null) {
             //ViewDialog().showEraseDialog(this, getString(R.string.do_you_want_to_delete_the_request), takenShoppingList!!)
             val dialog = Dialog(this)
             dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
@@ -309,7 +309,7 @@ class HomeActivity: Activity(), View.OnClickListener {
 
             (dialog.findViewById<Button>(R.id.btn_cancel)).setOnClickListener { dialog.dismiss() }
             (dialog.findViewById<Button>(R.id.btn_proceed)).setOnClickListener {
-                takenShoppingList!!.eraseList()
+                singleShList!!.eraseList()
                 Toast.makeText(this, getString(R.string.the_request_was_deleted), Toast.LENGTH_LONG).show()
                 dialog.dismiss()
                 btnHome?.performClick()

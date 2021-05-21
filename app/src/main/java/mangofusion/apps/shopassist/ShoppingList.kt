@@ -21,6 +21,7 @@ data class ShoppingList(
     var providerID: String = "",
     var taken: Boolean = false,
     var fulfilled: Boolean = false,
+    var claimedDelivered: Boolean = false,
     var delivered: Boolean = false
 ): Serializable {
 
@@ -38,14 +39,6 @@ data class ShoppingList(
         }
     }
 
-    @Exclude
-    fun toMap(): Map<String, Any?> {
-        return mapOf(
-            "listID" to listID,
-            "issuerID" to issuerID
-        )
-    }
-
     private fun calculateTotalSum() {
         if (invoices.isNotEmpty()) {
             for (i in invoices) {
@@ -57,32 +50,17 @@ data class ShoppingList(
     }
 
     fun publishList() {
-
         // TODO DO NOT PUBLISH MORE THAN ONE LIST !!!
-
         FirebaseDatabase.getInstance().reference.child("listIndex").get().addOnSuccessListener {
             val globalCounter: Long
-            if (it.value != null)
-                globalCounter = it.value.toString().toLong()
-            else
-                globalCounter = 0
+            globalCounter = if (it.value != null) it.value.toString().toLong() else 0
             FirebaseDatabase.getInstance().reference.child("listIndex").setValue(globalCounter + 1)
             listID = issuerID + "_" + globalCounter.toString()
             FirebaseDatabase.getInstance().reference
                 .child("lists")
                 .child(listID)
                 .setValue(this)
-        }/*.addOnFailureListener { // listIndex is not set // VERY SUSPICIOUS UNDETECTION OF MISSING listIndex :.(
-            val globalCounter: Long = 0
-            FirebaseDatabase.getInstance().reference.child("listIndex").setValue(globalCounter + 1)
-            listID = issuerID + "_" + globalCounter.toString()
-            FirebaseDatabase.getInstance().reference
-                .child("lists")
-                .child(issuerID)
-                .child(globalCounter.toString())
-                .setValue(this)
-        }*/
-        println("Sent")
+        }
     }
 
     fun takeList(provID: String) { // called when a provider takes the request
