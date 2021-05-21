@@ -13,7 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ShopAssist"
         android:windowSoftInputMode="adjustResize">
-        <activity android:name=".DeliveryViewActivity"></activity>
+        <activity android:name=".DeliveryViewByIssuerActivity"></activity>
+        <activity android:name=".DeliveryViewActivity" />
         <activity android:name=".FulfillShoppingActivity" />
         <activity android:name=".TakeListActivity" />
         <activity

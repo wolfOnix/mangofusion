@@ -100,8 +100,13 @@ data class ShoppingList(
         ref.child("totalSum").setValue(this.totalSum)
     }
 
-    fun killList() { // called when the shopping bag was delivered and the provider received the money
+    fun closeList() { // called when the shopping bag was delivered and the provider received the money
 
+    }
+
+    fun eraseList() { // called to permanently erase the shopping list before being taken
+        if (this.taken || this.fulfilled || this.delivered || !providerID.isEmpty()) return
+        FirebaseDatabase.getInstance().reference.child("lists").child(this.listID).removeValue()
     }
 
     fun addInvoice(invoice: Invoice) {

@@ -1,11 +1,14 @@
 package mangofusion.apps.shopassist
 
 import android.annotation.SuppressLint
+import android.app.AlertDialog
+import android.app.Dialog
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
+import android.view.Window
 import android.widget.*
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
@@ -54,7 +57,7 @@ class HomeActivity: Activity(), View.OnClickListener {
     }
 
     private fun greet() {
-        findViewById<TextView>(R.id.txvw_firstname).text = CURR_USER!!.firstName
+        findViewById<TextView>(R.id.txvw_greeting_firstname).text = CURR_USER!!.firstName
     }
 
     @SuppressLint("SetTextI18n")
@@ -82,9 +85,13 @@ class HomeActivity: Activity(), View.OnClickListener {
                             listOfShLists.clear()
                             break
                         } else if (shList.issuerID == getUserID()) { // the current user is the issuer
-                            if (!USER_AS_PROVIDER) USER_AS_ISSUER =
-                                true // the shopping list belongs to the current user
-                            displayCard(shList, (if (shList.taken) 2 else 1), 0)
+                            if (!USER_AS_PROVIDER) USER_AS_ISSUER = true // the shopping list belongs to the current user
+                            if (shList.fulfilled) // is on delivery
+                                startActivity(Intent(this@HomeActivity, DeliveryViewByIssuerActivity::class.java).putExtra("takenShoppingList", shList))
+                            else {
+                                takenShoppingList = shList
+                                displayCard(shList, (if (shList.taken) 2 else 1), 0)
+                            }
                             // adaptLayout(2 || 1)
                             listOfShLists.clear()
                             break
@@ -141,7 +148,7 @@ class HomeActivity: Activity(), View.OnClickListener {
 
         when (mode) {
             1 -> {
-                findViewById<TextView>(R.id.txvw_current_state).text = getString(R.string.waiting_to_be_taken)
+                findViewById<TextView>(R.id.txvw_current_status).text = getString(R.string.waiting_to_be_taken)
                 findViewById<TextView>(R.id.txvw_alternative_phrase).text = getString(R.string.PHRASE_the_list_is_waiting_to_be_taken)
 
                 findViewById<ImageButton>(R.id.btn_new_request).setImageResource(R.drawable.icon_cancel) // change navigation center icon
@@ -149,12 +156,12 @@ class HomeActivity: Activity(), View.OnClickListener {
             2, 3 -> {
 
                 if (mode == 2) {
-                    findViewById<TextView>(R.id.txvw_current_state).text = getString(R.string.the_request_is_taken)
+                    findViewById<TextView>(R.id.txvw_current_status).text = getString(R.string.the_request_is_taken)
                     findViewById<TextView>(R.id.txvw_alternative_phrase).text = getString(R.string.PHRASE_issuer_taken_info_home)
 
                     findViewById<ImageButton>(R.id.btn_new_request).visibility = View.GONE // hide '+' button
                 } else {
-                    findViewById<TextView>(R.id.txvw_current_state).text = getString(R.string.shopping)
+                    findViewById<TextView>(R.id.txvw_current_status).text = getString(R.string.shopping)
                     findViewById<TextView>(R.id.txvw_alternative_phrase).text = getString(R.string.PHRASE_provider_info_home)
 
                     findViewById<ImageButton>(R.id.btn_new_request).setImageResource(R.drawable.icon_shopping_finished)
@@ -273,6 +280,8 @@ class HomeActivity: Activity(), View.OnClickListener {
                         startActivity(Intent(this, CreateShoppingList::class.java))
                     } else if (USER_AS_PROVIDER) {
                         startActivity(Intent(this, FulfillShoppingActivity::class.java).putExtra("takenShoppingList", takenShoppingList).putExtra("issuerUser", THE_OTHER_USER))
+                    } else if (USER_AS_ISSUER) {
+                        openEraseDialog()
                     }
                 }
                 R.id.btn_my_account -> startActivity(Intent(this, MyAccountActivity::class.java))
@@ -284,6 +293,30 @@ class HomeActivity: Activity(), View.OnClickListener {
     override fun onBackPressed() {
         super.onBackPressed()
         finishAffinity()
+    }
+
+    private fun openEraseDialog() {
+        if (takenShoppingList != null) {
+            //ViewDialog().showEraseDialog(this, getString(R.string.do_you_want_to_delete_the_request), takenShoppingList!!)
+            val dialog = Dialog(this)
+            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+
+            dialog.setCancelable(false)
+            dialog.setCanceledOnTouchOutside(true)
+
+            dialog.setContentView(R.layout.alert_box)
+            (dialog.findViewById(R.id.txvw_alert_msg) as TextView).text = getString(R.string.do_you_want_to_delete_the_request)
+
+            (dialog.findViewById<Button>(R.id.btn_cancel)).setOnClickListener { dialog.dismiss() }
+            (dialog.findViewById<Button>(R.id.btn_proceed)).setOnClickListener {
+                takenShoppingList!!.eraseList()
+                Toast.makeText(this, getString(R.string.the_request_was_deleted), Toast.LENGTH_LONG).show()
+                dialog.dismiss()
+                btnHome?.performClick()
+            }
+
+            dialog.show()
+        }
     }
 
 }

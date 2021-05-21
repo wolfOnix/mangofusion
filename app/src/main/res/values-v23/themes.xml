@@ -4,8 +4,8 @@
     <style name="Theme.ShopAssist" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/white</item>
-        <item name="colorPrimaryVariant">@color/white</item> <!-- Not set yet -->
-        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryVariant">@color/purple</item> <!-- Not set yet -->
+        <item name="colorOnPrimary">@color/purple</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/magenta</item>
         <item name="colorSecondaryVariant">@color/secondmagenta</item> <!-- Not set yet -->

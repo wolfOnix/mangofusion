@@ -24,37 +24,7 @@
             android:orientation="vertical"
             android:paddingBottom="132dp">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center|top"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/txvw_greeting"
-                    style="@style/title_1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="68dp"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"
-                    android:gravity="center"
-                    android:text="@string/hello_"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
-
-                <TextView
-                    android:id="@+id/txvw_firstname"
-                    style="@style/title_2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"
-                    android:gravity="center"
-                    android:text=". . ."
-                    tools:ignore="HardcodedText" />
-
-            </LinearLayout>
+            <include layout="@layout/greeting_simple" />
 
             <LinearLayout
                 android:id="@+id/lnly_status_and_contact"
@@ -83,7 +53,7 @@
                         android:background="@drawable/state_indicator_circle" />
 
                     <TextView
-                        android:id="@+id/txvw_current_state"
+                        android:id="@+id/txvw_current_status"
                         style="@style/title_state"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"

@@ -107,8 +107,15 @@
     <string name="PHRASE_begin_delivery">Begin the delivery if you have bought everything that you could find</string>
     <string name="keep_all_the_receipts">Keep and hand all the receipts at the delivery</string>
     <string name="the_sum_does_not_have_a_valid_format">The sum does not have a valid format</string>
-    <string name="PHRASE_delivery_info">Now you can deliver the shopping bag. When you get at the delivery address, request the total sum displayed below and hand in the shopping and the receipts. Lastly, press on Finish delivery</string>
+    <string name="PHRASE_delivery_info">Now you can deliver the shopping bag. When you get at the delivery address, request the total sum displayed below and hand in the shopping and the receipts. Lastly, press <b>Finish delivery</b></string>
     <string name="on_delivery">On delivery</string>
     <string name="route">Route</string>
     <string name="finish_delivery">Finish delivery</string>
+    <string name="PHRASE_delivery_info_by_issuer">The shopping is finished and it is now being delivered by %1$s. When the provider will come, request the receipts and check the total price. Hand in the total sum, including the bonus amount, and receive the articles</string>
+    <string name="The_shopping_is_being_delivered">The shopping is being delivered</string>
+    <string name="view_receipts">View receipts</string>
+    <string name="total_sum_to_pay">Total sum to pay</string>
+    <string name="the_request_was_deleted">The request was deleted</string>
+    <string name="do_you_want_to_delete_the_request">Do you want to delete the request?</string>
+    <string name="delete">Delete</string>
 </resources>

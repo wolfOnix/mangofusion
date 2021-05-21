@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
             android:gravity="start"
-            android:text="Bandi"
+            android:text=". . ."
             tools:ignore="HardcodedText" />
 
     </LinearLayout>
@@ -43,13 +43,14 @@
         android:layout_weight=".5">
 
         <TextView
-            android:id="@+id/txvw_current_state"
+            android:id="@+id/txvw_current_status"
             style="@style/title_state"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="5dp"
             android:gravity="start"
-            android:text="@string/on_delivery" />
+            android:text=". . ."
+            tools:ignore="HardcodedText" />
 
         <ImageView
             android:id="@+id/imvw_circle_indicator"

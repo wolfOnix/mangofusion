@@ -44,28 +44,36 @@ class MyAccountUpdateDataActivity : Activity(), View.OnClickListener {
     }
 
     private fun fillFields() {
-        mDatabase.child("users").child(getUserID()).get().addOnSuccessListener {
-            initFirstname = "${it.child("firstName").value}"
-            edtxtFirstname.setText(initFirstname)
+        if (CURR_USER != null) {
+            edtxtFirstname.setText(CURR_USER?.firstName)
+            edtxtLastname.setText(CURR_USER?.lastName)
+            edtxtTelephonenumber.setText(CURR_USER?.telephoneNumber)
+            edtxtCity.setText(CURR_USER?.city)
+            edtxtAddress.setText(CURR_USER?.streetAndNumber)
+        } else {
+            mDatabase.child("users").child(getUserID()).get().addOnSuccessListener {
+                initFirstname = "${it.child("firstName").value}"
+                edtxtFirstname.setText(initFirstname)
 
-            initLastname = "${it.child("lastName").value}"
-            edtxtLastname .setText(initLastname)
+                initLastname = "${it.child("lastName").value}"
+                edtxtLastname.setText(initLastname)
 
-            initTelephonenumber = "${it.child("telephoneNumber").value}"
-            edtxtTelephonenumber.setText(initTelephonenumber)
+                initTelephonenumber = "${it.child("telephoneNumber").value}"
+                edtxtTelephonenumber.setText(initTelephonenumber)
 
-            initCity = "${it.child("city").value}"
-            edtxtCity.setText(initCity)
+                initCity = "${it.child("city").value}"
+                edtxtCity.setText(initCity)
 
-            initAddress = "${it.child("streetAndNumber").value}"
-            edtxtAddress .setText(initAddress)
+                initAddress = "${it.child("streetAndNumber").value}"
+                edtxtAddress.setText(initAddress)
+            }
         }
     }
 
     private fun updateUser() {
 
-        var noError: Boolean = true
-        var somethingChanged: Boolean = false
+        var noError = true
+        var somethingChanged = false
 
         val firstName = edtxtFirstname.text.toString().trim { it <= ' ' }.filter { it.isLetter() || it == ' '}
         val lastName = edtxtLastname.text.toString().trim { it <= ' ' }.filter { it.isLetter() || it == ' ' }
@@ -74,19 +82,19 @@ class MyAccountUpdateDataActivity : Activity(), View.OnClickListener {
         val streetAndNumber = edtxtAddress.text.toString().trim { it <= ' ' }
 
         if (firstName.isEmpty()) noError = false
-        if (firstName != initFirstname) somethingChanged = true
+        if (firstName != CURR_USER?.firstName) somethingChanged = true
 
         if (lastName.isEmpty()) noError = false
-        if (lastName != initLastname) somethingChanged = true
+        if (lastName != CURR_USER?.lastName) somethingChanged = true
 
         if (city.isEmpty()) noError = false
-        if (city != initCity) somethingChanged = true
+        if (city != CURR_USER?.city) somethingChanged = true
 
         if (streetAndNumber.isEmpty()) noError = false
-        if (streetAndNumber != initAddress) somethingChanged = true
+        if (streetAndNumber != CURR_USER?.streetAndNumber) somethingChanged = true
 
         if (telephoneNumber.length < 8 || telephoneNumber.length > 18) noError = false
-        if (telephoneNumber != initTelephonenumber) somethingChanged = true
+        if (telephoneNumber != CURR_USER?.telephoneNumber) somethingChanged = true
 
         if (!noError) {
             val txvwError: TextView = findViewById(R.id.txvw_error)
@@ -95,6 +103,12 @@ class MyAccountUpdateDataActivity : Activity(), View.OnClickListener {
         }
 
         if (somethingChanged) {
+            CURR_USER?.firstName = firstName
+            CURR_USER?.lastName = lastName
+            CURR_USER?.telephoneNumber = telephoneNumber
+            CURR_USER?.streetAndNumber = streetAndNumber
+            CURR_USER?.city = city
+
             val ref = mDatabase.child("users").child(getUserID())
 
             ref.child("firstName").setValue(firstName)

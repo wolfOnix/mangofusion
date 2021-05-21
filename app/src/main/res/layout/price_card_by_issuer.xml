@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp"
+    android:background="@drawable/card_background"
+    android:padding="30dp"
+    android:orientation="vertical"
+    android:gravity="start|center">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="30dp"
+        tools:ignore="UseCompoundDrawables">
+
+        <ImageView
+            android:id="@+id/imvw_circle_indicator"
+            android:backgroundTint="@color/green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/state_indicator_circle"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/txvw_current_status"
+            style="@style/title_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:gravity="start"
+            android:text="@string/The_shopping_is_being_delivered"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+    <TextView
+        style="@style/title_card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginEnd="10dp"
+        android:gravity="start"
+        android:text="@string/total_sum_to_pay" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/txvw_complete_sum"
+            style="@style/text_price_1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".6"
+            android:layout_marginStart="10dp"
+            android:gravity="start"
+            android:text="73,41 RON"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/txvw_shopping_sum_and_bonus"
+            style="@style/text_price_2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".35"
+            android:gravity="end"
+            android:text="63,41 RON\n10 RON"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            style="@style/text_price_2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".05"
+            android:layout_marginEnd="10dp"
+            android:gravity="center"
+            android:text="+\n"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txvw_price_card_by_issuer_info"
+        style="@style/description"
+        android:textSize="13sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:gravity="start"
+        android:text="@string/PHRASE_delivery_info_by_issuer"/>
+
+    <Button
+        android:id="@+id/btn_view_receipts"
+        style="@style/button_secondary"
+        android:layout_gravity="end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/view_receipts" />
+
+</LinearLayout>

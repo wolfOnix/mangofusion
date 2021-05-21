@@ -90,4 +90,8 @@
     <string name="begin_delivery">Lieferung beginnen</string>
     <string name="keep_all_the_receipts">Bewahren Sie alle Kassebons und geben Sie die an der Lieferung über</string>
     <string name="the_sum_does_not_have_a_valid_format">Die eingesetzte Summe hat kein gültiges Format</string>
+    <string name="total_sum_to_pay">Gesamtbetrag zu bezahlen</string>
+    <string name="do_you_want_to_delete_the_request">Möchten Sie die Anforderung wirklich löschen?</string>
+    <string name="delete">Löschen</string>
+    <string name="the_request_was_deleted">Die Anforderung wurde gelöscht</string>
 </resources>

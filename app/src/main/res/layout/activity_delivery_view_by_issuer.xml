@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DeliveryViewActivity">
+    tools:context=".DeliveryViewByIssuerActivity">
 
     <ScrollView
         android:id="@+id/scrollView3"
@@ -24,32 +24,15 @@
             android:orientation="vertical"
             android:paddingBottom="132dp">
 
-            <include layout="@layout/greeting_with_status"/>
+            <include layout="@layout/greeting_simple"/>
 
-            <include layout="@layout/the_other_user_contact_with_map"
+            <include layout="@layout/the_other_user_contact_only_call"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="100dp"
-                android:layout_marginBottom="100dp" />
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="50dp" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center">
-
-                <include layout="@layout/price_card" />
-
-                <android.widget.Button
-                    android:id="@+id/btn_begin_delivery"
-                    style="@style/button_main_gradient"
-                    android:background="@drawable/button_gradient"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:text="@string/finish_delivery"/>
-
-            </LinearLayout>
+            <include layout="@layout/price_card_by_issuer" />
 
         </LinearLayout>
 

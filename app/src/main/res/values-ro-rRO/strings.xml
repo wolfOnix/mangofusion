@@ -91,4 +91,8 @@
     <string name="begin_delivery">Livrare</string>
     <string name="keep_all_the_receipts">Păstrați toate bonurile și înmânați-le la sosire</string>
     <string name="the_sum_does_not_have_a_valid_format">Suma introdusă nu are un format numeric valid</string>
+    <string name="total_sum_to_pay">Suma totală de achitat</string>
+    <string name="do_you_want_to_delete_the_request">Doriți să ștergeți cererea?</string>
+    <string name="delete">Ștergere</string>
+    <string name="the_request_was_deleted">Cererea a fost ștersă</string>
 </resources>
