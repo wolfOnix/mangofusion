@@ -101,4 +101,7 @@
     <string name="The_shopping_is_being_delivered">Die Einkäufe werden geliefert</string>
     <string name="check_delivery">Einkäufe überprüfen</string>
     <string name="the_issuer_has_to_confirm_the_delivery">Bestätigung läuft in %1$s s ab</string>
+    <string name="congratulations">Gratuliere, %1$s!</string>
+    <string name="you_have_successfully_received_the_shopping_from">Ihre Einkäufe wurden erfolgreich von %1$s geliefert</string>
+    <string name="shopping_is_done">Bis bald!</string>
 </resources>

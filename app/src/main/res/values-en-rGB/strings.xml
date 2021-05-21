@@ -108,4 +108,8 @@
     <string name="delivery_completed">Delivery completed</string>
     <string name="the_issuer_has_to_confirm_the_delivery">Confirmation expires in %1$s s</string>
     <string name="check_delivery">Check delivery</string>
+    <string name="you_have_successfully_delivered_the_shopping_to">You have successfully delivered the shopping to %1$s</string>
+    <string name="congratulations">Congratulations, %1$s!</string>
+    <string name="shopping_is_done">Bye for now!</string>
+    <string name="you_have_successfully_received_the_shopping_from">You have successfully received the shopping bag from %1$s</string>
 </resources>

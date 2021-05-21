@@ -112,13 +112,13 @@
         android:gravity="start"
         android:text="@string/PHRASE_delivery_info_by_issuer"/>
 
-    <Button
+    <!--<Button
         android:id="@+id/btn_view_receipts"
         style="@style/button_secondary"
         android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="@string/view_receipts" />
+        android:text="@string/view_receipts" />-->
 
 </LinearLayout>

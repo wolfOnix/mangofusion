@@ -102,4 +102,7 @@
     <string name="The_shopping_is_being_delivered">Cumpărăturile se livrează</string>
     <string name="check_delivery">Verificare cumpărături</string>
     <string name="the_issuer_has_to_confirm_the_delivery">Confirmarea expiră în %1$s s</string>
+    <string name="congratulations">Felicitări, %1$s!</string>
+    <string name="you_have_successfully_received_the_shopping_from">Cumpărăturile dvs. au fost livrate cu succes de către %1$s</string>
+    <string name="shopping_is_done">Pe curând!</string>
 </resources>

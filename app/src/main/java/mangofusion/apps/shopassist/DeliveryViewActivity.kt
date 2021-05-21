@@ -97,12 +97,9 @@ class DeliveryViewActivity : Activity(), View.OnClickListener {
                 if (millisUntilFinished / 1000 % 5 == 0L)
                     mDatabase.child("lists").child(shList.listID).child("delivered").get().addOnSuccessListener {
                         if (it.value == true) {
-                            println("ok")
                             this.cancel() // stop countdown
-                            findViewById<ImageButton>(R.id.btn_home).performClick() // TODO momentan
+                            goIllustration()
                         }
-                    }.addOnFailureListener {
-                        println("sumting is not ok")
                     }
                 txvwWaitForDelivery.text = getString(R.string.the_issuer_has_to_confirm_the_delivery, (millisUntilFinished / 1000 + 1).toString())
             }
@@ -115,14 +112,10 @@ class DeliveryViewActivity : Activity(), View.OnClickListener {
             }
         }
         timer.start()
+    }
 
-        /*mDatabase.child("users").child(shList.issuerID).get().on {
-            if (it.child("delivered").value == true) {
-                println("ok")
-                findViewById<ImageButton>(R.id.btn_home).performClick()
-            }
-        }*/
-
+    private fun goIllustration() {
+        startActivity(Intent(this, DeliveryDoneActivity::class.java))
     }
 
     override fun onBackPressed() {

@@ -81,7 +81,7 @@ class DeliveryViewByIssuerActivity : Activity(), View.OnClickListener {
                 R.id.btn_home -> startActivity(Intent(this, HomeActivity::class.java))
                 R.id.btn_my_account -> startActivity(Intent(this, MyAccountActivity::class.java))
                 R.id.btn_call -> { startActivity(Intent(Intent.ACTION_DIAL).setData(Uri.parse("tel:${THE_OTHER_USER?.telephoneNumber}"))) }
-                R.id.btn_confirm_delivery -> { shList.closeList(); startActivity(Intent(this, HomeActivity::class.java)) }
+                R.id.btn_confirm_delivery -> { shList.closeList(); startActivity(Intent(this, DeliveryDoneByIssuerActivity::class.java)) }
             }
         }
     }
