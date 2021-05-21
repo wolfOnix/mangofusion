@@ -125,6 +125,30 @@
         <item name="android:fontFamily">@font/rubik_light</item>
     </style>
 
+    <style name="text_greeting" parent="@style/TextAppearance.AppCompat">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/carbon</item>
+        <item name="android:fontFamily">@font/rubik</item>
+    </style>
+
+    <style name="text_greeting_fname" parent="@style/TextAppearance.AppCompat">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/carbon</item>
+        <item name="android:fontFamily">@font/rubik_medium</item>
+    </style>
+
+    <style name="text_price_1" parent="@style/TextAppearance.AppCompat">
+        <item name="android:textSize">28sp</item>
+        <item name="android:textColor">@color/carbon</item>
+        <item name="android:fontFamily">@font/rubik</item>
+    </style>
+
+    <style name="text_price_2" parent="@style/TextAppearance.AppCompat">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/carbon</item>
+        <item name="android:fontFamily">@font/rubik_light</item>
+    </style>
+
     <style name="title_1" parent="@style/TextAppearance.AppCompat.Headline">
         <item name="android:textSize">25sp</item>
         <item name="android:textColor">@color/black</item>
@@ -169,7 +193,7 @@
 
     <style name="title_state" parent="@style/TextAppearance.AppCompat.Headline">
         <item name="android:textSize">15sp</item>
-        <item name="android:fontFamily">@font/rubik_medium</item>
+        <item name="android:fontFamily">@font/rubik</item>
         <item name="android:textAllCaps">false</item>
     </style>
 

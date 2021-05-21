@@ -24,89 +24,33 @@
             android:orientation="vertical"
             android:paddingBottom="132dp">
 
+            <include layout="@layout/greeting_with_status"/>
+
+            <include layout="@layout/the_other_user_contact_with_map"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="100dp"
+                android:layout_marginBottom="100dp" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center|top"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:gravity="center"
+                android:weightSum="1">
 
-                <TextView
-                    android:id="@+id/txvw_greeting"
-                    style="@style/title_1"
+                <include layout="@layout/price_card" />
+
+                <android.widget.Button
+                    android:id="@+id/btn_begin_delivery"
+                    style="@style/button_main_gradient"
+                    android:background="@drawable/button_gradient"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="68dp"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"
-                    android:gravity="center"
-                    android:text="@string/hello_"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
-
-                <TextView
-                    android:id="@+id/txvw_firstname"
-                    style="@style/title_2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"
-                    android:gravity="center"
-                    android:text=". . ."
-                    tools:ignore="HardcodedText" />
+                    android:layout_marginTop="5dp"
+                    android:text="@string/finish_delivery"/>
 
             </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/lnly_status_and_contact"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:gravity="start|center"
-                android:paddingBottom="15dp"
-                android:orientation="vertical" >
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="20dp"
-                    android:gravity="center"
-                    android:orientation="horizontal"
-                    app:layout_constraintBottom_toBottomOf="parent" >
-
-                    <ImageView
-                        android:id="@+id/imvw_circle_indicator"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="20dp"
-                        android:background="@drawable/state_indicator_circle" />
-
-                    <TextView
-                        android:id="@+id/txvw_current_state"
-                        style="@style/title_state"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginEnd="20dp"
-                        android:padding="2dp"
-                        android:gravity="start"
-                        android:text="@string/on_delivery" />
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <include layout="@layout/the_other_user_contact_with_map"/>
-
-            <include layout="@layout/price_card" />
-
-            <android.widget.Button
-                android:id="@+id/btn_begin_delivery"
-                style="@style/button_main_gradient"
-                android:background="@drawable/button_gradient"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/finish_delivery"/>
 
         </LinearLayout>
 
