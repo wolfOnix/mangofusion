@@ -27,9 +27,10 @@ class DeliveryViewByIssuerActivity : Activity(), View.OnClickListener {
 
         shList = intent.getSerializableExtra("takenShoppingList") as ShoppingList
 
-        val swipeRefreshLayout = findViewById<SwipeRefreshLayout>(R.id.refresher)
-        swipeRefreshLayout.setOnRefreshListener { // set refresh behaviour
-            swipeRefreshLayout.isRefreshing = false
+        val refresher = findViewById<SwipeRefreshLayout>(R.id.refresher)
+        refresher.setColorSchemeResources(R.color.purple)
+        refresher.setOnRefreshListener { // set refresh behaviour
+            refresher.isRefreshing = false
             startActivity(Intent(this, HomeActivity::class.java))
         }
 

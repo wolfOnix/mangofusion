@@ -6,14 +6,10 @@ import android.net.Uri
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.View
-import android.view.ViewGroup
 import android.widget.*
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
 
 class DeliveryViewActivity : Activity(), View.OnClickListener {
 
@@ -28,9 +24,10 @@ class DeliveryViewActivity : Activity(), View.OnClickListener {
 
         shList = intent.getSerializableExtra("takenShoppingList") as ShoppingList
 
-        val swipeRefreshLayout = findViewById<SwipeRefreshLayout>(R.id.refresher)
-        swipeRefreshLayout.setOnRefreshListener { // set refresh behaviour
-            swipeRefreshLayout.isRefreshing = false
+        val refresher = findViewById<SwipeRefreshLayout>(R.id.refresher)
+        refresher.setColorSchemeResources(R.color.purple)
+        refresher.setOnRefreshListener { // set refresh behaviour
+            refresher.isRefreshing = false
             startActivity(Intent(this, this::class.java).putExtra("takenShoppingList", shList))
         }
 
