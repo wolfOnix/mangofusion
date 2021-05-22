@@ -10,6 +10,7 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 
@@ -25,6 +26,12 @@ class DeliveryViewByIssuerActivity : Activity(), View.OnClickListener {
         findViewById<ImageButton>(R.id.btn_my_account).setOnClickListener(this)
 
         shList = intent.getSerializableExtra("takenShoppingList") as ShoppingList
+
+        val swipeRefreshLayout = findViewById<SwipeRefreshLayout>(R.id.refresher)
+        swipeRefreshLayout.setOnRefreshListener { // set refresh behaviour
+            swipeRefreshLayout.isRefreshing = false
+            startActivity(Intent(this, HomeActivity::class.java))
+        }
 
         if (intent.hasExtra("providerUser")) {
             THE_OTHER_USER = intent.getSerializableExtra("providerUser") as User

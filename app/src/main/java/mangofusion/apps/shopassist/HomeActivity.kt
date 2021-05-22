@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.Window
 import android.widget.*
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -37,6 +38,12 @@ class HomeActivity: Activity(), View.OnClickListener {
                 greet()
             }
         } else greet()
+
+        val swipeRefreshLayout = findViewById<SwipeRefreshLayout>(R.id.refresher)
+        swipeRefreshLayout.setOnRefreshListener { // set refresh behaviour
+            swipeRefreshLayout.isRefreshing = false
+            startActivity(Intent(this, HomeActivity::class.java))
+        }
 
         shoppingListsReadyContainer = findViewById(R.id.lnly_all_lists_container)
 

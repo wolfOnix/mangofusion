@@ -8,6 +8,7 @@ import android.os.CountDownTimer
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -26,6 +27,12 @@ class DeliveryViewActivity : Activity(), View.OnClickListener {
         findViewById<ImageButton>(R.id.btn_my_account).setOnClickListener(this)
 
         shList = intent.getSerializableExtra("takenShoppingList") as ShoppingList
+
+        val swipeRefreshLayout = findViewById<SwipeRefreshLayout>(R.id.refresher)
+        swipeRefreshLayout.setOnRefreshListener { // set refresh behaviour
+            swipeRefreshLayout.isRefreshing = false
+            startActivity(Intent(this, this::class.java).putExtra("takenShoppingList", shList))
+        }
 
         if (intent.hasExtra("issuerUser")) {
             THE_OTHER_USER = intent.getSerializableExtra("issuerUser") as User

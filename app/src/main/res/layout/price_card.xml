@@ -37,7 +37,7 @@
             android:layout_weight=".6"
             android:layout_marginStart="10dp"
             android:gravity="start"
-            android:text="73,41 RON"
+            android:text=". . . RON"
             tools:ignore="HardcodedText" />
 
         <TextView
@@ -47,7 +47,7 @@
             android:layout_height="wrap_content"
             android:layout_weight=".35"
             android:gravity="end"
-            android:text="63,41 RON\n10 RON"
+            android:text=". . . RON\n. . . RON"
             tools:ignore="HardcodedText" />
 
         <TextView
