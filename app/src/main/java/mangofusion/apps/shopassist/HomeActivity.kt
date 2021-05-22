@@ -14,6 +14,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import mangofusion.apps.shopassist.ShoppingList.Companion.eraseList
 
 class HomeActivity: Activity(), View.OnClickListener {
 
@@ -116,19 +117,6 @@ class HomeActivity: Activity(), View.OnClickListener {
     }
 
     private fun loopRequests(shListArr: Array<ShoppingList>) { // user has no role
-        /*if (USER_AS_ISSUER) { // user issued at least one list
-            println("CP3")
-            for (i in shListArr.indices) {
-                if (shListArr[i].issuerID == getUserID()) {
-                    if (shListArr[i].taken)
-                        displayCard(shListArr[i], 2, i)
-                    else
-                        displayCard(shListArr[i], 1, i)
-                }
-            }
-        } else if (!USER_AS_PROVIDER) {*/
-        println("CP4")
-
         nrNoRoleLists = shListArr.size
         txvwRequestsText?.text = resources.getString(R.string.PHRASE_available_requests_nearby)
         txvwRequestsNr?.text = nrNoRoleLists.toString()
@@ -152,6 +140,8 @@ class HomeActivity: Activity(), View.OnClickListener {
                 findViewById<TextView>(R.id.txvw_alternative_phrase).text = getString(R.string.PHRASE_the_list_is_waiting_to_be_taken)
 
                 findViewById<ImageButton>(R.id.btn_new_request).setImageResource(R.drawable.icon_cancel) // change navigation center icon
+
+                infoContainer.removeViewAt(2) // hide contact details
             }
             2, 3 -> {
 
@@ -167,11 +157,11 @@ class HomeActivity: Activity(), View.OnClickListener {
                     findViewById<ImageButton>(R.id.btn_new_request).setImageResource(R.drawable.icon_shopping_finished)
                 }
 
-                val v: View = layoutInflater.inflate(R.layout.the_other_user_contact, infoContainer, false)
-                infoContainer.addView(v, 2)
+                /*val v: View = layoutInflater.inflate(R.layout.the_other_user_contact, infoContainer, false)
+                infoContainer.addView(v, 2)*/
 
                 if (mode == 2) { // hide delivery address
-                    val contactLayout: ViewGroup = v as ViewGroup
+                    val contactLayout: ViewGroup = infoContainer.getChildAt(2) as ViewGroup
                     contactLayout.getChildAt(2).visibility = View.GONE
                 } else { // show the delivery address
                     findViewById<TextView>(R.id.txvw_delivery_address).text = "${THE_OTHER_USER!!.city}, ${THE_OTHER_USER!!.streetAndNumber}"
@@ -309,7 +299,8 @@ class HomeActivity: Activity(), View.OnClickListener {
 
             (dialog.findViewById<Button>(R.id.btn_cancel)).setOnClickListener { dialog.dismiss() }
             (dialog.findViewById<Button>(R.id.btn_proceed)).setOnClickListener {
-                singleShList!!.eraseList()
+                eraseList(singleShList!!)
+                singleShList = null
                 Toast.makeText(this, getString(R.string.the_request_was_deleted), Toast.LENGTH_LONG).show()
                 dialog.dismiss()
                 btnHome?.performClick()

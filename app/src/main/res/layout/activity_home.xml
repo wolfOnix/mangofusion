@@ -78,6 +78,11 @@
                     android:text=". . ."
                     tools:ignore="HardcodedText" />
 
+                <include layout="@layout/the_other_user_contact"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"/>
+
             </LinearLayout>
 
             <LinearLayout

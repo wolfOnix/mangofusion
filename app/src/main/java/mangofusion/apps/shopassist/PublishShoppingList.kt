@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import com.google.firebase.database.FirebaseDatabase
 
 class PublishShoppingList : Activity(), View.OnClickListener {
 
@@ -73,7 +74,15 @@ class PublishShoppingList : Activity(), View.OnClickListener {
     override fun onClick(v: View?) {
         if (v != null) {
             when (v.id) {
-                R.id.btn_publish_list -> { shoppingList.publishList(); startActivity(Intent(this, HomeActivity::class.java).putExtra("publishedList", shoppingList)) }
+                R.id.btn_publish_list -> {
+                    FirebaseDatabase.getInstance().reference.child("listIndex").get().addOnSuccessListener {
+                        val globalCounter: Long = if (it.value != null) it.value.toString().toLong() else 0
+                        FirebaseDatabase.getInstance().reference.child("listIndex").setValue(globalCounter + 1)
+                        shoppingList.listID = shoppingList.issuerID + "_" + globalCounter.toString()
+                        shoppingList.publishList()
+                        startActivity(Intent(this, HomeActivity::class.java).putExtra("publishedList", shoppingList))
+                    }
+                }
             }
         }
     }

@@ -1,5 +1,6 @@
 package mangofusion.apps.shopassist
 
+import android.content.Intent
 import com.google.firebase.database.Exclude
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.IgnoreExtraProperties
@@ -37,6 +38,15 @@ data class ShoppingList(
         fun getReasonPos(pos: Int): Int {
             return reasonsArr[pos]
         }
+
+        fun eraseList(list: ShoppingList): Boolean { // called to permanently erase the shopping list before being taken
+            println("${list.listID} ->")
+            if (!list.listID.contains(list.issuerID) || list.listID.isEmpty()) return false
+            if (list.taken || list.fulfilled || list.delivered || !list.providerID.isEmpty()) return false
+            FirebaseDatabase.getInstance().reference.child("lists").child(list.listID).setValue(null)
+            println("erased")
+            return true
+        }
     }
 
     private fun calculateTotalSum() {
@@ -50,17 +60,14 @@ data class ShoppingList(
     }
 
     fun publishList() {
-        // TODO DO NOT PUBLISH MORE THAN ONE LIST !!!
-        FirebaseDatabase.getInstance().reference.child("listIndex").get().addOnSuccessListener {
-            val globalCounter: Long
-            globalCounter = if (it.value != null) it.value.toString().toLong() else 0
-            FirebaseDatabase.getInstance().reference.child("listIndex").setValue(globalCounter + 1)
-            listID = issuerID + "_" + globalCounter.toString()
-            FirebaseDatabase.getInstance().reference
-                .child("lists")
-                .child(listID)
-                .setValue(this)
-        }
+        if (listID == "") {
+            FirebaseDatabase.getInstance().reference.child("listIndex").get().addOnSuccessListener {
+                val globalCounter: Long = if (it.value != null) it.value.toString().toLong() else 0
+                FirebaseDatabase.getInstance().reference.child("listIndex").setValue(globalCounter + 1)
+                listID = issuerID + "_" + globalCounter.toString()
+                FirebaseDatabase.getInstance().reference.child("lists").child(this.listID).setValue(this)
+            }
+        } else FirebaseDatabase.getInstance().reference.child("lists").child(this.listID).setValue(this)
     }
 
     fun takeList(provID: String) { // called when a provider takes the request
@@ -86,11 +93,6 @@ data class ShoppingList(
     fun closeList(value: Boolean = true) { // called when the shopping bag was delivered and the provider received the money
         this.delivered = value;
         val ref = FirebaseDatabase.getInstance().reference.child("lists").child(this.listID).child("delivered").setValue(value)
-    }
-
-    fun eraseList() { // called to permanently erase the shopping list before being taken
-        if (this.taken || this.fulfilled || this.delivered || !providerID.isEmpty()) return
-        FirebaseDatabase.getInstance().reference.child("lists").child(this.listID).removeValue()
     }
 
     fun addInvoice(invoice: Invoice) {
