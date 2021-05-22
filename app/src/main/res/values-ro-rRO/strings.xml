@@ -117,4 +117,5 @@
     <string name="PHRASE_delivery_info_by_issuer">Cumpărăturile au fost finalizate de către %1$s. Când va sosi, solicitați bonurile și cumpărăturile și verificați prețul. Dacă totul este în regulă, înmânați suma afișată, care include suma bonus, și solicitați cumpărăturile</string>
     <string name="PHRASE_confirm_delivery_by_issuer">%1$s a setat cumpărăturile ca fiind finalizate. Dacă ați verificat bonurile, ați primit cumpărăturile și ați înmânat suma totală, <b>confirmați</b> livrarea</string>
     <string name="you_have_successfully_delivered_the_shopping_to">Ați livrat cu succes cumpărăturile pentru %1$s</string>
+    <string name="request_could_not_be_deleted">Cererea nu a putut fi ștersă. Reîncărcați pagina</string>
 </resources>

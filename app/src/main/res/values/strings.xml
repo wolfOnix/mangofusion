@@ -129,4 +129,5 @@
     <string name="PHRASE_call_if">You will be able to call the issuer at any step after you take the request. You can do this now, too, if you have some questions and you want to assist the issuer</string>
     <string name="PHRASE_begin_delivery">If you have finished all the shopping, you are ready to go</string>
     <string name="by_creating_an_account_you_agree_with_the_terms_and_conditions">By creating an account, you agree with the <b>Terms and conditions</b> and with the <b>Code of conduct</b></string>
+    <string name="request_could_not_be_deleted">The request could not be deleted. Refresh the page</string>
 </resources>

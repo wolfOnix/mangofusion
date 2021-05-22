@@ -299,11 +299,14 @@ class HomeActivity: Activity(), View.OnClickListener {
 
             (dialog.findViewById<Button>(R.id.btn_cancel)).setOnClickListener { dialog.dismiss() }
             (dialog.findViewById<Button>(R.id.btn_proceed)).setOnClickListener {
-                eraseList(singleShList!!)
-                singleShList = null
-                Toast.makeText(this, getString(R.string.the_request_was_deleted), Toast.LENGTH_LONG).show()
-                dialog.dismiss()
-                btnHome?.performClick()
+                if (eraseList(singleShList!!)) {
+                    singleShList = null
+                    Toast.makeText(this, getString(R.string.the_request_was_deleted), Toast.LENGTH_LONG).show()
+                    dialog.dismiss()
+                    btnHome?.performClick()
+                } else {
+                    Toast.makeText(this, getString(R.string.request_could_not_be_deleted), Toast.LENGTH_LONG).show()
+                }
             }
 
             dialog.show()

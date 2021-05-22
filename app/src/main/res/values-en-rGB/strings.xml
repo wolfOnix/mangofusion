@@ -116,4 +116,5 @@
     <string name="PHRASE_the_list_is_waiting_to_be_taken">Your request is visible for all the users, waiting to be taken by one of them</string>
     <string name="by_creating_an_account_you_agree_with_the_terms_and_conditions">By creating an account, you agree with the <b>Terms and conditions</b> and with the <b>Behaviour codex</b></string>
     <string name="PHRASE_confirm_delivery_by_issuer">%1$s set your request as being delivered. If you have checked the receipts, have taken the shopping articles and have handed the total sum to the provider, <b>confirm</b> the delivery</string>
+    <string name="request_could_not_be_deleted">The request could not be deleted. Refresh the page</string>
 </resources>

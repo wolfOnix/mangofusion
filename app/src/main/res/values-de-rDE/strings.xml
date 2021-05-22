@@ -116,4 +116,5 @@
     <string name="PHRASE_delivery_info_by_issuer">"Die Einkäufe sind jetzt von %1$s geliefert. Wenn der Anbieter kommt, fordern Sie die Quittungen an und prüfen Sie den Gesamtpreis über. Geben Sie die Gesamtsumme, die bereits den Bonusbetrag enthält, ab und erhalten Sie die Artikel "</string>
     <string name="PHRASE_confirm_delivery_by_issuer">%1$s hat Ihre Anfrage als geliefert gesetzt. Wenn Sie die Quittungen überprüft, die Einkaufsartikel genommen und die Gesamtsumme an den Anbieter übergeben haben, <b>bestätigen</b> Sie die Lieferung</string>
     <string name="you_have_successfully_delivered_the_shopping_to">Sie haben die Einkaufsartikel erfolgreich für %1$s geliefert</string>
+    <string name="request_could_not_be_deleted">Die Anforderung konnte nicht gelöscht werden. Laden Sie diese Seite erneut</string>
 </resources>
