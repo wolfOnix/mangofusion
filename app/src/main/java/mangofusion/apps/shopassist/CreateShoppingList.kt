@@ -11,7 +11,7 @@ import java.util.*
 import mangofusion.apps.shopassist.ShoppingList.Companion.getReasonPos
 
 
-class CreateShoppingListActivity : Activity(), View.OnClickListener, AdapterView.OnItemSelectedListener {
+class CreateShoppingList : Activity(), View.OnClickListener, AdapterView.OnItemSelectedListener {
 
     private var btn_create_list_next: Button? = null
     private var btns_bonus = mutableListOf<Button>()
@@ -57,7 +57,7 @@ class CreateShoppingListActivity : Activity(), View.OnClickListener, AdapterView
         {
             adapter = adapter
             setSelection(0, false)
-            onItemSelectedListener = this@CreateShoppingListActivity
+            onItemSelectedListener = this@CreateShoppingList
         }
     }
 

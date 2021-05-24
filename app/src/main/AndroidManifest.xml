@@ -14,7 +14,7 @@
         android:theme="@style/Theme.ShopAssist"
         android:windowSoftInputMode="adjustResize">
         <activity android:name=".PublishShoppingList" android:screenOrientation="portrait" />
-        <activity android:name=".CreateShoppingListActivity" android:screenOrientation="portrait" />
+        <activity android:name=".CreateShoppingList" android:screenOrientation="portrait" />
         <activity android:name=".MyAccountUpdateDataActivity" android:screenOrientation="portrait"/>
         <activity android:name=".ForgotPasswordActivity" android:screenOrientation="portrait" />
         <activity android:name=".MyAccountActivity" android:screenOrientation="portrait" />

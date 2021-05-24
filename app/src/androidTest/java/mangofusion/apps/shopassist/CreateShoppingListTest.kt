@@ -8,27 +8,27 @@ import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 
-class CreateShoppingListActivityTest {
+class CreateShoppingListTest {
     @Rule @JvmField
     var createShoppingListActivityActivityTestRule = ActivityTestRule(
-        CreateShoppingListActivity::class.java
+        CreateShoppingList::class.java
     )
-    var createShoppingListActivity: CreateShoppingListActivity? = null
+    var createShoppingList: CreateShoppingList? = null
     @Before
     @Throws(Exception::class)
     fun setUp() {
-        createShoppingListActivity = createShoppingListActivityActivityTestRule.activity
+        createShoppingList = createShoppingListActivityActivityTestRule.activity
     }
 
     @Test
     fun testLaunch() {
-        val view = createShoppingListActivity!!.findViewById<View>(R.id.txvw_signup)
+        val view = createShoppingList!!.findViewById<View>(R.id.txvw_signup)
         assertNotNull(view)
     }
 
     @After
     @Throws(Exception::class)
     fun tearDown() {
-        createShoppingListActivity = null
+        createShoppingList = null
     }
 }
